@@ -2,10 +2,18 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>تماس با ما | بیکران گسترش تجارت پارسی</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        تماس با ما | بیکران گسترش تجارت پارسی
+    </title>
+
 
     <style>
 
@@ -15,160 +23,477 @@
             box-sizing: border-box;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
             background: #080808;
-            color: white;
+            color: #ffffff;
             font-family: Tahoma, Arial, sans-serif;
             min-height: 100vh;
         }
+
 
         a {
             text-decoration: none;
         }
 
+
+        /* =========================
+           HEADER
+        ========================= */
+
         .header {
+
             height: 80px;
+
             width: 100%;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
-            padding: 0 6%;
-
-            border-bottom: 1px solid rgba(212,168,79,.12);
+            padding: 0 5%;
 
             background: #080808;
+
+            border-bottom:
+                1px solid rgba(212, 168, 79, 0.12);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
         }
 
-        .logo {
-            color: #d4a84f;
-            font-size: 26px;
-            font-weight: bold;
+
+        /* LOGO */
+
+        .header-logo {
+
+            width: 135px;
+
+            height: 55px;
+
+            object-fit: contain;
         }
 
-        .back {
+
+        /* BACK BUTTON */
+
+        .back-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
             color: #d4a84f;
-            border: 1px solid rgba(212,168,79,.4);
-            padding: 10px 18px;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.45);
+
+            padding: 11px 20px;
+
             border-radius: 7px;
+
             font-size: 13px;
+
+            transition: 0.25s;
         }
+
+
+        .back-button:hover {
+
+            background:
+                rgba(212, 168, 79, 0.1);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .page {
+
+            width: 100%;
+
+            min-height:
+                calc(100vh - 80px);
+
+            padding: 80px 0;
+        }
+
 
         .container {
+
             width: 90%;
-            max-width: 900px;
+
+            max-width: 1000px;
+
             margin: auto;
         }
 
-        .page {
-            padding: 90px 0;
-        }
+
+        /* =========================
+           TITLE
+        ========================= */
 
         .title {
+
             text-align: center;
-            margin-bottom: 60px;
+
+            margin-bottom: 55px;
         }
+
 
         .title span {
+
+            display: block;
+
             color: #d4a84f;
+
             font-size: 14px;
+
+            margin-bottom: 18px;
         }
+
 
         .title h1 {
-            margin-top: 15px;
-            font-size: 40px;
+
+            font-size:
+                clamp(34px, 5vw, 50px);
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
         }
+
 
         .title p {
+
             color: #888;
-            margin-top: 15px;
+
+            font-size: 14px;
+
             line-height: 2;
+
+            max-width: 650px;
+
+            margin: auto;
         }
 
+
+        /* =========================
+           CONTACT GRID
+        ========================= */
+
         .contact-grid {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
         }
 
+
+        /* CARD */
+
         .contact-card {
+
             background: #111;
-            border: 1px solid rgba(212,168,79,.15);
-            border-radius: 12px;
-            padding: 30px 20px;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            padding: 35px 22px;
+
             text-align: center;
+
+            min-height: 240px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.25s;
         }
 
+
+        .contact-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(212, 168, 79, 0.45);
+        }
+
+
+        /* ICON */
+
         .icon {
-            font-size: 30px;
+
+            width: 65px;
+
+            height: 65px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(212, 168, 79, 0.08);
+
+            border:
+                1px solid rgba(212, 168, 79, 0.25);
+
             color: #d4a84f;
+
+            font-size: 28px;
+
             margin-bottom: 20px;
         }
 
+
+        /* SMALL TITLE */
+
         .contact-card small {
+
             display: block;
+
             color: #777;
-            margin-bottom: 10px;
+
+            font-size: 12px;
+
+            margin-bottom: 13px;
         }
+
+
+        /* TEXT */
 
         .contact-card strong {
+
             color: #ddd;
+
             font-size: 14px;
-            line-height: 2;
+
+            line-height: 2.3;
+
+            font-weight: normal;
         }
 
-        .contact-card a {
+
+        /* PHONE LINKS */
+
+        .phone-link {
+
+            display: block;
+
             color: #d4a84f;
+
+            direction: ltr;
+
+            transition: 0.2s;
         }
 
-        @media(max-width:700px) {
+
+        .phone-link:hover {
+
+            color: #f0ca78;
+        }
+
+
+        /* INSTAGRAM */
+
+        .instagram-link {
+
+            color: #d4a84f;
+
+            direction: ltr;
+
+            display: inline-block;
+
+            transition: 0.2s;
+        }
+
+
+        .instagram-link:hover {
+
+            color: #f0ca78;
+        }
+
+
+        /* ADDRESS */
+
+        .address {
+
+            color: #ccc;
+
+            font-size: 13px;
+
+            line-height: 2.2;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            padding: 25px 5%;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
 
             .contact-grid {
+
                 grid-template-columns: 1fr;
+
             }
 
-            .title h1 {
-                font-size: 32px;
+
+            .contact-card {
+
+                min-height: 210px;
+
             }
+
 
             .page {
-                padding: 60px 0;
+
+                padding: 55px 0;
+
+            }
+
+
+            .header {
+
+                padding: 0 20px;
+
+            }
+
+
+            .header-logo {
+
+                width: 110px;
+
+            }
+
+
+            .back-button {
+
+                padding: 9px 14px;
+
+                font-size: 12px;
+
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .title h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .title p {
+
+                font-size: 12px;
+
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
-    <a
-        href="/bikaran-website/"
-        class="logo"
-    >
-        بیکران
+
+    <a href="/bikaran-website/">
+
+        <img
+            src="/bikaran-website/logo.png.jpeg"
+            alt="بیکران گسترش تجارت پارسی"
+            class="header-logo"
+        >
+
     </a>
+
 
     <a
         href="/bikaran-website/"
-        class="back"
+        class="back-button"
     >
+
         ← بازگشت به خانه
+
     </a>
+
 
 </header>
 
 
 
+<!-- =========================
+     MAIN
+========================= -->
+
 <main class="page">
+
 
     <div class="container">
 
+
+        <!-- TITLE -->
 
         <div class="title">
 
@@ -176,99 +501,155 @@
                 در ارتباط باشیم
             </span>
 
+
             <h1>
                 تماس با ما
             </h1>
 
+
             <p>
+
                 برای ارتباط با بیکران گسترش تجارت پارسی
-                از راه‌های زیر با ما در تماس باشید.
+                می‌توانید از راه‌های زیر با ما در تماس باشید.
+
             </p>
 
         </div>
 
 
 
+        <!-- CONTACT CARDS -->
+
         <div class="contact-grid">
 
 
-            <!-- تلفن -->
+
+            <!-- PHONE -->
 
             <div class="contact-card">
+
 
                 <div class="icon">
                     ☎
                 </div>
 
+
                 <small>
-                    شماره تماس
+                    شماره‌های تماس
                 </small>
 
+
                 <strong>
-                    ۸۸۰۸۱۳۴۴۷
+
+
+                    <a
+                        href="tel:880813447"
+                        class="phone-link"
+                    >
+                        ۸۸۰۸۱۳۴۴۷
+                    </a>
+
+
+                    <a
+                        href="tel:09981415115"
+                        class="phone-link"
+                    >
+                        ۰۹۹۸۱۴۱۵۱۱۵
+                    </a>
+
+
                 </strong>
+
 
             </div>
 
 
 
-            <!-- اینستاگرام -->
+            <!-- INSTAGRAM -->
 
             <div class="contact-card">
+
 
                 <div class="icon">
                     ◎
                 </div>
 
+
                 <small>
                     اینستاگرام
                 </small>
+
 
                 <strong>
 
                     <a
                         href="https://instagram.com/bikaran_trade"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        class="instagram-link"
                     >
                         @bikaran_trade
                     </a>
 
                 </strong>
 
+
             </div>
 
 
 
-            <!-- آدرس -->
+            <!-- ADDRESS -->
 
             <div class="contact-card">
+
 
                 <div class="icon">
                     📍
                 </div>
 
+
                 <small>
                     آدرس
                 </small>
 
-                <strong>
+
+                <strong class="address">
+
                     تهران، شهرک غرب،
                     بلوار فرحزادی،
                     بعد از تقاطع دریا،
                     خیابان شهید اناری،
                     مجتمع اداری آریا،
-                    طبقه ۴، واحد ۴۰۶
+                    طبقه ۴،
+                    واحد ۴۰۶
+
                 </strong>
+
 
             </div>
 
 
         </div>
 
+
     </div>
+
 
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    © ۱۴۰۵ بیکران گسترش تجارت پارسی
+
+</footer>
+
+
 </body>
+
 </html>
