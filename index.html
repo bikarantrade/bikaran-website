@@ -1,68 +1,48 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>بیکران گسترش تجارت پارسی</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-background:#080808;
-color:white;
-font-family:Tahoma,Arial,sans-serif;
-}
-
-a{
-text-decoration:none;
-}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
+a{text-decoration:none}
 
 .header{
 position:fixed;
-top:0;
-right:0;
-left:0;
+top:0;right:0;left:0;
 height:80px;
 padding:0 25px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-z-index:1000;
+z-index:1000
 }
 
 .logo{
-width:110px;
+width:120px;
 height:55px;
-object-fit:contain;
+object-fit:contain
 }
 
 .menu-button{
-width:48px;
-height:48px;
+width:48px;height:48px;
+background:rgba(0,0,0,.7);
 border:1px solid #d4a84f;
-background:#111;
 border-radius:8px;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 gap:6px;
-cursor:pointer;
+cursor:pointer
 }
 
 .menu-button span{
-display:block;
-width:24px;
-height:2px;
-background:#d4a84f;
+width:23px;height:2px;
+background:#d4a84f
 }
 
 .hero{
@@ -72,38 +52,38 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:100px 20px 50px;
-background:radial-gradient(circle,#29241b,#0d0d0d 50%,#050505);
+background:radial-gradient(circle,#29241c,#0d0d0d 50%,#050505)
 }
 
 .hero-content{
 width:90%;
-max-width:850px;
+max-width:850px
 }
 
 .company{
 color:#d4a84f;
 font-size:18px;
 font-weight:bold;
-margin-bottom:20px;
+margin-bottom:20px
 }
 
 h1{
 font-size:clamp(42px,7vw,78px);
 line-height:1.5;
-margin:0;
+margin:0
 }
 
 h1 span{
 display:block;
-color:#d4a84f;
+color:#d4a84f
 }
 
 .hero p{
 max-width:700px;
 margin:25px auto;
-font-size:18px;
-line-height:2.2;
 color:#ddd;
+font-size:18px;
+line-height:2.2
 }
 
 .buttons{
@@ -111,7 +91,7 @@ display:flex;
 justify-content:center;
 gap:15px;
 flex-wrap:wrap;
-margin-top:30px;
+margin-top:30px
 }
 
 .button{
@@ -119,18 +99,18 @@ display:block;
 min-width:190px;
 padding:16px 25px;
 border-radius:8px;
-font-weight:bold;
+font-weight:bold
 }
 
 .consult{
 background:#d4a84f;
-color:#111;
+color:#111
 }
 
 .services{
 background:#111;
-color:white;
-border:1px solid #d4a84f;
+color:#fff;
+border:1px solid #d4a84f
 }
 
 .overlay{
@@ -138,12 +118,10 @@ position:fixed;
 inset:0;
 background:rgba(0,0,0,.75);
 display:none;
-z-index:1998;
+z-index:1998
 }
 
-.overlay.active{
-display:block;
-}
+.overlay.active{display:block}
 
 .menu{
 position:fixed;
@@ -156,25 +134,23 @@ background:#111;
 z-index:2000;
 padding:25px;
 transform:translateX(100%);
-transition:.3s;
+transition:.3s
 }
 
-.menu.active{
-transform:translateX(0);
-}
+.menu.active{transform:translateX(0)}
 
 .menu-top{
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding-bottom:20px;
-border-bottom:1px solid #333;
+border-bottom:1px solid #333
 }
 
 .menu-logo{
 width:100px;
 height:50px;
-object-fit:contain;
+object-fit:contain
 }
 
 .close{
@@ -182,78 +158,44 @@ background:none;
 border:0;
 color:#d4a84f;
 font-size:35px;
-cursor:pointer;
+cursor:pointer
 }
 
 .menu a{
 display:block;
-color:white;
+color:#fff;
 padding:17px 10px;
 margin-top:5px;
-border-radius:8px;
+border-radius:8px
 }
 
 .menu a:hover{
 color:#d4a84f;
-background:#1c1c1c;
+background:#1c1c1c
 }
 
 @media(max-width:600px){
-
-.hero h1{
-font-size:40px;
+.hero h1{font-size:40px}
+.hero p{font-size:15px}
+.buttons{flex-direction:column;align-items:center}
+.button{width:100%;max-width:280px}
 }
-
-.hero p{
-font-size:15px;
-}
-
-.buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.button{
-width:100%;
-max-width:280px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-
 <header class="header">
 
-<a href="https://bikarantrade.github.io/bikaran-website/">
-
-<img
-src="logo.png.jpeg"
-class="logo"
-alt="بیکران"
->
-
+<a href="index.html">
+<img src="logo.png.jpeg" class="logo" alt="بیکران">
 </a>
 
-
-<button
-type="button"
-class="menu-button"
-id="openMenu"
->
-
-<span></span>
-<span></span>
-<span></span>
-
+<button class="menu-button" id="openMenu">
+<span></span><span></span><span></span>
 </button>
 
 </header>
-
 
 <section class="hero">
 
@@ -273,97 +215,57 @@ id="openMenu"
 مشاوره و آموزش امور تخصصی بازرگانی خارجی
 </p>
 
-
 <div class="buttons">
 
-<a
-href="consultation.html"
-class="button consult"
->
+<a href="consultation.html" class="button consult">
 درخواست مشاوره
 </a>
 
-<a
-href="services.html"
-class="button services"
->
+<a href="services.html" class="button services">
 مشاهده خدمات
 </a>
 
 </div>
 
 </div>
-
 </section>
 
+<div class="overlay" id="overlay"></div>
 
-<div
-class="overlay"
-id="overlay"
-></div>
-
-
-<aside
-class="menu"
-id="menu"
->
+<aside class="menu" id="menu">
 
 <div class="menu-top">
 
-<img
-src="logo.png.jpeg"
-class="menu-logo"
-alt="بیکران"
->
+<img src="logo.png.jpeg" class="menu-logo" alt="بیکران">
 
-<button
-type="button"
-class="close"
-id="closeMenu"
->
-×
-</button>
+<button class="close" id="closeMenu">×</button>
 
 </div>
 
-
 <nav>
 
-<a href="https://bikarantrade.github.io/bikaran-website/">
-خانه
-</a>
-
-<a href="services.html">
-خدمات
-</a>
-
-<a href="about.html">
-درباره ما
-</a>
-
-<a href="news.html">
-اخبار
-</a>
-
-<a href="consultation.html">
-مشاوره
-</a>
-
-<a href="contact.html">
-تماس با ما
-</a>
+<a href="index.html">خانه</a>
+<a href="services.html">خدمات</a>
+<a href="about.html">درباره ما</a>
+<a href="news.html">اخبار</a>
+<a href="consultation.html">مشاوره</a>
+<a href="contact.html">تماس با ما</a>
 
 </nav>
 
 </aside>
 
-
 <script>
-
 const openMenu=document.getElementById("openMenu");
-
 const closeMenu=document.getElementById("closeMenu");
-
 const menu=document.getElementById("menu");
+const overlay=document.getElementById("overlay");
 
-const overlay=document.getElementB
+openMenu.onclick=function(){
+menu.classList.add("active");
+overlay.classList.add("active");
+};
+
+closeMenu.onclick=function(){
+menu.classList.remove("active");
+overlay.classList.remove("acti
