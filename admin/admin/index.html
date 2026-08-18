@@ -28,7 +28,7 @@
         .container {
             width: 92%;
             max-width: 900px;
-            margin: 40px auto;
+            margin: 30px auto;
         }
 
         .box {
@@ -44,32 +44,34 @@
             color: #d4a84f;
         }
 
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #ddd;
+        }
+
         input,
         textarea {
             width: 100%;
             padding: 14px;
-            margin-top: 8px;
             margin-bottom: 18px;
             background: #101010;
+            color: #fff;
             border: 1px solid #333;
             border-radius: 10px;
-            color: white;
             font-family: inherit;
         }
 
         textarea {
             min-height: 180px;
+            resize: vertical;
             line-height: 2;
-        }
-
-        label {
-            color: #ddd;
         }
 
         button {
             width: 100%;
             padding: 14px;
-            border: 0;
+            border: none;
             border-radius: 10px;
             background: #d4a84f;
             color: #111;
@@ -83,50 +85,51 @@
         }
 
         .secondary {
-            background: #252525;
-            color: #d4a84f;
             margin-top: 10px;
+            background: #292929;
+            color: #d4a84f;
         }
 
         .danger {
-            background: #351818;
+            background: #401818;
             color: #ff7777;
+            margin-top: 10px;
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         .message {
             margin-top: 15px;
-            padding: 12px;
+            padding: 13px;
             border-radius: 10px;
             background: rgba(212,168,79,.1);
             color: #d4a84f;
             line-height: 2;
         }
 
-        .news {
-            border: 1px solid #333;
+        .news-item {
             padding: 15px;
+            border: 1px solid #333;
             border-radius: 12px;
             margin-bottom: 15px;
         }
 
-        .news img {
+        .news-item img {
             width: 100%;
             max-height: 220px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .news h3 {
+        .news-item h3 {
             color: #d4a84f;
         }
 
-        .news p {
-            color: #bbb;
+        .news-item p {
+            color: #aaa;
             line-height: 2;
         }
 
@@ -140,16 +143,18 @@
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
 
-    <!-- TOKEN -->
+    <!-- LOGIN -->
 
     <div
-        class="box"
         id="loginBox"
+        class="box"
     >
 
         <h1>
@@ -157,7 +162,7 @@
         </h1>
 
         <p class="small">
-            برای استفاده از پنل، توکن GitHub مدیر را وارد کنید.
+            توکن GitHub مدیر را وارد کنید.
         </p>
 
         <label>
@@ -165,13 +170,13 @@
         </label>
 
         <input
-            type="password"
             id="token"
+            type="password"
             placeholder="ghp_..."
         >
 
-        <button id="loginBtn">
-            ورود به پنل
+        <button id="loginButton">
+            ورود
         </button>
 
         <div
@@ -182,19 +187,18 @@
     </div>
 
 
-
     <!-- ADMIN -->
 
     <div
-        class="hidden"
         id="adminPanel"
+        class="hidden"
     >
 
 
         <div class="box">
 
             <h2>
-                افزودن خبر جدید
+                انتشار خبر جدید
             </h2>
 
 
@@ -203,18 +207,20 @@
             </label>
 
             <input
-                id="title"
+                id="newsTitle"
+                type="text"
                 placeholder="عنوان خبر"
             >
 
 
             <label>
-                تاریخ
+                تاریخ خبر
             </label>
 
             <input
-                id="date"
-                placeholder="مثلاً ۲۸ مرداد ۱۴۰۵"
+                id="newsDate"
+                type="text"
+                placeholder="۲۸ مرداد ۱۴۰۵"
             >
 
 
@@ -223,7 +229,7 @@
             </label>
 
             <textarea
-                id="description"
+                id="newsText"
                 placeholder="متن کامل خبر..."
             ></textarea>
 
@@ -233,15 +239,13 @@
             </label>
 
             <input
+                id="newsImage"
                 type="file"
-                id="image"
                 accept="image/*"
             >
 
 
-            <button
-                id="publishBtn"
-            >
+            <button id="publishButton">
                 انتشار خبر
             </button>
 
@@ -252,7 +256,6 @@
             ></div>
 
         </div>
-
 
 
         <div class="box">
@@ -269,10 +272,10 @@
 
 
         <button
+            id="logoutButton"
             class="secondary"
-            id="logoutBtn"
         >
-            خروج
+            خروج از پنل
         </button>
 
 
@@ -281,56 +284,60 @@
 </div>
 
 
+
 <script>
 
 
-const REPO =
-    "melinaamiri91/bikaran-website";
+/* =========================
+   تنظیمات سایت
+========================= */
 
+const OWNER =
+    "melinaamiri91";
+
+const REPOSITORY =
+    "bikaran-website";
 
 const BRANCH =
     "main";
 
-
-const NEWS_PATH =
+const NEWS_FOLDER =
     "content/news";
 
-
-const IMAGE_PATH =
+const IMAGE_FOLDER =
     "images/news";
-
 
 
 let token =
     localStorage.getItem(
-        "bikaran_github_token"
+        "bikaran_admin_token"
     );
 
 
+
+/* =========================
+   عناصر صفحه
+========================= */
 
 const loginBox =
     document.getElementById(
         "loginBox"
     );
 
-
 const adminPanel =
     document.getElementById(
         "adminPanel"
     );
-
 
 const tokenInput =
     document.getElementById(
         "token"
     );
 
-
 const loginMessage =
     document.getElementById(
         "loginMessage"
     );
-
 
 const status =
     document.getElementById(
@@ -340,22 +347,92 @@ const status =
 
 
 /* =========================
-   LOGIN
+   درخواست به GitHub
+========================= */
+
+async function github(
+    url,
+    method = "GET",
+    body = null
+) {
+
+    const headers = {
+
+        "Accept":
+            "application/vnd.github+json",
+
+        "X-GitHub-Api-Version":
+            "2022-11-28"
+
+    };
+
+
+    if (token) {
+
+        headers.Authorization =
+            "Bearer " + token;
+
+    }
+
+
+    const response =
+        await fetch(
+            "https://api.github.com" + url,
+            {
+
+                method:
+                    method,
+
+                headers:
+                    headers,
+
+                body:
+                    body
+                    ?
+                    JSON.stringify(body)
+                    :
+                    undefined
+
+            }
+        );
+
+
+    if (!response.ok) {
+
+        const errorText =
+            await response.text();
+
+        throw new Error(
+            errorText
+        );
+
+    }
+
+
+    return response.json();
+
+}
+
+
+
+/* =========================
+   ورود
 ========================= */
 
 document
-    .getElementById("loginBtn")
+    .getElementById("loginButton")
     .addEventListener(
         "click",
         async function() {
 
-            const value =
+
+            const enteredToken =
                 tokenInput
                     .value
                     .trim();
 
 
-            if (!value) {
+            if (!enteredToken) {
 
                 showLoginMessage(
                     "توکن را وارد کنید."
@@ -368,39 +445,47 @@ document
 
             try {
 
-                const response =
-                    await github(
-                        "/user",
-                        "GET",
-                        null,
-                        value
-                    );
 
-
-                if (!response.login) {
-
-                    throw new Error();
-
-                }
+                const oldToken =
+                    token;
 
 
                 token =
-                    value;
+                    enteredToken;
+
+
+                await github(
+                    "/user"
+                );
 
 
                 localStorage.setItem(
-                    "bikaran_github_token",
+                    "bikaran_admin_token",
                     token
                 );
 
 
-                showAdmin();
+                loginBox
+                    .classList
+                    .add("hidden");
+
+
+                adminPanel
+                    .classList
+                    .remove("hidden");
+
+
+                loadNews();
 
 
             } catch (error) {
 
+                token =
+                    oldToken;
+
+
                 showLoginMessage(
-                    "توکن GitHub صحیح نیست یا دسترسی لازم را ندارد."
+                    "توکن اشتباه است یا دسترسی لازم را ندارد."
                 );
 
             }
@@ -411,66 +496,49 @@ document
 
 
 /* =========================
-   SHOW ADMIN
-========================= */
-
-function showAdmin() {
-
-    loginBox.classList.add(
-        "hidden"
-    );
-
-
-    adminPanel.classList.remove(
-        "hidden"
-    );
-
-
-    loadNews();
-
-}
-
-
-
-/* =========================
-   AUTO LOGIN
+   ورود خودکار
 ========================= */
 
 if (token) {
 
-    github(
-        "/user",
-        "GET",
-        null,
-        token
-    )
-    .then(
-        function() {
+    github("/user")
+        .then(
+            function() {
 
-            showAdmin();
+                loginBox
+                    .classList
+                    .add("hidden");
 
-        }
-    )
-    .catch(
-        function() {
+                adminPanel
+                    .classList
+                    .remove("hidden");
 
-            localStorage.removeItem(
-                "bikaran_github_token"
-            );
+                loadNews();
 
-        }
-    );
+            }
+        )
+        .catch(
+            function() {
+
+                localStorage.removeItem(
+                    "bikaran_admin_token"
+                );
+
+                token = null;
+
+            }
+        );
 
 }
 
 
 
 /* =========================
-   PUBLISH
+   انتشار خبر
 ========================= */
 
 document
-    .getElementById("publishBtn")
+    .getElementById("publishButton")
     .addEventListener(
         "click",
         publishNews
@@ -483,35 +551,35 @@ async function publishNews() {
 
     const title =
         document
-            .getElementById("title")
+            .getElementById("newsTitle")
             .value
             .trim();
 
 
     const date =
         document
-            .getElementById("date")
+            .getElementById("newsDate")
             .value
             .trim();
 
 
-    const description =
+    const text =
         document
-            .getElementById("description")
+            .getElementById("newsText")
             .value
             .trim();
 
 
-    const imageFile =
+    const image =
         document
-            .getElementById("image")
+            .getElementById("newsImage")
             .files[0];
 
 
     if (
         !title ||
         !date ||
-        !description
+        !text
     ) {
 
         showStatus(
@@ -525,7 +593,7 @@ async function publishNews() {
 
     const button =
         document.getElementById(
-            "publishBtn"
+            "publishButton"
         );
 
 
@@ -541,102 +609,141 @@ async function publishNews() {
         let imageURL = "";
 
 
-        /* IMAGE */
+        /* =====================
+           آپلود عکس
+        ===================== */
 
-        if (imageFile) {
+        if (image) {
 
-            const imageData =
+
+            const base64 =
                 await fileToBase64(
-                    imageFile
+                    image
                 );
 
 
-            const safeName =
-                createFileName(
-                    imageFile.name
+            const fileName =
+                Date.now() +
+                "-" +
+                cleanFileName(
+                    image.name
                 );
 
 
             const imagePath =
-                `${IMAGE_PATH}/${Date.now()}-${safeName}`;
+                IMAGE_FOLDER +
+                "/" +
+                fileName;
 
 
-            await createGitHubFile(
-                imagePath,
-                imageData,
-                `افزودن تصویر خبر: ${title}`
+            await github(
+                `/repos/${OWNER}/${REPOSITORY}/contents/${imagePath}`,
+                "PUT",
+                {
+
+                    message:
+                        "افزودن تصویر خبر",
+
+                    content:
+                        base64,
+
+                    branch:
+                        BRANCH
+
+                }
             );
 
 
             imageURL =
-                `/bikaran-website/${imagePath}`;
+                "/bikaran-website/" +
+                imagePath;
 
         }
 
 
 
-        /* NEWS */
+        /* =====================
+           ساخت فایل خبر
+        ===================== */
 
-        const slug =
-            createSlug(
-                title
-            );
+        const fileName =
+            Date.now() +
+            "-" +
+            slug(title) +
+            ".md";
 
 
-        const filePath =
-            `${NEWS_PATH}/${Date.now()}-${slug}.md`;
+        const newsPath =
+            NEWS_FOLDER +
+            "/" +
+            fileName;
 
 
         const markdown =
 `---
-title: "${yamlEscape(title)}"
-date: "${yamlEscape(date)}"
-image: "${yamlEscape(imageURL)}"
+title: "${yaml(title)}"
+date: "${yaml(date)}"
+image: "${yaml(imageURL)}"
 ---
 
-${description}
-`;
+${text}`;
 
 
-        const content =
-            btoa(
-                unescape(
-                    encodeURIComponent(
-                        markdown
-                    )
-                )
+        const encoded =
+            utf8ToBase64(
+                markdown
             );
 
 
-        await createGitHubFile(
-            filePath,
-            content,
-            `افزودن خبر: ${title}`
+        await github(
+            `/repos/${OWNER}/${REPOSITORY}/contents/${newsPath}`,
+            "PUT",
+            {
+
+                message:
+                    "افزودن خبر: " +
+                    title,
+
+                content:
+                    encoded,
+
+                branch:
+                    BRANCH
+
+            }
         );
 
 
         showStatus(
-            "خبر با موفقیت منتشر شد. چند لحظه بعد در سایت نمایش داده می‌شود."
+            "✅ خبر با موفقیت منتشر شد."
         );
 
 
         document
-            .getElementById("title")
+            .getElementById(
+                "newsTitle"
+            )
             .value = "";
 
 
         document
-            .getElementById("date")
+            .getElementById(
+                "newsDate"
+            )
             .value = "";
 
 
         document
-            .getElementById("description")
+            .getElementById(
+                "newsText"
+            )
             .value = "";
 
 
         document
-            .getElementById("image")
+            .getElementById(
+                "newsImage"
+            )
             .value = "";
 
 
@@ -650,9 +757,9 @@ ${description}
 
         console.error(error);
 
+
         showStatus(
-            "خطا در انتشار خبر: " +
-            error.message
+            "❌ خطا در انتشار خبر."
         );
 
     }
@@ -668,10 +775,11 @@ ${description}
 
 
 /* =========================
-   LOAD NEWS
+   دریافت اخبار
 ========================= */
 
 async function loadNews() {
+
 
     const list =
         document.getElementById(
@@ -688,19 +796,8 @@ async function loadNews() {
 
         const files =
             await github(
-                `/repos/${REPO}/contents/${NEWS_PATH}?ref=${BRANCH}`,
-                "GET"
+                `/repos/${OWNER}/${REPOSITORY}/contents/${NEWS_FOLDER}?ref=${BRANCH}`
             );
-
-
-        if (!Array.isArray(files)) {
-
-            list.innerHTML =
-                "هنوز خبری وجود ندارد.";
-
-            return;
-
-        }
 
 
         list.innerHTML =
@@ -725,8 +822,7 @@ async function loadNews() {
 
             const data =
                 await github(
-                    `/repos/${REPO}/contents/${file.path}?ref=${BRANCH}`,
-                    "GET"
+                    `/repos/${OWNER}/${REPOSITORY}/contents/${file.path}`
                 );
 
 
@@ -737,22 +833,22 @@ async function loadNews() {
 
 
             const news =
-                parseMarkdown(
+                parseNews(
                     markdown
                 );
 
 
-            const div =
+            const item =
                 document.createElement(
                     "div"
                 );
 
 
-            div.className =
-                "news";
+            item.className =
+                "news-item";
 
 
-            div.innerHTML = `
+            item.innerHTML = `
 
                 ${
                     news.image
@@ -771,14 +867,14 @@ async function loadNews() {
                 </div>
 
                 <p>
-                    ${escapeHTML(news.body)}
+                    ${escapeHTML(news.text)}
                 </p>
 
             `;
 
 
             list.appendChild(
-                div
+                item
             );
 
         }
@@ -787,14 +883,12 @@ async function loadNews() {
         if (!list.innerHTML) {
 
             list.innerHTML =
-                "هنوز خبری وجود ندارد.";
+                "هنوز خبری منتشر نشده.";
 
         }
 
 
     } catch (error) {
-
-        console.error(error);
 
         list.innerHTML =
             "خطا در دریافت اخبار.";
@@ -806,113 +900,7 @@ async function loadNews() {
 
 
 /* =========================
-   CREATE GITHUB FILE
-========================= */
-
-async function createGitHubFile(
-    path,
-    content,
-    message
-) {
-
-    return github(
-        `/repos/${REPO}/contents/${path}`,
-        "PUT",
-        {
-            message:
-                message,
-
-            content:
-                content,
-
-            branch:
-                BRANCH
-        }
-    );
-
-}
-
-
-
-/* =========================
-   GITHUB API
-========================= */
-
-async function github(
-    endpoint,
-    method = "GET",
-    body = null,
-    customToken = null
-) {
-
-
-    const headers = {
-
-        Accept:
-            "application/vnd.github+json",
-
-        "X-GitHub-Api-Version":
-            "2022-11-28"
-
-    };
-
-
-    const activeToken =
-        customToken || token;
-
-
-    if (activeToken) {
-
-        headers.Authorization =
-            `Bearer ${activeToken}`;
-
-    }
-
-
-    const response =
-        await fetch(
-            "https://api.github.com" +
-            endpoint,
-            {
-
-                method:
-                    method,
-
-                headers:
-                    headers,
-
-                body:
-                    body
-                    ?
-                    JSON.stringify(body)
-                    :
-                    undefined
-
-            }
-        );
-
-
-    if (!response.ok) {
-
-        const text =
-            await response.text();
-
-
-        throw new Error(
-            text
-        );
-
-    }
-
-
-    return response.json();
-
-}
-
-
-
-/* =========================
-   FILE → BASE64
+   تبدیل عکس
 ========================= */
 
 function fileToBase64(
@@ -920,7 +908,10 @@ function fileToBase64(
 ) {
 
     return new Promise(
-        function(resolve, reject) {
+        function(
+            resolve,
+            reject
+        ) {
 
             const reader =
                 new FileReader();
@@ -929,18 +920,9 @@ function fileToBase64(
             reader.onload =
                 function() {
 
-                    const result =
-                        reader.result;
-
-
-                    const base64 =
-                        result.split(
-                            ","
-                        )[1];
-
-
                     resolve(
-                        base64
+                        reader.result
+                            .split(",")[1]
                     );
 
                 };
@@ -962,15 +944,14 @@ function fileToBase64(
 
 
 /* =========================
-   HELPERS
+   ساخت slug
 ========================= */
 
-function createSlug(
+function slug(
     text
 ) {
 
     return text
-        .toLowerCase()
         .replace(
             /[^\w\u0600-\u06FF]+/g,
             "-"
@@ -981,13 +962,18 @@ function createSlug(
         )
         .substring(
             0,
-            60
+            50
         );
 
 }
 
 
-function createFileName(
+
+/* =========================
+   نام فایل عکس
+========================= */
+
+function cleanFileName(
     name
 ) {
 
@@ -1000,11 +986,16 @@ function createFileName(
 }
 
 
-function yamlEscape(
+
+/* =========================
+   YAML
+========================= */
+
+function yaml(
     text
 ) {
 
-    return text
+    return String(text)
         .replace(
             /\\/g,
             "\\\\"
@@ -1017,14 +1008,39 @@ function yamlEscape(
 }
 
 
+
+/* =========================
+   UTF8 → Base64
+========================= */
+
+function utf8ToBase64(
+    text
+) {
+
+    return btoa(
+        unescape(
+            encodeURIComponent(
+                text
+            )
+        )
+    );
+
+}
+
+
+
+/* =========================
+   Base64 → UTF8
+========================= */
+
 function decodeBase64(
-    base64
+    text
 ) {
 
     return decodeURIComponent(
         escape(
             atob(
-                base64.replace(
+                text.replace(
                     /\n/g,
                     ""
                 )
@@ -1035,22 +1051,30 @@ function decodeBase64(
 }
 
 
-function parseMarkdown(
+
+/* =========================
+   خواندن Markdown
+========================= */
+
+function parseNews(
     markdown
 ) {
 
-    const match =
-        markdown.match(
-            /^---([\s\S]*?)---([\s\S]*)$/
+
+    const parts =
+        markdown.split(
+            "---"
         );
 
 
-    if (!match) {
+    if (
+        parts.length < 3
+    ) {
 
         return {
 
             title:
-                "بدون عنوان",
+                "خبر",
 
             date:
                 "",
@@ -1058,7 +1082,7 @@ function parseMarkdown(
             image:
                 "",
 
-            body:
+            text:
                 markdown
 
         };
@@ -1067,40 +1091,42 @@ function parseMarkdown(
 
 
     const front =
-        match[1];
+        parts[1];
 
 
-    const body =
-        match[2].trim();
+    const text =
+        parts
+            .slice(2)
+            .join("---")
+            .trim();
 
 
-    const get =
-        function(
-            key
-        ) {
+    function get(
+        key
+    ) {
 
-            const regex =
-                new RegExp(
-                    "^" +
-                    key +
-                    ":\\s*[\"']?(.*?)[\"']?$",
-                    "m"
-                );
-
-
-            const found =
-                front.match(
-                    regex
-                );
+        const regex =
+            new RegExp(
+                "^" +
+                key +
+                ":\\s*[\"']?(.*?)[\"']?$",
+                "m"
+            );
 
 
-            return found
-                ?
-                found[1]
-                :
-                "";
+        const result =
+            front.match(
+                regex
+            );
 
-        };
+
+        return result
+            ?
+            result[1]
+            :
+            "";
+
+    }
 
 
     return {
@@ -1114,13 +1140,18 @@ function parseMarkdown(
         image:
             get("image"),
 
-        body:
-            body
+        text:
+            text
 
     };
 
 }
 
+
+
+/* =========================
+   HTML امن
+========================= */
 
 function escapeHTML(
     text
@@ -1141,12 +1172,17 @@ function escapeHTML(
 }
 
 
+
+/* =========================
+   پیام
+========================= */
+
 function showStatus(
-    text
+    message
 ) {
 
     status.textContent =
-        text;
+        message;
 
 
     status.classList.remove(
@@ -1156,12 +1192,17 @@ function showStatus(
 }
 
 
+
+/* =========================
+   پیام ورود
+========================= */
+
 function showLoginMessage(
-    text
+    message
 ) {
 
     loginMessage.textContent =
-        text;
+        message;
 
 
     loginMessage.classList.remove(
@@ -1171,14 +1212,21 @@ function showLoginMessage(
 }
 
 
+
+/* =========================
+   خروج
+========================= */
+
 document
-    .getElementById("logoutBtn")
+    .getElementById(
+        "logoutButton"
+    )
     .addEventListener(
         "click",
         function() {
 
             localStorage.removeItem(
-                "bikaran_github_token"
+                "bikaran_admin_token"
             );
 
             location.reload();
@@ -1186,8 +1234,8 @@ document
         }
     );
 
-
 </script>
+
 
 </body>
 
