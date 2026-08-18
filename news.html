@@ -1,241 +1,66 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>اخبار | بیکران گسترش تجارت پارسی</title>
-
-<link rel="stylesheet" href="style.css">
+<title>اخبار | بیکران</title>
 
 <style>
-
-body{
-    margin:0;
-    background:#080808;
-    color:#fff;
-    font-family:Tahoma,Arial,sans-serif;
-}
-
-.news-page{
-    min-height:100vh;
-    padding:120px 20px 70px;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.title span{
-    color:#d4a84f;
-    font-size:17px;
-    font-weight:bold;
-}
-
-.title h1{
-    font-size:44px;
-    margin:15px 0;
-}
-
-.title p{
-    color:#999;
-    line-height:2;
-}
-
-.news-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.news-card{
-    background:#111;
-    border:1px solid rgba(212,168,79,.2);
-    border-radius:15px;
-    padding:28px;
-    transition:.25s;
-}
-
-.news-card:hover{
-    transform:translateY(-5px);
-    border-color:#d4a84f;
-}
-
-.news-date{
-    color:#d4a84f;
-    font-size:13px;
-    margin-bottom:15px;
-}
-
-.news-card h2{
-    font-size:20px;
-    line-height:1.8;
-    margin:0 0 15px;
-}
-
-.news-card p{
-    color:#999;
-    font-size:14px;
-    line-height:2.2;
-}
-
-.read-more{
-    display:inline-block;
-    margin-top:15px;
-    color:#d4a84f;
-    font-weight:bold;
-}
-
-.home-link{
-    display:block;
-    width:max-content;
-    margin:45px auto 0;
-    padding:14px 30px;
-    border-radius:8px;
-    background:#d4a84f;
-    color:#111;
-    font-weight:bold;
-}
-
-@media(max-width:900px){
-
-    .news-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:600px){
-
-    .title h1{
-        font-size:34px;
-    }
-
-    .news-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
+.page{min-height:100vh;padding:110px 20px}
+.container{max-width:1000px;width:90%;margin:auto}
+h1{text-align:center;font-size:42px}
+.gold{text-align:center;color:#d4a84f;margin-bottom:45px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#111;border:1px solid #333;border-radius:14px;padding:25px}
+.card h2{color:#d4a84f;font-size:19px;line-height:1.8}
+.card p{color:#ccc;line-height:2}
+.home{display:block;width:max-content;margin:45px auto;padding:15px 30px;background:#d4a84f;color:#111;border-radius:8px;font-weight:bold}
+@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
 </style>
-
 </head>
 
 <body>
 
-
-<section class="news-page">
-
+<section class="page">
 <div class="container">
 
+<h1>اخبار</h1>
 
-<div class="title">
+<div class="gold">
+آخرین اخبار و مطالب بازرگانی
+</div>
 
-<span>
-بیکران گسترش تجارت پارسی
-</span>
+<div class="grid">
 
-<h1>
-اخبار
-</h1>
-
+<div class="card">
+<h2>اخبار بازرگانی</h2>
 <p>
-آخرین اخبار و مطالب حوزه تجارت و بازرگانی
+آخرین مطالب و تحولات حوزه تجارت و بازرگانی.
 </p>
-
 </div>
 
-
-<div class="news-grid">
-
-
-<article class="news-card">
-
-<div class="news-date">
-اخبار بازرگانی
-</div>
-
-<h2>
-آخرین اخبار و تحولات تجارت بین‌الملل
-</h2>
-
+<div class="card">
+<h2>بازرگانی خارجی</h2>
 <p>
-در این بخش اخبار و مطالب جدید
-حوزه تجارت و بازرگانی منتشر می‌شود.
+مطالب و اطلاعات تخصصی مرتبط با واردات و صادرات.
 </p>
-
-<a href="#" class="read-more">
-ادامه مطلب
-</a>
-
-</article>
-
-
-<article class="news-card">
-
-<div class="news-date">
-بازرگانی خارجی
 </div>
 
-<h2>
-مطالب تخصصی بازرگانی خارجی
-</h2>
-
+<div class="card">
+<h2>اطلاعیه‌های بیکران</h2>
 <p>
-مطالب آموزشی و تخصصی مرتبط با واردات،
-صادرات و امور بازرگانی خارجی.
+اخبار و اطلاعیه‌های مجموعه بیکران گسترش تجارت پارسی.
 </p>
-
-<a href="#" class="read-more">
-ادامه مطلب
-</a>
-
-</article>
-
-
-<article class="news-card">
-
-<div class="news-date">
-اطلاعیه
 </div>
-
-<h2>
-اخبار و اطلاعیه‌های بیکران
-</h2>
-
-<p>
-آخرین اطلاعیه‌ها و مطالب منتشرشده
-توسط مجموعه بیکران گسترش تجارت پارسی.
-</p>
-
-<a href="#" class="read-more">
-ادامه مطلب
-</a>
-
-</article>
-
 
 </div>
 
-
-<a
-href="https://bikarantrade.github.io/bikaran-website/"
-class="home-link"
->
+<a href="index.html" class="home">
 بازگشت به خانه
 </a>
 
-
 </div>
-
 </section>
 
 </body>
