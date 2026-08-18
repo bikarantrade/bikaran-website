@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>بیکران گسترش تجارت پارسی</title>
 
@@ -13,149 +17,808 @@
     >
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           HOME PAGE
+        ========================= */
+
+        .home-page {
+            min-height: 100vh;
+            background: #090909;
+        }
+
+        .home-hero {
+            min-height: 100vh;
+            width: 100%;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(212,168,79,0.13),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(212,168,79,0.05),
+                    transparent 30%
+                ),
+                #090909;
+        }
+
+        /* خطوط تزئینی */
+
+        .home-hero::before {
+            content: "";
+            position: absolute;
+
+            width: 700px;
+            height: 700px;
+
+            border: 1px solid rgba(212,168,79,0.08);
+            border-radius: 50%;
+
+            right: -250px;
+            top: 50%;
+
+            transform: translateY(-50%);
+        }
+
+        .home-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid rgba(212,168,79,0.08);
+            border-radius: 50%;
+
+            right: -150px;
+            top: 50%;
+
+            transform: translateY(-50%);
+        }
+
+
+        /* محتوای اصلی */
+
+        .home-container {
+            width: min(1180px, calc(100% - 40px));
+
+            margin: 0 auto;
+
+            padding-top: 82px;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* متن */
+
+        .home-text {
+            text-align: right;
+        }
+
+        .home-small-title {
+            display: inline-block;
+
+            color: #d4a84f;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+
+            position: relative;
+
+            padding-right: 35px;
+        }
+
+        .home-small-title::before {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            top: 50%;
+
+            width: 25px;
+            height: 1px;
+
+            background: #d4a84f;
+        }
+
+
+        .home-title {
+            margin: 0;
+
+            font-size: clamp(42px, 5.5vw, 72px);
+
+            line-height: 1.35;
+
+            font-weight: 700;
+
+            color: #fff;
+        }
+
+        .home-title-gold {
+            display: block;
+
+            color: #d4a84f;
+
+            margin-top: 5px;
+        }
+
+
+        .home-description {
+            color: #999;
+
+            font-size: 16px;
+
+            line-height: 2.2;
+
+            margin-top: 25px;
+
+            max-width: 570px;
+        }
+
+
+        /* دکمه ها */
+
+        .home-buttons {
+            display: flex;
+
+            justify-content: flex-start;
+
+            gap: 14px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .home-button {
+            min-width: 175px;
+
+            padding: 14px 23px;
+
+            border-radius: 8px;
+
+            display: inline-flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            font-size: 13px;
+
+            transition: .3s;
+
+            cursor: pointer;
+        }
+
+        .home-button-primary {
+            background: #d4a84f;
+
+            color: #111;
+
+            border: 1px solid #d4a84f;
+        }
+
+        .home-button-primary:hover {
+            background: #e4bb67;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px rgba(212,168,79,.15);
+        }
+
+        .home-button-secondary {
+            color: #d4a84f;
+
+            border: 1px solid rgba(212,168,79,.45);
+
+            background: rgba(212,168,79,.04);
+        }
+
+        .home-button-secondary:hover {
+            background: rgba(212,168,79,.1);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           LOGO سمت راست
+        ========================= */
+
+        .home-visual {
+            min-height: 520px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+        }
+
+
+        .visual-ring {
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(212,168,79,.22);
+        }
+
+        .visual-ring-1 {
+            width: 430px;
+            height: 430px;
+        }
+
+        .visual-ring-2 {
+            width: 330px;
+            height: 330px;
+
+            border-color: rgba(212,168,79,.3);
+        }
+
+        .visual-ring-3 {
+            width: 210px;
+            height: 210px;
+
+            border-color: rgba(212,168,79,.42);
+        }
+
+
+        .visual-dot {
+            width: 8px;
+            height: 8px;
+
+            background: #d4a84f;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            box-shadow:
+                0 0 25px rgba(212,168,79,.6);
+        }
+
+
+        .visual-dot-1 {
+            top: 95px;
+            right: 90px;
+        }
+
+        .visual-dot-2 {
+            bottom: 100px;
+            left: 80px;
+        }
+
+
+        .home-logo {
+            position: relative;
+
+            z-index: 5;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .home-logo-main {
+            color: #d4a84f;
+
+            font-size: clamp(55px, 7vw, 90px);
+
+            font-weight: bold;
+
+            line-height: 1;
+        }
+
+        .home-logo-sub {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-top: 12px;
+        }
+
+
+        /* خط پایین */
+
+        .home-bottom-info {
+            position: absolute;
+
+            bottom: 35px;
+
+            right: 50%;
+
+            transform: translateX(50%);
+
+            width: min(1180px, calc(100% - 40px));
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #555;
+
+            font-size: 10px;
+
+            z-index: 5;
+        }
+
+        .home-bottom-line {
+            height: 1px;
+
+            flex: 1;
+
+            background: rgba(255,255,255,.08);
+
+            margin: 0 20px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .home-container {
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+
+                padding-top: 105px;
+
+                padding-bottom: 100px;
+            }
+
+            .home-text {
+                text-align: center;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .home-small-title {
+                padding-right: 0;
+            }
+
+            .home-small-title::before {
+                display: none;
+            }
+
+            .home-title {
+                font-size: 43px;
+            }
+
+            .home-description {
+                max-width: 500px;
+
+                font-size: 14px;
+            }
+
+            .home-buttons {
+                justify-content: center;
+
+                width: 100%;
+            }
+
+            .home-button {
+                min-width: 160px;
+            }
+
+            .home-visual {
+                min-height: 300px;
+            }
+
+            .visual-ring-1 {
+                width: 280px;
+                height: 280px;
+            }
+
+            .visual-ring-2 {
+                width: 220px;
+                height: 220px;
+            }
+
+            .visual-ring-3 {
+                width: 140px;
+                height: 140px;
+            }
+
+            .home-logo-main {
+                font-size: 55px;
+            }
+
+            .home-logo-sub {
+                font-size: 10px;
+            }
+
+            .visual-dot-1 {
+                top: 30px;
+                right: 50px;
+            }
+
+            .visual-dot-2 {
+                bottom: 35px;
+                left: 45px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .home-container {
+                width: calc(100% - 28px);
+            }
+
+            .home-title {
+                font-size: 36px;
+            }
+
+            .home-description {
+                font-size: 13px;
+            }
+
+            .home-buttons {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .home-button {
+                width: 100%;
+
+                max-width: 300px;
+            }
+
+            .home-visual {
+                min-height: 250px;
+            }
+
+            .home-bottom-info {
+                display: none;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
 <body class="home-page">
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
     <div class="header-inner">
 
-        <a href="index.html" class="logo">
-            <span class="logo-main">بیکران</span>
-            <span class="logo-sub">گسترش تجارت پارسی</span>
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-main">
+                بیکران
+            </span>
+
+            <span class="logo-sub">
+                گسترش تجارت پارسی
+            </span>
+
         </a>
 
-        <button class="menu-button" id="menuButton" aria-label="منو">
+
+        <!-- سه خط -->
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="باز کردن منو"
+        >
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
+
 
     </div>
 
 </header>
 
 
-<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- =========================
+     OVERLAY
+========================= -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+></div>
 
 
-<aside class="side-menu" id="sideMenu">
+
+<!-- =========================
+     SIDE MENU
+========================= -->
+
+<aside
+    class="side-menu"
+    id="sideMenu"
+>
+
 
     <div class="side-menu-header">
 
+
         <div class="side-logo">
-            <strong>بیکران</strong>
-            <span>گسترش تجارت پارسی</span>
+
+            <strong>
+                بیکران
+            </strong>
+
+            <span>
+                گسترش تجارت پارسی
+            </span>
+
         </div>
 
-        <button class="close-menu" id="closeMenu">
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            aria-label="بستن منو"
+        >
             ×
         </button>
+
 
     </div>
 
 
+
     <nav class="side-nav">
+
 
         <a href="index.html">
             <span>⌂</span>
             خانه
         </a>
 
+
         <a href="services.html">
             <span>◆</span>
             خدمات
         </a>
+
 
         <a href="about.html">
             <span>◇</span>
             درباره ما
         </a>
 
+
         <a href="news.html">
             <span>▣</span>
             اخبار
         </a>
+
 
         <a href="contact.html">
             <span>☎</span>
             تماس با ما
         </a>
 
+
     </nav>
 
+
+
     <div class="side-menu-footer">
+
         تجارت بین‌الملل، ساده‌تر از همیشه
+
     </div>
+
 
 </aside>
 
 
+
+<!-- =========================
+     HOME
+========================= -->
+
 <main>
 
-<section class="hero">
 
-    <div class="hero-glow"></div>
+<section class="home-hero">
 
-    <div class="hero-content">
 
-        <div class="hero-text">
+    <div class="home-container">
 
-            <span class="hero-small-title">
+
+        <!-- متن -->
+
+        <div class="home-text">
+
+
+            <span class="home-small-title">
                 بیکران گسترش تجارت پارسی
             </span>
 
-            <h1>
+
+            <h1 class="home-title">
+
                 تجارت بین‌الملل،
-                <span>ساده‌تر از همیشه</span>
+
+                <span class="home-title-gold">
+                    ساده‌تر از همیشه
+                </span>
+
             </h1>
 
-            <p>
-                همراه شما در مسیر واردات، صادرات
-                و خدمات بازرگانی
+
+            <p class="home-description">
+
+                همراه شما در مسیر واردات،
+                صادرات و خدمات بازرگانی
+
             </p>
 
-            <div class="hero-buttons">
 
-                <a href="contact.html" class="btn btn-primary">
+
+            <div class="home-buttons">
+
+
+                <a
+                    href="contact.html"
+                    class="home-button home-button-primary"
+                >
+
                     درخواست مشاوره
-                    <span>←</span>
+
+                    <span>
+                        ←
+                    </span>
+
                 </a>
 
-                <a href="services.html" class="btn btn-secondary">
+
+
+                <a
+                    href="services.html"
+                    class="home-button home-button-secondary"
+                >
+
                     مشاهده خدمات
-                    <span>←</span>
+
+                    <span>
+                        ←
+                    </span>
+
                 </a>
+
 
             </div>
+
 
         </div>
 
 
-        <div class="hero-decoration">
 
-            <div class="hero-circle circle-one"></div>
-            <div class="hero-circle circle-two"></div>
+        <!-- لوگو -->
 
-            <div class="hero-logo-text">
+        <div class="home-visual">
 
-                <strong>بیکران</strong>
 
-                <span>
+            <div class="visual-ring visual-ring-1"></div>
+
+            <div class="visual-ring visual-ring-2"></div>
+
+            <div class="visual-ring visual-ring-3"></div>
+
+
+            <div class="visual-dot visual-dot-1"></div>
+
+            <div class="visual-dot visual-dot-2"></div>
+
+
+            <div class="home-logo">
+
+                <span class="home-logo-main">
+                    بیکران
+                </span>
+
+                <span class="home-logo-sub">
                     گسترش تجارت پارسی
                 </span>
 
             </div>
 
+
         </div>
+
 
     </div>
 
+
+
+    <!-- پایین صفحه -->
+
+    <div class="home-bottom-info">
+
+        <span>
+            تجارت بین‌الملل
+        </span>
+
+        <div class="home-bottom-line"></div>
+
+        <span>
+            BIKARAN TRADE
+        </span>
+
+    </div>
+
+
 </section>
+
 
 </main>
 
+
+
+<!-- =========================
+     SCRIPT
+========================= -->
 
 <script>
 
@@ -172,30 +835,61 @@ const menuOverlay =
     document.getElementById("menuOverlay");
 
 
-menuButton.addEventListener("click", function () {
+function openMenu() {
 
     sideMenu.classList.add("open");
+
     menuOverlay.classList.add("show");
 
-});
+    document.body.classList.add("menu-open");
+
+}
 
 
-closeMenu.addEventListener("click", function () {
-
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("show");
-
-});
-
-
-menuOverlay.addEventListener("click", function () {
+function closeMenuFunction() {
 
     sideMenu.classList.remove("open");
+
     menuOverlay.classList.remove("show");
 
-});
+    document.body.classList.remove("menu-open");
+
+}
+
+
+menuButton.addEventListener(
+    "click",
+    openMenu
+);
+
+
+closeMenu.addEventListener(
+    "click",
+    closeMenuFunction
+);
+
+
+menuOverlay.addEventListener(
+    "click",
+    closeMenuFunction
+);
+
+
+document
+    .querySelectorAll(".side-nav a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            closeMenuFunction
+        );
+
+    });
+
 
 </script>
 
+
 </body>
+
 </html>
