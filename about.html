@@ -11,127 +11,110 @@
 
 <style>
 
-.about-page{
-    min-height:100vh;
-    padding:130px 20px 70px;
+body{
+    margin:0;
     background:#080808;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
-.about-container{
+.page{
+    min-height:100vh;
+    padding:120px 20px 70px;
+}
+
+.container{
     width:90%;
     max-width:1100px;
     margin:auto;
 }
 
-.about-title{
+.title{
     text-align:center;
-    margin-bottom:55px;
+    margin-bottom:50px;
 }
 
-.about-title span{
+.title span{
     color:#d4a84f;
     font-size:17px;
-    font-weight:700;
+    font-weight:bold;
 }
 
-.about-title h1{
-    color:#fff;
+.title h1{
     font-size:44px;
     margin:15px 0;
-    font-weight:700;
 }
 
-.about-title p{
+.title p{
     color:#999;
-    font-size:15px;
     line-height:2;
 }
 
-.about-box{
+.box{
     background:#111;
     border:1px solid rgba(212,168,79,.2);
-    border-radius:16px;
+    border-radius:15px;
     padding:40px;
     margin-bottom:25px;
 }
 
-.about-box h2{
+.box h2{
     color:#d4a84f;
-    font-size:25px;
     margin-bottom:20px;
 }
 
-.about-box p{
+.box p{
     color:#ddd;
-    font-size:15px;
     line-height:2.5;
+    font-size:15px;
 }
 
-.about-grid{
+.cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.about-card{
+.card{
     background:#111;
-    border:1px solid rgba(212,168,79,.18);
-    border-radius:14px;
-    padding:30px 22px;
+    border:1px solid rgba(212,168,79,.2);
+    border-radius:15px;
+    padding:30px 20px;
     text-align:center;
-    transition:.25s;
 }
 
-.about-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(212,168,79,.5);
-}
-
-.about-card h3{
+.card h3{
     color:#d4a84f;
-    font-size:19px;
-    margin-bottom:15px;
 }
 
-.about-card p{
+.card p{
     color:#999;
-    font-size:14px;
     line-height:2.2;
 }
 
-.back-home{
+.home-link{
     display:block;
     width:max-content;
     margin:45px auto 0;
-    padding:14px 28px;
+    padding:14px 30px;
+    border-radius:8px;
     background:#d4a84f;
     color:#111;
-    border-radius:8px;
-    font-weight:700;
-    transition:.25s;
-}
-
-.back-home:hover{
-    background:#e4ba63;
-    transform:translateY(-2px);
+    font-weight:bold;
 }
 
 @media(max-width:700px){
 
-    .about-page{
-        padding-top:105px;
-    }
-
-    .about-title h1{
+    .title h1{
         font-size:34px;
     }
 
-    .about-box{
-        padding:25px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
+    .box{
+        padding:25px;
     }
 
 }
@@ -140,16 +123,15 @@
 
 </head>
 
-
 <body>
 
 
-<section class="about-page">
+<section class="page">
 
-<div class="about-container">
+<div class="container">
 
 
-<div class="about-title">
+<div class="title">
 
 <span>
 بیکران گسترش تجارت پارسی
@@ -160,67 +142,65 @@
 </h1>
 
 <p>
-آشنایی با مجموعه و مسیر فعالیت ما در حوزه تجارت و بازرگانی
+آشنایی با مجموعه بیکران و زمینه فعالیت آن
 </p>
 
 </div>
 
 
-<div class="about-box">
+<div class="box">
 
 <h2>
 بیکران گسترش تجارت پارسی
 </h2>
 
 <p>
-
 مجموعه بیکران گسترش تجارت پارسی با هدف ارائه خدمات تخصصی
 در حوزه بازرگانی و تجارت بین‌الملل فعالیت می‌کند.
-ما تلاش می‌کنیم با ارائه مشاوره و خدمات تخصصی،
-مسیر تجارت را برای مشتریان خود ساده‌تر و مطمئن‌تر کنیم.
-
+ما تلاش می‌کنیم با ارائه خدمات و مشاوره تخصصی،
+مسیر تجارت را برای مشتریان ساده‌تر و مطمئن‌تر کنیم.
 </p>
 
 </div>
 
 
-<div class="about-grid">
+<div class="cards">
 
 
-<div class="about-card">
+<div class="card">
 
 <h3>
 تخصص
 </h3>
 
 <p>
-ارائه خدمات و مشاوره تخصصی در حوزه امور بازرگانی خارجی.
+ارائه خدمات تخصصی در حوزه امور بازرگانی خارجی.
 </p>
 
 </div>
 
 
-<div class="about-card">
+<div class="card">
 
 <h3>
 اعتماد
 </h3>
 
 <p>
-تلاش برای ایجاد ارتباطی شفاف، حرفه‌ای و قابل اعتماد با مشتریان.
+ایجاد ارتباطی شفاف و حرفه‌ای با مشتریان.
 </p>
 
 </div>
 
 
-<div class="about-card">
+<div class="card">
 
 <h3>
 تجارت بین‌الملل
 </h3>
 
 <p>
-همراهی در مسیر واردات، صادرات و توسعه فعالیت‌های تجاری.
+همراهی در مسیر واردات، صادرات و توسعه تجارت.
 </p>
 
 </div>
@@ -229,15 +209,11 @@
 </div>
 
 
-<!-- بازگشت واقعی به صفحه اول -->
-
 <a
 href="https://bikarantrade.github.io/bikaran-website/"
-class="back-home"
+class="home-link"
 >
-
-بازگشت به صفحه اصلی
-
+بازگشت به خانه
 </a>
 
 
@@ -245,7 +221,5 @@ class="back-home"
 
 </section>
 
-
 </body>
-
 </html>
