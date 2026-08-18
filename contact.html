@@ -1,52 +1,378 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تماس با ما | بیکران</title>
+
+<title>تماس با ما | بیکران گسترش تجارت پارسی</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
-.page{min-height:100vh;padding:110px 20px}
-.container{max-width:800px;width:90%;margin:auto}
-h1{text-align:center;font-size:42px}
-.gold{text-align:center;color:#d4a84f;margin-bottom:40px}
-.box{background:#111;border:1px solid #333;border-radius:14px;padding:30px;text-align:center}
-.label{color:#aaa;margin-top:20px}
-.phone{display:block;color:#d4a84f;font-size:22px;font-weight:bold;margin:10px}
-.home{display:block;width:max-content;margin:40px auto;padding:15px 30px;background:#d4a84f;color:#111;border-radius:8px;font-weight:bold}
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= PAGE ================= */
+
+.page{
+    min-height:100vh;
+
+    padding:110px 20px 60px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29241c 0%,
+            #0d0d0d 50%,
+            #050505 100%
+        );
+}
+
+.container{
+    width:90%;
+    max-width:850px;
+    margin:auto;
+}
+
+
+/* ================= TITLE ================= */
+
+h1{
+    text-align:center;
+
+    font-size:clamp(38px,6vw,58px);
+
+    margin:0 0 15px;
+}
+
+.subtitle{
+    text-align:center;
+
+    color:#d4a84f;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+}
+
+
+/* ================= CONTACT BOX ================= */
+
+.contact-box{
+
+    background:#111;
+
+    border:1px solid rgba(212,168,79,.3);
+
+    border-radius:15px;
+
+    padding:35px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.4);
+}
+
+
+/* ================= CONTACT ITEM ================= */
+
+.contact-item{
+
+    padding:22px 0;
+
+    border-bottom:1px solid #292929;
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-title{
+
+    color:#d4a84f;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.contact-text{
+
+    color:#ddd;
+
+    font-size:17px;
+
+    line-height:2;
+}
+
+
+/* ================= PHONE ================= */
+
+.phone{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    direction:ltr;
+
+    text-align:right;
+
+    margin-top:5px;
+
+    transition:.2s;
+}
+
+.phone:hover{
+    color:#d4a84f;
+}
+
+
+/* ================= ADDRESS ================= */
+
+.address{
+
+    color:#ddd;
+
+    font-size:17px;
+
+    line-height:2.5;
+}
+
+
+/* ================= HOME BUTTON ================= */
+
+.home{
+
+    display:block;
+
+    width:max-content;
+
+    margin:40px auto 0;
+
+    padding:15px 32px;
+
+    background:#d4a84f;
+
+    color:#111;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.home:hover{
+
+    transform:translateY(-3px);
+
+    background:#e3b961;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .page{
+
+        padding:100px 15px 40px;
+    }
+
+    .container{
+
+        width:94%;
+    }
+
+    h1{
+
+        font-size:36px;
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+        margin-bottom:30px;
+    }
+
+    .contact-box{
+
+        padding:25px 20px;
+    }
+
+    .contact-text,
+    .address{
+
+        font-size:15px;
+    }
+
+    .phone{
+
+        font-size:18px;
+    }
+
+    .home{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <section class="page">
+
+
 <div class="container">
 
-<h1>تماس با ما</h1>
 
-<div class="gold">
+<h1>
+تماس با ما
+</h1>
+
+
+<div class="subtitle">
 ارتباط با بیکران گسترش تجارت پارسی
 </div>
 
-<div class="box">
 
-<div class="label">شماره تماس</div>
 
-<span class="phone">09981415115</span>
+<div class="contact-box">
 
-<span class="phone">88083447</span>
 
-<div class="label">آماده پاسخگویی به شما هستیم.</div>
+<!-- شماره اول -->
 
+<div class="contact-item">
+
+<div class="contact-title">
+شماره تماس
 </div>
 
-<a href="index.html" class="home">
-بازگشت به خانه
+<a
+href="tel:09981415115"
+class="phone"
+>
+09981415115
 </a>
 
 </div>
+
+
+
+<!-- شماره دوم -->
+
+<div class="contact-item">
+
+<div class="contact-title">
+شماره تماس
+</div>
+
+<a
+href="tel:88083447"
+class="phone"
+>
+88083447
+</a>
+
+</div>
+
+
+
+<!-- آدرس -->
+
+<div class="contact-item">
+
+<div class="contact-title">
+آدرس
+</div>
+
+<div class="address">
+
+تهران، شهرک غرب، بلوار فرحزادی،<br>
+
+بعد از تقاطع دریا، خیابان شهید اناری،<br>
+
+مجتمع اداری آریا، طبقه ۴، واحد ۴۰۶
+
+</div>
+
+</div>
+
+
+
+<!-- توضیحات -->
+
+<div class="contact-item">
+
+<div class="contact-title">
+ارتباط با ما
+</div>
+
+<div class="contact-text">
+
+برای دریافت اطلاعات بیشتر،
+مشاوره و خدمات بازرگانی
+می‌توانید با ما تماس بگیرید.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<a
+href="https://bikarantrade.github.io/bikaran-website/"
+class="home"
+>
+
+بازگشت به خانه
+
+</a>
+
+
+</div>
+
 </section>
 
+
 </body>
+
 </html>
