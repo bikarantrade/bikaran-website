@@ -1,471 +1,150 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        خدمات | بیکران گسترش تجارت پارسی
-    </title>
+<title>تماس با ما | بیکران گسترش تجارت پارسی</title>
 
+<link rel="stylesheet" href="style.css">
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.contact-page{
 
+    min-height:100vh;
 
-        html {
-            scroll-behavior: smooth;
-        }
+    padding:140px 20px 70px;
 
+    background:#080808;
 
-        body {
-            background: #080808;
-            color: #ffffff;
-            font-family: Tahoma, Arial, sans-serif;
-            min-height: 100vh;
-        }
+}
 
+.contact-container{
 
-        a {
-            text-decoration: none;
-        }
+    width:90%;
 
+    max-width:1000px;
 
-        /* =========================
-           HEADER
-        ========================= */
+    margin:auto;
 
-        .header {
+}
 
-            height: 80px;
+.contact-title{
 
-            width: 100%;
+    text-align:center;
 
-            display: flex;
+    margin-bottom:50px;
 
-            align-items: center;
+}
 
-            justify-content: space-between;
+.contact-title h1{
 
-            padding: 0 5%;
+    color:#d4a84f;
 
-            background: #080808;
+    font-size:42px;
 
-            border-bottom:
-                1px solid rgba(212, 168, 79, 0.12);
+    margin-bottom:15px;
 
-            position: sticky;
+}
 
-            top: 0;
+.contact-title p{
 
-            z-index: 1000;
-        }
+    color:#aaa;
 
+    font-size:16px;
 
-        .header-logo {
+    line-height:2;
 
-            width: 135px;
+}
 
-            height: 55px;
+.contact-grid{
 
-            object-fit: contain;
-        }
+    display:grid;
 
+    grid-template-columns:repeat(3,1fr);
 
-        .back-button {
+    gap:20px;
 
-            display: inline-flex;
+}
 
-            align-items: center;
+.contact-card{
 
-            justify-content: center;
+    background:#111;
 
-            color: #d4a84f;
+    border:1px solid rgba(212,168,79,.2);
 
-            border:
-                1px solid rgba(212, 168, 79, 0.45);
+    border-radius:15px;
 
-            padding: 11px 20px;
+    padding:35px 20px;
 
-            border-radius: 7px;
+    text-align:center;
 
-            font-size: 13px;
+}
 
-            transition: 0.25s;
-        }
+.contact-card h2{
 
+    color:#d4a84f;
 
-        .back-button:hover {
+    font-size:20px;
 
-            background:
-                rgba(212, 168, 79, 0.1);
-        }
+    margin-bottom:15px;
 
+}
 
-        /* =========================
-           MAIN
-        ========================= */
+.contact-card p{
 
-        .page {
+    color:#ddd;
 
-            width: 100%;
+    line-height:2;
 
-            padding: 80px 0;
-        }
+}
 
+.contact-card a{
 
-        .container {
+    color:#d4a84f;
 
-            width: 90%;
+}
 
-            max-width: 1100px;
+.back-home{
 
-            margin: auto;
-        }
+    display:block;
 
+    width:max-content;
 
-        /* =========================
-           TITLE
-        ========================= */
+    margin:45px auto 0;
 
-        .title {
+    padding:14px 28px;
 
-            text-align: center;
+    background:#d4a84f;
 
-            margin-bottom: 55px;
-        }
+    color:#111;
 
+    border-radius:8px;
 
-        .title span {
+    font-weight:bold;
 
-            display: block;
+}
 
-            color: #d4a84f;
+@media(max-width:700px){
 
-            font-size: 14px;
+    .contact-grid{
 
-            margin-bottom: 18px;
-        }
+        grid-template-columns:1fr;
 
+    }
 
-        .title h1 {
+    .contact-title h1{
 
-            font-size:
-                clamp(34px, 5vw, 50px);
+        font-size:32px;
 
-            line-height: 1.5;
+    }
 
-            margin-bottom: 15px;
-        }
+}
 
-
-        .title p {
-
-            color: #888;
-
-            font-size: 14px;
-
-            line-height: 2;
-
-            max-width: 650px;
-
-            margin: auto;
-        }
-
-
-        /* =========================
-           SERVICES GRID
-        ========================= */
-
-        .services-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-
-        /* CARD */
-
-        .service-card {
-
-            background: #111;
-
-            border:
-                1px solid rgba(212, 168, 79, 0.15);
-
-            border-radius: 14px;
-
-            padding: 35px 25px;
-
-            min-height: 300px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            transition: 0.25s;
-        }
-
-
-        .service-card:hover {
-
-            transform:
-                translateY(-6px);
-
-            border-color:
-                rgba(212, 168, 79, 0.5);
-        }
-
-
-        /* ICON */
-
-        .service-icon {
-
-            width: 65px;
-
-            height: 65px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background:
-                rgba(212, 168, 79, 0.08);
-
-            border:
-                1px solid rgba(212, 168, 79, 0.25);
-
-            color: #d4a84f;
-
-            font-size: 28px;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* TITLE */
-
-        .service-card h2 {
-
-            color: #ffffff;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            margin-bottom: 15px;
-        }
-
-
-        /* TEXT */
-
-        .service-card p {
-
-            color: #888;
-
-            font-size: 13px;
-
-            line-height: 2;
-
-            flex: 1;
-        }
-
-
-        /* BUTTON */
-
-        .service-link {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            margin-top: 25px;
-
-            color: #d4a84f;
-
-            font-size: 13px;
-        }
-
-
-        .service-link:hover {
-
-            color: #f0ca78;
-        }
-
-
-        /* =========================
-           CONSULTATION BUTTON
-        ========================= */
-
-        .bottom-box {
-
-            text-align: center;
-
-            margin-top: 60px;
-
-            padding: 40px 20px;
-
-            border:
-                1px solid rgba(212, 168, 79, 0.15);
-
-            border-radius: 14px;
-
-            background: #101010;
-        }
-
-
-        .bottom-box h2 {
-
-            font-size: 25px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .bottom-box p {
-
-            color: #888;
-
-            font-size: 13px;
-
-            line-height: 2;
-
-            margin-bottom: 25px;
-        }
-
-
-        .consultation-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 10px;
-
-            padding: 14px 28px;
-
-            background: #d4a84f;
-
-            color: #111;
-
-            border-radius: 7px;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            transition: 0.25s;
-        }
-
-
-        .consultation-button:hover {
-
-            background: #e4ba63;
-
-            transform:
-                translateY(-2px);
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .footer {
-
-            border-top:
-                1px solid rgba(255, 255, 255, 0.08);
-
-            padding: 25px 5%;
-
-            text-align: center;
-
-            color: #666;
-
-            font-size: 12px;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .services-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .services-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .page {
-
-                padding: 55px 0;
-            }
-
-
-            .header {
-
-                padding: 0 20px;
-            }
-
-
-            .header-logo {
-
-                width: 110px;
-            }
-
-
-            .back-button {
-
-                padding: 9px 14px;
-
-                font-size: 12px;
-            }
-
-
-            .service-card {
-
-                min-height: auto;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -473,322 +152,91 @@
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<section class="contact-page">
 
-<header class="header">
+<div class="contact-container">
 
 
-    <a href="/bikaran-website/">
+<div class="contact-title">
 
-        <img
-            src="/bikaran-website/logo.png.jpeg"
-            alt="بیکران گسترش تجارت پارسی"
-            class="header-logo"
-        >
+<h1>تماس با ما</h1>
 
-    </a>
+<p>
+برای دریافت مشاوره و ارتباط با مجموعه بیکران
+با ما در تماس باشید.
+</p>
 
+</div>
 
-    <a
-        href="/bikaran-website/"
-        class="back-button"
-    >
 
-        ← بازگشت به خانه
+<div class="contact-grid">
 
-    </a>
 
+<div class="contact-card">
 
-</header>
+<h2>تلفن تماس</h2>
 
+<p>
 
+<a href="tel:09981415115">
+09981415115
+</a>
 
-<!-- =========================
-     MAIN
-========================= -->
+<br>
 
-<main class="page">
+<a href="tel:09123456789">
+شماره تماس قبلی
+</a>
 
+</p>
 
-    <div class="container">
+</div>
 
 
-        <!-- TITLE -->
+<div class="contact-card">
 
-        <div class="title">
+<h2>مشاوره</h2>
 
-            <span>
-                خدمات ما
-            </span>
+<p>
 
+برای دریافت مشاوره بازرگانی
+با ما تماس بگیرید.
 
-            <h1>
-                خدمات تخصصی بازرگانی
-            </h1>
+</p>
 
+</div>
 
-            <p>
 
-                بیکران گسترش تجارت پارسی
-                در مسیر تجارت و بازرگانی
-                همراه شماست.
+<div class="contact-card">
 
-            </p>
+<h2>بیکران گسترش تجارت پارسی</h2>
 
-        </div>
+<p>
 
+همراه شما در مسیر
+تجارت بین‌الملل
 
+</p>
 
-        <!-- SERVICES -->
+</div>
 
-        <div class="services-grid">
 
+</div>
 
 
-            <!-- SERVICE 1 -->
+<a
+href="index.html"
+class="back-home"
+>
 
-            <div class="service-card">
+بازگشت به خانه
 
+</a>
 
-                <div class="service-icon">
-                    🌍
-                </div>
 
+</div>
 
-                <h2>
-                    واردات و صادرات
-                </h2>
-
-
-                <p>
-
-                    ارائه خدمات تخصصی در زمینه
-                    واردات و صادرات و همراهی
-                    در مسیر تجارت بین‌الملل.
-
-                </p>
-
-
-                <a
-                    href="consultation.html"
-                    class="service-link"
-                >
-
-                    ثبت درخواست ←
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- SERVICE 2 -->
-
-            <div class="service-card">
-
-
-                <div class="service-icon">
-                    🤝
-                </div>
-
-
-                <h2>
-                    مشاوره بازرگانی
-                </h2>
-
-
-                <p>
-
-                    ارائه مشاوره تخصصی در زمینه
-                    امور بازرگانی و تجارت
-                    بین‌الملل.
-
-                </p>
-
-
-                <a
-                    href="consultation.html"
-                    class="service-link"
-                >
-
-                    ثبت درخواست ←
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- SERVICE 3 -->
-
-            <div class="service-card">
-
-
-                <div class="service-icon">
-                    🛃
-                </div>
-
-
-                <h2>
-                    خدمات ترخیص کالا
-                </h2>
-
-
-                <p>
-
-                    همراهی و ارائه خدمات تخصصی
-                    در فرآیندهای گمرکی و
-                    ترخیص کالا.
-
-                </p>
-
-
-                <a
-                    href="consultation.html"
-                    class="service-link"
-                >
-
-                    ثبت درخواست ←
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- SERVICE 4 -->
-
-            <div class="service-card">
-
-
-                <div class="service-icon">
-                    ⚖️
-                </div>
-
-
-                <h2>
-                    خدمات حقوقی
-                </h2>
-
-
-                <p>
-
-                    ارائه خدمات و مشاوره حقوقی
-                    مرتبط با امور تجاری و
-                    فعالیت‌های بازرگانی.
-
-                </p>
-
-
-                <a
-                    href="consultation.html"
-                    class="service-link"
-                >
-
-                    ثبت درخواست ←
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- SERVICE 5 -->
-
-            <div class="service-card">
-
-
-                <div class="service-icon">
-                    📚
-                </div>
-
-
-                <h2>
-                    آموزش امور تخصصی بازرگانی خارجی
-                </h2>
-
-
-                <p>
-
-                    آموزش مفاهیم و مهارت‌های
-                    تخصصی مرتبط با امور
-                    بازرگانی خارجی و تجارت
-                    بین‌الملل.
-
-                </p>
-
-
-                <a
-                    href="consultation.html"
-                    class="service-link"
-                >
-
-                    ثبت درخواست ←
-
-                </a>
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-        <!-- BOTTOM -->
-
-        <div class="bottom-box">
-
-
-            <h2>
-                برای شروع همکاری آماده‌اید؟
-            </h2>
-
-
-            <p>
-
-                برای دریافت مشاوره و اطلاعات
-                بیشتر با ما در ارتباط باشید.
-
-            </p>
-
-
-            <a
-                href="consultation.html"
-                class="consultation-button"
-            >
-
-                درخواست مشاوره ←
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-    © ۱۴۰۵ بیکران گسترش تجارت پارسی
-
-</footer>
+</section>
 
 
 </body>
