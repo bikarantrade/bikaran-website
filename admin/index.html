@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مدیریت اخبار | بیکران</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .header {
+            background: #171717;
+            border: 1px solid rgba(212,168,79,.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            color: #d4a84f;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .card {
+            background: #171717;
+            border: 1px solid rgba(212,168,79,.15);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #d4a84f;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #ccc;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: #0d0d0d;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 8px;
+            padding: 13px;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            margin-bottom: 18px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #d4a84f;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .button {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            background: #d4a84f;
+            color: #111;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: #e5bd70;
+        }
+
+        .button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        .danger {
+            background: #8f3030;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .message {
+            display: none;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 2;
+            font-size: 13px;
+        }
+
+        .success {
+            display: block;
+            background: rgba(50,150,80,.15);
+            border: 1px solid rgba(50,150,80,.4);
+            color: #79d991;
+        }
+
+        .error {
+            display: block;
+            background: rgba(180,50,50,.15);
+            border: 1px solid rgba(180,50,50,.4);
+            color: #ff8585;
+        }
+
+        .news-item {
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+
+        .news-item h3 {
+            color: #d4a84f;
+            margin-bottom: 7px;
+            font-size: 16px;
+        }
+
+        .news-item small {
+            color: #777;
+        }
+
+        .news-item p {
+            color: #aaa;
+            font-size: 13px;
+            margin-top: 10px;
+            line-height: 2;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .warning {
+            color: #e5bd70;
+            font-size: 12px;
+            line-height: 2;
+            margin-top: 10px;
+        }
+
+        .logout {
+            margin-top: 10px;
+            background: #252525;
+            color: #ddd;
+        }
+
+        .status {
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="logo">
+            بیکران
+        </div>
+
+        <div class="subtitle">
+            مدیریت اخبار و اطلاعیه‌ها
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN -->
+
+    <div id="loginBox" class="card">
+
+        <h2>
+            ورود مدیر
+        </h2>
+
+        <label>
+            GitHub Token
+        </label>
+
+        <input
+            type="password"
+            id="token"
+            placeholder="ghp_..."
+            autocomplete="off"
+        >
+
+        <button
+            class="button"
+            onclick="login()"
+        >
+            ورود به پنل
+        </button>
+
+        <div class="warning">
+            توکن GitHub را برای هیچ شخص دیگری ارسال نکن.
+            توکن فقط در مرورگر همین دستگاه استفاده می‌شود.
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN -->
+
+    <div id="adminBox" class="hidden">
+
+        <div id="message" class="message"></div>
+
+
+        <!-- ADD NEWS -->
+
+        <div class="card">
+
+            <h2>
+                افزودن خبر جدید
+            </h2>
+
+            <label>
+                عنوان خبر
+            </label>
+
+            <input
+                type="text"
+                id="newsTitle"
+                placeholder="عنوان خبر را وارد کنید"
+            >
+
+
+            <label>
+                تاریخ
+            </label>
+
+            <input
+                type="text"
+                id="newsDate"
+                placeholder="۱۴۰۵/۰۵/۲۷"
+            >
+
+
+            <label>
+                متن خبر
+            </label>
+
+            <textarea
+                id="newsText"
+                placeholder="متن کامل خبر را بنویسید..."
+            ></textarea>
+
+
+            <label>
+                لینک تصویر
+            </label>
+
+            <input
+                type="url"
+                id="newsImage"
+                placeholder="https://..."
+            >
+
+            <div class="warning">
+                برای تصویر فعلاً باید لینک مستقیم تصویر وارد شود.
+            </div>
+
+
+            <button
+                id="publishButton"
+                class="button"
+                onclick="publishNews()"
+            >
+                انتشار خبر
+            </button>
+
+        </div>
+
+
+        <!-- NEWS LIST -->
+
+        <div class="card">
+
+            <h2>
+                اخبار منتشرشده
+            </h2>
+
+            <div id="newsList">
+                در حال دریافت اخبار...
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <button
+                class="button logout"
+                onclick="logout()"
+            >
+                خروج از پنل
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   تنظیمات اصلی
+========================================================= */
+
+const OWNER = "melinaamiri91";
+
+const REPO = "bikaran-website";
+
+const BRANCH = "main";
+
+const NEWS_FILE = "content/news/news.json";
+
+
+let githubToken = "";
+
+let currentSha = null;
+
+
+/* =========================================================
+   ابزارهای کمکی
+========================================================= */
+
+function showMessage(text, type) {
+
+    const box = document.getElementById("message");
+
+    box.className = "message " + type;
+
+    box.innerHTML = text;
+
+}
+
+
+function hideMessage() {
+
+    const box = document.getElementById("message");
+
+    box.className = "message";
+
+    box.innerHTML = "";
+
+}
+
+
+/* =========================================================
+   ورود
+========================================================= */
+
+async function login() {
+
+    const tokenInput =
+        document.getElementById("token");
+
+    const token =
+        tokenInput.value.trim();
+
+
+    if (!token) {
+
+        showMessage(
+            "لطفاً GitHub Token را وارد کنید.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            "https://api.github.com/user",
+            {
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Accept": "application/vnd.github+json"
+                }
+            }
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "توکن GitHub معتبر نیست."
+            );
+
+        }
+
+
+        githubToken = token;
+
+
+        localStorage.setItem(
+            "bikaran_github_token",
+            token
+        );
+
+
+        document
+            .getElementById("loginBox")
+            .classList.add("hidden");
+
+
+        document
+            .getElementById("adminBox")
+            .classList.remove("hidden");
+
+
+        loadNews();
+
+
+    } catch (error) {
+
+        showMessage(
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   دریافت فایل اخبار
+========================================================= */
+
+async function getNewsFile() {
+
+    const url =
+        "https://api.github.com/repos/" +
+        OWNER +
+        "/" +
+        REPO +
+        "/contents/" +
+        NEWS_FILE +
+        "?ref=" +
+        BRANCH;
+
+
+    const response = await fetch(
+        url,
+        {
+            headers: {
+                "Authorization":
+                    "Bearer " + githubToken,
+
+                "Accept":
+                    "application/vnd.github+json"
+            }
+        }
+    );
+
+
+    if (response.status === 404) {
+
+        return {
+            exists: false,
+            news: [],
+            sha: null
+        };
+
+    }
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            "خطا در دریافت فایل اخبار: " +
+            response.status
+        );
+
+    }
+
+
+    const data =
+        await response.json();
+
+
+    const decoded =
+        decodeURIComponent(
+            escape(
+                atob(
+                    data.content.replace(/\n/g, "")
+                )
+            )
+        );
+
+
+    let news = [];
+
+    try {
+
+        news = JSON.parse(decoded);
+
+    } catch {
+
+        news = [];
+
+    }
+
+
+    return {
+        exists: true,
+        news: Array.isArray(news)
+            ? news
+            : [],
+        sha: data.sha
+    };
+
+}
+
+
+/* =========================================================
+   نمایش اخبار
+========================================================= */
+
+async function loadNews() {
+
+    const list =
+        document.getElementById("newsList");
+
+
+    list.innerHTML =
+        "در حال دریافت اخبار...";
+
+
+    try {
+
+        const result =
+            await getNewsFile();
+
+
+        currentSha =
+            result.sha;
+
+
+        if (
+            !result.news ||
+            result.news.length === 0
+        ) {
+
+            list.innerHTML =
+                "هنوز خبری منتشر نشده است.";
+
+            return;
+
+        }
+
+
+        list.innerHTML =
+            "";
+
+
+        result.news
+            .slice()
+            .reverse()
+            .forEach(function(news) {
+
+                const item =
+                    document.createElement("div");
+
+                item.className =
+                    "news-item";
+
+
+                item.innerHTML = `
+                    <h3>${escapeHtml(news.title)}</h3>
+
+                    <small>
+                        ${escapeHtml(news.date || "")}
+                    </small>
+
+                    <p>
+                        ${escapeHtml(news.text || "")}
+                    </p>
+                `;
+
+
+                list.appendChild(item);
+
+            });
+
+
+    } catch (error) {
+
+        list.innerHTML =
+            "خطا در دریافت اخبار.";
+
+        showMessage(
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   انتشار خبر
+========================================================= */
+
+async function publishNews() {
+
+    hideMessage();
+
+
+    const title =
+        document
+            .getElementById("newsTitle")
+            .value
+            .trim();
+
+
+    const date =
+        document
+            .getElementById("newsDate")
+            .value
+            .trim();
+
+
+    const text =
+        document
+            .getElementById("newsText")
+            .value
+            .trim();
+
+
+    const image =
+        document
+            .getElementById("newsImage")
+            .value
+            .trim();
+
+
+    if (!title) {
+
+        showMessage(
+            "عنوان خبر را وارد کنید.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!text) {
+
+        showMessage(
+            "متن خبر را وارد کنید.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const button =
+        document.getElementById(
+            "publishButton"
+        );
+
+
+    button.disabled = true;
+
+    button.innerText =
+        "در حال انتشار...";
+
+
+    try {
+
+        const result =
+            await getNewsFile();
+
+
+        let news =
+            result.news || [];
+
+
+        const newNews = {
+
+            id:
+                Date.now(),
+
+            title:
+                title,
+
+            date:
+                date ||
+                new Date()
+                    .toLocaleDateString("fa-IR"),
+
+            text:
+                text,
+
+            image:
+                image || ""
+
+        };
+
+
+        news.push(newNews);
+
+
+        const content =
+            JSON.stringify(
+                news,
+                null,
+                2
+            );
+
+
+        const encoded =
+            btoa(
+                unescape(
+                    encodeURIComponent(content)
+                )
+            );
+
+
+        const url =
+            "https://api.github.com/repos/" +
+            OWNER +
+            "/" +
+            REPO +
+            "/contents/" +
+            NEWS_FILE;
+
+
+        const body = {
+
+            message:
+                "افزودن خبر جدید",
+
+            content:
+                encoded,
+
+            branch:
+                BRANCH
+
+        };
+
+
+        if (result.sha) {
+
+            body.sha =
+                result.sha;
+
+        }
+
+
+        const response =
+            await fetch(
+                url,
+                {
+
+                    method:
+                        "PUT",
+
+                    headers: {
+
+                        "Authorization":
+                            "Bearer " +
+                            githubToken,
+
+                        "Accept":
+                            "application/vnd.github+json",
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify(body)
+
+                }
+            );
+
+
+        const responseData =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                responseData.message ||
+                "انتشار خبر ناموفق بود."
+            );
+
+        }
+
+
+        showMessage(
+            "✓ خبر با موفقیت منتشر شد. چند لحظه برای بروزرسانی سایت صبر کنید.",
+            "success"
+        );
+
+
+        document
+            .getElementById("newsTitle")
+            .value = "";
+
+
+        document
+            .getElementById("newsDate")
+            .value = "";
+
+
+        document
+            .getElementById("newsText")
+            .value = "";
+
+
+        document
+            .getElementById("newsImage")
+            .value = "";
+
+
+        currentSha =
+            responseData.content.sha;
+
+
+        await loadNews();
+
+
+    } catch (error) {
+
+        showMessage(
+            "خطا: " + error.message,
+            "error"
+        );
+
+    }
+
+
+    button.disabled = false;
+
+    button.innerText =
+        "انتشار خبر";
+
+}
+
+
+/* =========================================================
+   خروج
+========================================================= */
+
+function logout() {
+
+    githubToken = "";
+
+    localStorage.removeItem(
+        "bikaran_github_token"
+    );
+
+
+    document
+        .getElementById("adminBox")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("loginBox")
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById("token")
+        .value = "";
+
+}
+
+
+/* =========================================================
+   امنیت نمایش متن
+========================================================= */
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   ورود خودکار
+========================================================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const savedToken =
+            localStorage.getItem(
+                "bikaran_github_token"
+            );
+
+
+        if (savedToken) {
+
+            document
+                .getElementById("token")
+                .value =
+                savedToken;
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
