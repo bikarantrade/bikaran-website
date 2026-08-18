@@ -1,303 +1,297 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>اخبار | بیکران گسترش تجارت پارسی</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<header class="header">
-
-    <div class="header-inner">
-
-        <a href="index.html" class="logo">
-
-            <span class="logo-main">
-                بیکران
-            </span>
-
-            <span class="logo-sub">
-                گسترش تجارت پارسی
-            </span>
-
-        </a>
-
-
-        <button class="menu-button" id="menuButton">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-    </div>
-
-</header>
-
-
-<div class="menu-overlay" id="menuOverlay"></div>
-
-
-<aside class="side-menu" id="sideMenu">
-
-    <div class="side-menu-header">
-
-        <div class="side-logo">
-
-            <strong>
-                بیکران
-            </strong>
-
-            <span>
-                گسترش تجارت پارسی
-            </span>
-
-        </div>
-
-        <button class="close-menu" id="closeMenu">
-            ×
-        </button>
-
-    </div>
-
-
-    <nav class="side-nav">
-
-        <a href="index.html">⌂ خانه</a>
-        <a href="services.html">◆ خدمات</a>
-        <a href="about.html">◇ درباره ما</a>
-        <a href="news.html">▣ اخبار</a>
-        <a href="contact.html">☎ تماس با ما</a>
-
-    </nav>
-
-</aside>
-
-
-<main>
-
-<section class="page-hero">
-
-    <div class="container">
-
-        <span>
-            اخبار
-        </span>
-
-        <h1>
-            اخبار و
-            <strong>اطلاعیه‌ها</strong>
-        </h1>
-
-        <p>
-            آخرین اخبار و اطلاعیه‌های بیکران
-        </p>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
-
-        <div
-            class="news-grid"
-            id="news-list"
-        >
-
-            <div class="news-empty">
-                در حال دریافت اخبار...
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<script>
-
-/* MENU */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const closeMenu =
-    document.getElementById("closeMenu");
-
-const sideMenu =
-    document.getElementById("sideMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-
-menuButton.onclick = function () {
-
-    sideMenu.classList.add("open");
-    menuOverlay.classList.add("show");
-
-};
-
-
-closeMenu.onclick = function () {
-
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("show");
-
-};
-
-
-menuOverlay.onclick = function () {
-
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("show");
-
-};
-
-
-/* NEWS */
-
-async function loadNews() {
-
-    const list =
-        document.getElementById("news-list");
-
-
-    try {
-
-        const response =
-            await fetch(
-                "content/news/news.json?v=" +
-                Date.now()
-            );
-
-
-        if (!response.ok) {
-            throw new Error();
-        }
-
-
-        const news =
-            await response.json();
-
-
-        if (
-            !Array.isArray(news) ||
-            news.length === 0
-        ) {
-
-            list.innerHTML = `
-                <div class="news-empty">
-                    هنوز خبری منتشر نشده است.
-                </div>
-            `;
-
-            return;
-
-        }
-
-
-        list.innerHTML = "";
-
-
-        news
-            .slice()
-            .reverse()
-            .forEach(function(item) {
-
-
-                const card =
-                    document.createElement("article");
-
-
-                card.className =
-                    "news-card";
-
-
-                let image = "";
-
-
-                if (item.image) {
-
-                    image = `
-                        <div class="news-image">
-                            <img
-                                src="${item.image}"
-                                alt="${item.title || "خبر"}"
-                            >
-                        </div>
-                    `;
-
-                }
-
-
-                card.innerHTML = `
-
-                    ${image}
-
-                    <div class="news-content">
-
-                        <span class="news-date">
-                            ${item.date || ""}
-                        </span>
-
-                        <h3>
-                            ${item.title || ""}
-                        </h3>
-
-                        <p>
-                            ${item.text || ""}
-                        </p>
-
-                    </div>
-
-                `;
-
-
-                list.appendChild(card);
-
-            });
-
-
-    } catch (error) {
-
-        list.innerHTML = `
-
-            <div class="news-empty">
-
-                هنوز خبری منتشر نشده است.
-
-            </div>
-
-        `;
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اخبار | بیکران گسترش تجارت پارسی</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.news-page{
+    min-height:100vh;
+    padding:130px 20px 70px;
+    background:#080808;
+}
+
+.news-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.news-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.news-title span{
+    color:#d4a84f;
+    font-size:17px;
+    font-weight:700;
+}
+
+.news-title h1{
+    color:#fff;
+    font-size:44px;
+    margin:15px 0;
+    font-weight:700;
+}
+
+.news-title p{
+    color:#999;
+    font-size:15px;
+    line-height:2;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.news-card{
+    background:#111;
+    border:1px solid rgba(212,168,79,.18);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,168,79,.5);
+}
+
+.news-image{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    display:block;
+    background:#181818;
+}
+
+.news-content{
+    padding:25px;
+}
+
+.news-date{
+    color:#d4a84f;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.news-content h2{
+    color:#fff;
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:12px;
+}
+
+.news-content p{
+    color:#999;
+    font-size:14px;
+    line-height:2.1;
+}
+
+.news-link{
+    display:inline-block;
+    margin-top:18px;
+    color:#d4a84f;
+    font-size:14px;
+    font-weight:600;
+}
+
+.empty-news{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:60px 20px;
+    background:#111;
+    border:1px solid rgba(212,168,79,.18);
+    border-radius:15px;
+}
+
+.empty-news h2{
+    color:#d4a84f;
+    margin-bottom:15px;
+}
+
+.empty-news p{
+    color:#888;
+    line-height:2;
+}
+
+.back-home{
+    display:block;
+    width:max-content;
+    margin:45px auto 0;
+    padding:14px 28px;
+    background:#d4a84f;
+    color:#111;
+    border-radius:8px;
+    font-weight:700;
+}
+
+@media(max-width:900px){
+
+    .news-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
+@media(max-width:700px){
 
-loadNews();
+    .news-page{
+        padding-top:105px;
+    }
 
-</script>
+    .news-title h1{
+        font-size:34px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<section class="news-page">
+
+<div class="news-container">
+
+
+<div class="news-title">
+
+<span>
+بیکران گسترش تجارت پارسی
+</span>
+
+<h1>
+اخبار
+</h1>
+
+<p>
+آخرین اخبار و مطالب حوزه تجارت و بازرگانی
+</p>
+
+</div>
+
+
+<div class="news-grid">
+
+
+<!-- خبر اول -->
+
+<article class="news-card">
+
+<div class="news-content">
+
+<div class="news-date">
+اخبار بازرگانی
+</div>
+
+<h2>
+آخرین اخبار و تحولات تجارت بین‌الملل
+</h2>
+
+<p>
+در این بخش می‌توانید آخرین مطالب،
+اخبار و تحولات حوزه تجارت و بازرگانی
+را دنبال کنید.
+</p>
+
+<a href="#" class="news-link">
+ادامه مطلب
+</a>
+
+</div>
+
+</article>
+
+
+<!-- خبر دوم -->
+
+<article class="news-card">
+
+<div class="news-content">
+
+<div class="news-date">
+بازرگانی خارجی
+</div>
+
+<h2>
+اطلاعات و مطالب تخصصی بازرگانی خارجی
+</h2>
+
+<p>
+مطالب آموزشی و تخصصی مرتبط با
+واردات، صادرات و امور بازرگانی خارجی.
+</p>
+
+<a href="#" class="news-link">
+ادامه مطلب
+</a>
+
+</div>
+
+</article>
+
+
+<!-- خبر سوم -->
+
+<article class="news-card">
+
+<div class="news-content">
+
+<div class="news-date">
+بیکران
+</div>
+
+<h2>
+اخبار و اطلاعیه‌های مجموعه
+</h2>
+
+<p>
+اخبار، اطلاعیه‌ها و مطالب جدید
+مجموعه بیکران گسترش تجارت پارسی.
+</p>
+
+<a href="#" class="news-link">
+ادامه مطلب
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<a href="index.html" class="back-home">
+
+بازگشت به صفحه اصلی
+
+</a>
+
+
+</div>
+
+</section>
+
 
 </body>
+
 </html>
