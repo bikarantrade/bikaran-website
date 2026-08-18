@@ -9,29 +9,74 @@
 
 <title>بیکران گسترش تجارت پارسی</title>
 
+
+<!-- Estedad Font -->
+
 <style>
 
+@font-face{
+
+    font-family:Estedad;
+
+    src:url("https://cdn.jsdelivr.net/gh/aminm7/Estedad@master/fonts/ttf/Estedad-Regular.ttf")
+    format("truetype");
+
+    font-weight:400;
+
+}
+
+
+@font-face{
+
+    font-family:Estedad;
+
+    src:url("https://cdn.jsdelivr.net/gh/aminm7/Estedad@master/fonts/ttf/Estedad-Bold.ttf")
+    format("truetype");
+
+    font-weight:700;
+
+}
+
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
 
-html,
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
 body{
+
     width:100%;
-    min-height:100%;
+
+    min-height:100vh;
+
+    background:#080808;
+
+    color:#fff;
+
+    font-family:Estedad,Tahoma,sans-serif;
+
+    overflow-x:hidden;
+
 }
 
-body{
-    background:#080808;
-    color:#fff;
-    font-family:Tahoma,Arial,sans-serif;
-    overflow-x:hidden;
-}
 
 a{
+
     text-decoration:none;
+
 }
 
 
@@ -44,7 +89,9 @@ a{
     position:fixed;
 
     top:0;
+
     right:0;
+
     left:0;
 
     height:80px;
@@ -52,7 +99,9 @@ a{
     padding:0 5%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     background:rgba(0,0,0,.35);
@@ -63,27 +112,29 @@ a{
     1px solid rgba(255,255,255,.12);
 
     z-index:1000;
+
 }
 
-
-/* لوگوی کوچک بالای صفحه */
 
 .header-logo{
 
     width:130px;
+
     height:55px;
 
     object-fit:contain;
+
 }
 
 
 /* =========================
-   MENU
+   MENU BUTTON
 ========================= */
 
 .menu-button{
 
     width:48px;
+
     height:48px;
 
     border:
@@ -105,11 +156,14 @@ a{
     gap:5px;
 
     cursor:pointer;
+
 }
+
 
 .menu-button span{
 
     width:22px;
+
     height:2px;
 
     background:#d4a84f;
@@ -138,10 +192,11 @@ a{
     overflow:hidden;
 
     background:#080808;
+
 }
 
 
-/* تصویر اصلی تمام صفحه */
+/* BACKGROUND IMAGE */
 
 .hero-background{
 
@@ -150,6 +205,7 @@ a{
     inset:0;
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -157,10 +213,11 @@ a{
     object-position:center;
 
     z-index:0;
+
 }
 
 
-/* لایه تیره روی عکس */
+/* DARK OVERLAY */
 
 .hero-overlay{
 
@@ -171,18 +228,24 @@ a{
     background:
 
     linear-gradient(
+
         90deg,
+
         rgba(0,0,0,.80),
+
         rgba(0,0,0,.35),
+
         rgba(0,0,0,.70)
+
     );
 
     z-index:1;
+
 }
 
 
 /* =========================
-   CONTENT
+   HERO CONTENT
 ========================= */
 
 .hero-content{
@@ -204,13 +267,15 @@ a{
 
 .small-title{
 
+    display:block;
+
     color:#d4a84f;
 
     font-size:15px;
 
     margin-bottom:25px;
 
-    display:block;
+    font-weight:400;
 
 }
 
@@ -222,7 +287,7 @@ a{
 
     line-height:1.5;
 
-    font-weight:bold;
+    font-weight:700;
 
     text-shadow:
     0 5px 30px rgba(0,0,0,.8);
@@ -232,9 +297,9 @@ a{
 
 .hero-title span{
 
-    color:#d4a84f;
-
     display:block;
+
+    color:#d4a84f;
 
 }
 
@@ -249,7 +314,7 @@ a{
 
     font-size:17px;
 
-    line-height:2;
+    line-height:2.2;
 
     text-shadow:
     0 3px 15px #000;
@@ -286,6 +351,8 @@ a{
 
     font-size:14px;
 
+    font-family:Estedad,Tahoma,sans-serif;
+
     transition:.25s;
 
 }
@@ -296,6 +363,8 @@ a{
     background:#d4a84f;
 
     color:#111;
+
+    font-weight:700;
 
 }
 
@@ -349,6 +418,7 @@ a{
     visibility:hidden;
 
     transition:.3s;
+
 }
 
 
@@ -357,6 +427,7 @@ a{
     opacity:1;
 
     visibility:visible;
+
 }
 
 
@@ -386,6 +457,7 @@ a{
     transition:.35s;
 
     padding:30px;
+
 }
 
 
@@ -415,6 +487,7 @@ a{
 .menu-logo{
 
     width:130px;
+
 }
 
 
@@ -425,6 +498,7 @@ a{
     height:55px;
 
     object-fit:contain;
+
 }
 
 
@@ -439,6 +513,8 @@ a{
     font-size:36px;
 
     cursor:pointer;
+
+    font-family:Arial,sans-serif;
 
 }
 
@@ -495,6 +571,7 @@ a{
 
     }
 
+
     .header-logo{
 
         width:105px;
@@ -503,11 +580,6 @@ a{
 
     }
 
-    .hero-background{
-
-        object-position:center;
-
-    }
 
     .hero-overlay{
 
@@ -516,11 +588,13 @@ a{
 
     }
 
+
     .hero-title{
 
         font-size:38px;
 
     }
+
 
     .hero-description{
 
@@ -528,11 +602,23 @@ a{
 
     }
 
+
     .button{
 
         width:100%;
 
         max-width:280px;
+
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .hero-title{
+
+        font-size:33px;
 
     }
 
@@ -553,21 +639,27 @@ a{
 <header class="header">
 
 
+<a href="/bikaran-website/">
+
 <img
     class="header-logo"
     src="/bikaran-website/logo.png.jpeg"
     alt="بیکران گسترش تجارت پارسی"
 >
 
+</a>
+
 
 <button
     class="menu-button"
     id="openMenu"
-    aria-label="منو"
+    aria-label="باز کردن منو"
 >
 
 <span></span>
+
 <span></span>
+
 <span></span>
 
 </button>
@@ -583,11 +675,8 @@ a{
 
 <main>
 
-
 <section class="hero">
 
-
-<!-- عکس کل صفحه -->
 
 <img
     class="hero-background"
@@ -596,13 +685,9 @@ a{
 >
 
 
-<!-- لایه تاریک -->
-
 <div class="hero-overlay"></div>
 
 
-
-<!-- نوشته روی عکس -->
 
 <div class="hero-content">
 
@@ -640,7 +725,9 @@ a{
     href="consultation.html"
     class="button primary"
 >
+
 درخواست مشاوره
+
 </a>
 
 
@@ -648,7 +735,9 @@ a{
     href="services.html"
     class="button secondary"
 >
+
 مشاهده خدمات
+
 </a>
 
 
@@ -659,7 +748,6 @@ a{
 
 
 </section>
-
 
 </main>
 
@@ -703,7 +791,9 @@ a{
     class="close-button"
     id="closeMenu"
 >
+
 ×
+
 </button>
 
 
@@ -715,27 +805,37 @@ a{
 
 
 <a href="/bikaran-website/">
+
 خانه
+
 </a>
 
 
 <a href="services.html">
+
 خدمات
+
 </a>
 
 
 <a href="about.html">
+
 درباره ما
+
 </a>
 
 
 <a href="news.html">
+
 اخبار
+
 </a>
 
 
 <a href="contact.html">
+
 تماس با ما
+
 </a>
 
 
@@ -751,11 +851,14 @@ a{
 const openMenu =
 document.getElementById("openMenu");
 
+
 const closeMenu =
 document.getElementById("closeMenu");
 
+
 const sideMenu =
 document.getElementById("sideMenu");
+
 
 const overlay =
 document.getElementById("overlay");
