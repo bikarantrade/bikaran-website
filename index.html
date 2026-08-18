@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -16,105 +17,7 @@
         content="بیکران گسترش تجارت پارسی | تجارت بین‌الملل، واردات، صادرات و خدمات بازرگانی"
     >
 
-
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        .success-message {
-            display: none;
-            margin-top: 20px;
-            padding: 16px 18px;
-            border-radius: 8px;
-            background: rgba(212, 168, 79, 0.12);
-            border: 1px solid rgba(212, 168, 79, 0.45);
-            color: #d4a84f;
-            font-size: 13px;
-            line-height: 2;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        /* NEWS */
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .news-card {
-            background: #181818;
-            border: 1px solid rgba(212,168,79,.20);
-            border-radius: 14px;
-            overflow: hidden;
-            transition: .3s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212,168,79,.55);
-        }
-
-        .news-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .news-card-content {
-            padding: 22px;
-        }
-
-        .news-card-content small {
-            display: block;
-            color: #d4a84f;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-
-        .news-card-content h3 {
-            color: #fff;
-            font-size: 19px;
-            line-height: 1.8;
-            margin: 0 0 12px;
-        }
-
-        .news-card-content p {
-            color: #aaa;
-            font-size: 14px;
-            line-height: 2;
-            margin: 0;
-        }
-
-        .news-loading {
-            width: 100%;
-            text-align: center;
-            color: #aaa;
-            padding: 30px;
-        }
-
-        @media (max-width: 900px) {
-
-            .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-        @media (max-width: 600px) {
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
 
 </head>
 
@@ -122,15 +25,18 @@
 <body>
 
 
-<!-- =========================
+<!-- =========================================
      HEADER
-========================= -->
+========================================= -->
 
 <header class="header">
 
-    <div class="container">
+    <div class="header-inner">
 
-        <div class="logo">
+
+        <!-- LOGO -->
+
+        <a href="#home" class="logo">
 
             <span class="logo-main">
                 بیکران
@@ -140,35 +46,22 @@
                 گسترش تجارت پارسی
             </span>
 
-        </div>
+        </a>
 
 
-        <nav class="navbar">
+        <!-- MENU BUTTON -->
 
-            <a
-                href="#"
-                class="active"
-            >
-                خانه
-            </a>
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="باز کردن منو"
+        >
 
-            <a href="#services">
-                خدمات
-            </a>
+            <span></span>
+            <span></span>
+            <span></span>
 
-            <a href="#about">
-                درباره ما
-            </a>
-
-            <a href="#news">
-                اخبار
-            </a>
-
-            <a href="#contact">
-                تماس با ما
-            </a>
-
-        </nav>
+        </button>
 
     </div>
 
@@ -176,835 +69,987 @@
 
 
 
-<!-- =========================
+<!-- =========================================
+     SIDE MENU
+========================================= -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+></div>
+
+
+<aside
+    class="side-menu"
+    id="sideMenu"
+>
+
+    <div class="side-menu-header">
+
+        <div class="side-logo">
+
+            <strong>
+                بیکران
+            </strong>
+
+            <span>
+                گسترش تجارت پارسی
+            </span>
+
+        </div>
+
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            aria-label="بستن منو"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="side-nav">
+
+        <a href="#home">
+            <span>⌂</span>
+            خانه
+        </a>
+
+        <a href="#services">
+            <span>◆</span>
+            خدمات
+        </a>
+
+        <a href="#about">
+            <span>◇</span>
+            درباره ما
+        </a>
+
+        <a href="#news">
+            <span>▣</span>
+            اخبار
+        </a>
+
+        <a href="#contact">
+            <span>☎</span>
+            تماس با ما
+        </a>
+
+    </nav>
+
+
+    <div class="side-menu-footer">
+
+        تجارت بین‌الملل،
+        ساده‌تر از همیشه
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================
      MAIN
-========================= -->
+========================================= -->
 
 <main>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+<!-- =========================================
+     HOME / HERO
+========================================= -->
 
-    <section class="hero">
+<section
+    class="hero"
+    id="home"
+>
 
-        <div class="container hero-content">
-
-            <div class="hero-text">
-
-                <span class="hero-small-title">
-                    بیکران گسترش تجارت پارسی
-                </span>
-
-                <h1>
-                    تجارت بین‌الملل،
-                    <span>
-                        ساده‌تر از همیشه
-                    </span>
-                </h1>
-
-                <p>
-                    همراه شما در مسیر واردات، صادرات
-                    و خدمات بازرگانی
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#contact"
-                        class="btn btn-primary"
-                    >
-                        درخواست مشاوره
-                    </a>
-
-                    <a
-                        href="#services"
-                        class="btn btn-secondary"
-                    >
-                        مشاهده خدمات
-                    </a>
-
-                </div>
-
-            </div>
+    <div class="hero-glow"></div>
 
 
-            <div class="hero-decoration">
-
-                <div class="hero-logo-text">
-
-                    <strong>
-                        بیکران
-                    </strong>
-
-                    <span>
-                        گسترش تجارت پارسی
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    <div class="container hero-content">
 
 
+        <div class="hero-text">
 
-    <!-- =========================
-         SERVICES
-    ========================= -->
+            <span class="hero-small-title">
+                بیکران گسترش تجارت پارسی
+            </span>
 
-    <section
-        class="services"
-        id="services"
-    >
 
-        <div class="container">
+            <h1>
 
-            <div class="section-title">
+                تجارت بین‌الملل،
 
                 <span>
-                    خدمات ما
+                    ساده‌تر از همیشه
                 </span>
 
-                <h2>
-                    راهکارهای تخصصی برای
-                    <strong>
-                        تجارت و بازرگانی
-                    </strong>
-                </h2>
-
-                <p>
-                    خدمات تخصصی بیکران گسترش تجارت پارسی
-                    در حوزه تجارت و بازرگانی
-                </p>
-
-            </div>
+            </h1>
 
 
-            <div class="services-grid">
+            <p>
+
+                همراه شما در مسیر واردات،
+                صادرات و خدمات بازرگانی
+
+            </p>
 
 
-                <div class="service-card">
+            <div class="hero-buttons">
 
-                    <div class="service-icon">
-                        🌍
-                    </div>
-
-                    <h3>
-                        واردات و صادرات
-                    </h3>
-
-                    <p>
-                        ارائه خدمات تخصصی در زمینه واردات
-                        و صادرات و همراهی در مسیر تجارت
-                        بین‌الملل.
-                    </p>
-
-                    <a href="#contact">
-                        ثبت درخواست ←
-                    </a>
-
-                </div>
+                <a
+                    href="#contact"
+                    class="btn btn-primary"
+                >
+                    درخواست مشاوره
+                    <span>←</span>
+                </a>
 
 
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        مشاوره بازرگانی
-                    </h3>
-
-                    <p>
-                        ارائه مشاوره تخصصی در زمینه امور
-                        بازرگانی و تجارت بین‌الملل.
-                    </p>
-
-                    <a href="#contact">
-                        ثبت درخواست ←
-                    </a>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🛃
-                    </div>
-
-                    <h3>
-                        خدمات ترخیص کالا
-                    </h3>
-
-                    <p>
-                        همراهی و ارائه خدمات تخصصی در
-                        فرآیندهای گمرکی و ترخیص کالا.
-                    </p>
-
-                    <a href="#contact">
-                        ثبت درخواست ←
-                    </a>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        ⚖️
-                    </div>
-
-                    <h3>
-                        خدمات حقوقی
-                    </h3>
-
-                    <p>
-                        ارائه خدمات و مشاوره حقوقی مرتبط
-                        با امور تجاری و فعالیت‌های بازرگانی.
-                    </p>
-
-                    <a href="#contact">
-                        ثبت درخواست ←
-                    </a>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        📊
-                    </div>
-
-                    <h3>
-                        امور تخصصی بازرگانی خارجی
-                    </h3>
-
-                    <p>
-                        ارائه خدمات تخصصی در زمینه امور
-                        بازرگانی خارجی و تجارت بین‌الملل.
-                    </p>
-
-                    <a href="#contact">
-                        ثبت درخواست ←
-                    </a>
-
-                </div>
-
+                <button
+                    class="btn btn-secondary"
+                    id="openServices"
+                >
+                    مشاهده خدمات
+                    <span>←</span>
+                </button>
 
             </div>
 
         </div>
 
-    </section>
 
 
+        <div class="hero-decoration">
 
-    <!-- =========================
-         NEWS
-    ========================= -->
+            <div class="hero-circle circle-one"></div>
 
-    <section
-        class="news"
-        id="news"
-    >
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>
-                    اخبار
-                </span>
-
-                <h2>
-                    اخبار و
-                    <strong>
-                        اطلاعیه‌ها
-                    </strong>
-                </h2>
-
-                <p>
-                    آخرین اخبار و اطلاعیه‌های
-                    بیکران گسترش تجارت پارسی
-                </p>
-
-            </div>
+            <div class="hero-circle circle-two"></div>
 
 
-            <!--
-                اخبار به صورت خودکار
-                توسط news.js اینجا قرار می‌گیرند
-            -->
+            <div class="hero-logo-text">
 
-            <div
-                class="news-grid"
-                id="news-list"
-            >
-
-                <div class="news-loading">
-                    در حال دریافت آخرین اخبار...
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section
-        class="experience"
-        id="about"
-    >
-
-        <div class="container experience-content">
-
-
-            <div class="experience-number">
-
-                <span class="plus">
-                    ✦
-                </span>
-
-                <span class="number">
+                <strong>
                     بیکران
-                </span>
+                </strong>
 
-                <span class="years">
+                <span>
                     گسترش تجارت پارسی
                 </span>
 
             </div>
 
+        </div>
 
-            <div class="experience-text">
-
-                <span class="experience-label">
-                    درباره ما
-                </span>
-
-                <h2>
-                    همراه مطمئن شما در
-                    <span>
-                        تجارت و بازرگانی
-                    </span>
-                </h2>
+    </div>
 
 
-                <p>
-                    بیکران گسترش تجارت پارسی با هدف ارائه
-                    خدمات حرفه‌ای و تخصصی در حوزه تجارت و
-                    بازرگانی خارجی فعالیت می‌کند. ما در مسیر
-                    واردات و صادرات، مشاوره بازرگانی، خدمات
-                    ترخیص کالا، خدمات حقوقی و امور تخصصی
-                    بازرگانی خارجی، در کنار مشتریان خود هستیم.
-                </p>
+    <div class="scroll-hint">
+
+        <span>
+            برای مشاهده بیشتر
+        </span>
+
+        <b>
+            ↓
+        </b>
+
+    </div>
+
+</section>
 
 
-                <p>
-                    رویکرد ما بر پایه اعتماد، شفافیت،
-                    مسئولیت‌پذیری و ارائه راهکارهای متناسب
-                    با نیاز هر کسب‌وکار شکل گرفته است.
-                    تلاش می‌کنیم مسیر انجام امور بازرگانی
-                    را ساده‌تر، مطمئن‌تر و حرفه‌ای‌تر کنیم.
-                </p>
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section
+    class="section services"
+    id="services"
+>
+
+    <div class="container">
 
 
-                <div class="experience-features">
+        <div class="section-title">
 
+            <span>
+                خدمات ما
+            </span>
 
-                    <div class="feature">
+            <h2>
 
-                        <span>
-                            ✓
-                        </span>
+                راهکارهای تخصصی برای
 
-                        <p>
-                            اعتماد و شفافیت
-                        </p>
+                <strong>
+                    تجارت و بازرگانی
+                </strong>
 
-                    </div>
+            </h2>
 
+            <p>
 
-                    <div class="feature">
+                خدمات تخصصی بیکران گسترش تجارت پارسی
+                در حوزه تجارت و بازرگانی
 
-                        <span>
-                            ✓
-                        </span>
-
-                        <p>
-                            خدمات تخصصی
-                        </p>
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <span>
-                            ✓
-                        </span>
-
-                        <p>
-                            مسئولیت‌پذیری
-                        </p>
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <span>
-                            ✓
-                        </span>
-
-                        <p>
-                            همکاری پایدار
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
+            </p>
 
         </div>
 
-    </section>
 
 
-
-    <!-- =========================
-         WHY US
-    ========================= -->
-
-    <section class="why-us">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>
-                    چرا بیکران؟
-                </span>
-
-                <h2>
-                    همراهی مطمئن در مسیر
-                    <strong>
-                        تجارت شما
-                    </strong>
-                </h2>
-
-                <p>
-                    تعهد و نگاه حرفه‌ای
-                    در کنار شما.
-                </p>
-
-            </div>
+        <div class="services-grid">
 
 
-            <div class="why-grid">
+            <div class="service-card">
 
-
-                <div class="why-card">
-
-                    <div class="why-number">
-                        01
-                    </div>
-
-                    <div class="why-icon">
-                        ◆
-                    </div>
-
-                    <h3>
-                        اعتماد
-                    </h3>
-
-                    <p>
-                        ایجاد همکاری شفاف و قابل
-                        اعتماد با مشتریان.
-                    </p>
-
+                <div class="service-icon">
+                    🌍
                 </div>
-
-
-                <div class="why-card">
-
-                    <div class="why-number">
-                        02
-                    </div>
-
-                    <div class="why-icon">
-                        ✓
-                    </div>
-
-                    <h3>
-                        تخصص
-                    </h3>
-
-                    <p>
-                        ارائه راهکارهای تخصصی و
-                        حرفه‌ای در امور بازرگانی.
-                    </p>
-
-                </div>
-
-
-                <div class="why-card">
-
-                    <div class="why-number">
-                        03
-                    </div>
-
-                    <div class="why-icon">
-                        ↗
-                    </div>
-
-                    <h3>
-                        شفافیت
-                    </h3>
-
-                    <p>
-                        پایبندی به شفافیت و مسئولیت‌پذیری
-                        در همکاری با مشتریان.
-                    </p>
-
-                </div>
-
-
-                <div class="why-card">
-
-                    <div class="why-number">
-                        04
-                    </div>
-
-                    <div class="why-icon">
-                        ◈
-                    </div>
-
-                    <h3>
-                        همراهی
-                    </h3>
-
-                    <p>
-                        تلاش برای ایجاد همکاری‌های
-                        پایدار و ارزشمند.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section
-        class="contact"
-        id="contact"
-    >
-
-        <div class="container contact-content">
-
-
-            <div class="contact-info">
-
-                <span class="contact-label">
-                    در ارتباط باشیم
-                </span>
-
-
-                <h2>
-                    برای شروع یک
-                    <span>
-                        همکاری جدید
-                    </span>
-                    آماده‌ایم
-                </h2>
-
-
-                <p>
-                    برای دریافت اطلاعات بیشتر،
-                    مشاوره و آشنایی با خدمات
-                    بیکران گسترش تجارت پارسی
-                    با ما در ارتباط باشید.
-                </p>
-
-
-                <div class="contact-items">
-
-
-                    <!-- PHONE -->
-
-                    <a
-                        href="tel:880813447"
-                        class="contact-item"
-                    >
-
-                        <div class="contact-item-icon">
-                            ☎
-                        </div>
-
-                        <div>
-
-                            <small>
-                                شماره تماس
-                            </small>
-
-                            <strong>
-                                ۸۸۰۸۱۳۴۴۷
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- INSTAGRAM -->
-
-                    <a
-                        href="https://instagram.com/bikaran_trade"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-item"
-                    >
-
-                        <div class="contact-item-icon">
-                            ◎
-                        </div>
-
-                        <div>
-
-                            <small>
-                                اینستاگرام
-                            </small>
-
-                            <strong>
-                                @bikaran_trade
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- ADDRESS -->
-
-                    <div class="contact-item">
-
-                        <div class="contact-item-icon">
-                            📍
-                        </div>
-
-                        <div>
-
-                            <small>
-                                آدرس
-                            </small>
-
-                            <strong>
-                                تهران، شهرک غرب، بلوار فرحزادی،
-                                بعد از تقاطع دریا، خیابان شهید اناری،
-                                مجتمع اداری آریا، طبقه ۴، واحد ۴۰۶
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CONTACT FORM -->
-
-            <div class="contact-form-box">
 
                 <h3>
-                    درخواست مشاوره مورد نظر
+                    واردات و صادرات
                 </h3>
 
-
                 <p>
-                    اطلاعات خود را وارد کنید
-                    تا با شما تماس بگیریم.
+
+                    ارائه خدمات تخصصی در زمینه واردات
+                    و صادرات و همراهی در مسیر تجارت
+                    بین‌الملل.
+
                 </p>
 
+                <a href="#contact">
+                    ثبت درخواست ←
+                </a>
 
-                <form
-                    id="consultationForm"
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    مشاوره بازرگانی
+                </h3>
+
+                <p>
+
+                    ارائه مشاوره تخصصی در زمینه امور
+                    بازرگانی و تجارت بین‌الملل.
+
+                </p>
+
+                <a href="#contact">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🛃
+                </div>
+
+                <h3>
+                    خدمات ترخیص کالا
+                </h3>
+
+                <p>
+
+                    همراهی و ارائه خدمات تخصصی در
+                    فرآیندهای گمرکی و ترخیص کالا.
+
+                </p>
+
+                <a href="#contact">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    خدمات حقوقی
+                </h3>
+
+                <p>
+
+                    ارائه خدمات و مشاوره حقوقی مرتبط
+                    با امور تجاری و فعالیت‌های بازرگانی.
+
+                </p>
+
+                <a href="#contact">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📊
+                </div>
+
+                <h3>
+                    امور تخصصی بازرگانی خارجی
+                </h3>
+
+                <p>
+
+                    ارائه خدمات تخصصی در زمینه امور
+                    بازرگانی خارجی و تجارت بین‌الملل.
+
+                </p>
+
+                <a href="#contact">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEWS
+========================================= -->
+
+<section
+    class="section news"
+    id="news"
+>
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                اخبار
+            </span>
+
+            <h2>
+
+                اخبار و
+
+                <strong>
+                    اطلاعیه‌ها
+                </strong>
+
+            </h2>
+
+            <p>
+
+                آخرین اخبار و اطلاعیه‌های
+                بیکران گسترش تجارت پارسی
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="news-grid"
+            id="news-list"
+        >
+
+            <div class="news-loading">
+
+                در حال دریافت آخرین اخبار...
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    class="section experience"
+    id="about"
+>
+
+    <div class="container experience-content">
+
+
+        <div class="experience-number">
+
+            <span class="plus">
+                ✦
+            </span>
+
+            <span class="number">
+                بیکران
+            </span>
+
+            <span class="years">
+                گسترش تجارت پارسی
+            </span>
+
+        </div>
+
+
+
+        <div class="experience-text">
+
+            <span class="experience-label">
+                درباره ما
+            </span>
+
+
+            <h2>
+
+                همراه مطمئن شما در
+
+                <span>
+                    تجارت و بازرگانی
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                بیکران گسترش تجارت پارسی با هدف ارائه
+                خدمات حرفه‌ای و تخصصی در حوزه تجارت و
+                بازرگانی خارجی فعالیت می‌کند. ما در مسیر
+                واردات و صادرات، مشاوره بازرگانی، خدمات
+                ترخیص کالا، خدمات حقوقی و امور تخصصی
+                بازرگانی خارجی، در کنار مشتریان خود هستیم.
+
+            </p>
+
+
+            <p>
+
+                رویکرد ما بر پایه اعتماد، شفافیت،
+                مسئولیت‌پذیری و ارائه راهکارهای متناسب
+                با نیاز هر کسب‌وکار شکل گرفته است.
+                تلاش می‌کنیم مسیر انجام امور بازرگانی
+                را ساده‌تر، مطمئن‌تر و حرفه‌ای‌تر کنیم.
+
+            </p>
+
+
+            <div class="experience-features">
+
+
+                <div class="feature">
+
+                    <span>✓</span>
+
+                    <p>
+                        اعتماد و شفافیت
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>✓</span>
+
+                    <p>
+                        خدمات تخصصی
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>✓</span>
+
+                    <p>
+                        مسئولیت‌پذیری
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>✓</span>
+
+                    <p>
+                        همکاری پایدار
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY US
+========================================= -->
+
+<section class="section why-us">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                چرا بیکران؟
+            </span>
+
+            <h2>
+
+                همراهی مطمئن در مسیر
+
+                <strong>
+                    تجارت شما
+                </strong>
+
+            </h2>
+
+            <p>
+                تعهد و نگاه حرفه‌ای در کنار شما.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <div class="why-icon">
+                    ◆
+                </div>
+
+                <h3>
+                    اعتماد
+                </h3>
+
+                <p>
+                    ایجاد همکاری شفاف و قابل
+                    اعتماد با مشتریان.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <div class="why-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    تخصص
+                </h3>
+
+                <p>
+                    ارائه راهکارهای تخصصی و
+                    حرفه‌ای در امور بازرگانی.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <div class="why-icon">
+                    ↗
+                </div>
+
+                <h3>
+                    شفافیت
+                </h3>
+
+                <p>
+                    پایبندی به شفافیت و مسئولیت‌پذیری
+                    در همکاری با مشتریان.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <div class="why-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    همراهی
+                </h3>
+
+                <p>
+                    تلاش برای ایجاد همکاری‌های
+                    پایدار و ارزشمند.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT / CONSULTATION
+========================================= -->
+
+<section
+    class="section contact"
+    id="contact"
+>
+
+    <div class="container contact-content">
+
+
+        <div class="contact-info">
+
+            <span class="contact-label">
+                در ارتباط باشیم
+            </span>
+
+
+            <h2>
+
+                برای شروع یک
+
+                <span>
+                    همکاری جدید
+                </span>
+
+                آماده‌ایم
+
+            </h2>
+
+
+            <p>
+
+                برای دریافت اطلاعات بیشتر،
+                مشاوره و آشنایی با خدمات
+                بیکران گسترش تجارت پارسی
+                با ما در ارتباط باشید.
+
+            </p>
+
+
+            <div class="contact-items">
+
+
+                <a
+                    href="tel:880813447"
+                    class="contact-item"
                 >
 
+                    <div class="contact-item-icon">
+                        ☎
+                    </div>
 
-                    <div class="form-row">
+                    <div>
 
+                        <small>
+                            شماره تماس
+                        </small>
 
-                        <div class="form-group">
-
-                            <label for="name">
-                                نام و نام خانوادگی
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                placeholder="نام شما"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="phone">
-                                شماره تماس
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="phone"
-                                placeholder="۰۹۱۲..."
-                                required
-                            >
-
-                        </div>
-
+                        <strong>
+                            ۸۸۰۸۱۳۴۴۷
+                        </strong>
 
                     </div>
+
+                </a>
+
+
+
+                <a
+                    href="https://instagram.com/bikaran_trade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-item"
+                >
+
+                    <div class="contact-item-icon">
+                        ◎
+                    </div>
+
+                    <div>
+
+                        <small>
+                            اینستاگرام
+                        </small>
+
+                        <strong>
+                            @bikaran_trade
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <small>
+                            آدرس
+                        </small>
+
+                        <strong>
+
+                            تهران، شهرک غرب، بلوار فرحزادی،
+                            بعد از تقاطع دریا، خیابان شهید اناری،
+                            مجتمع اداری آریا، طبقه ۴، واحد ۴۰۶
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <div class="contact-form-box">
+
+            <h3>
+                درخواست مشاوره
+            </h3>
+
+
+            <p>
+                اطلاعات خود را وارد کنید
+                تا با شما تماس بگیریم.
+            </p>
+
+
+            <form id="consultationForm">
+
+
+                <div class="form-row">
 
 
                     <div class="form-group">
 
-                        <label for="subject">
-                            موضوع درخواست
+                        <label for="name">
+                            نام و نام خانوادگی
                         </label>
 
-
-                        <select
-                            id="subject"
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="نام شما"
                             required
                         >
 
-                            <option value="">
-                                انتخاب کنید
-                            </option>
-
-                            <option>
-                                واردات و صادرات
-                            </option>
-
-                            <option>
-                                مشاوره بازرگانی
-                            </option>
-
-                            <option>
-                                خدمات ترخیص کالا
-                            </option>
-
-                            <option>
-                                خدمات حقوقی
-                            </option>
-
-                            <option>
-                                امور تخصصی بازرگانی خارجی
-                            </option>
-
-                        </select>
-
                     </div>
+
 
 
                     <div class="form-group">
 
-                        <label for="message">
-                            توضیحات
+                        <label for="phone">
+                            شماره تماس
                         </label>
 
-
-                        <textarea
-                            id="message"
-                            rows="5"
-                            placeholder="توضیحات خود را بنویسید..."
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="۰۹۱۲..."
                             required
-                        ></textarea>
+                        >
 
                     </div>
 
 
-                    <button
-                        type="submit"
-                        class="form-button"
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        موضوع درخواست
+                    </label>
+
+                    <select
+                        id="subject"
+                        required
                     >
 
-                        ارسال درخواست
+                        <option value="">
+                            انتخاب کنید
+                        </option>
 
-                        <span>
-                            ←
-                        </span>
+                        <option>
+                            واردات و صادرات
+                        </option>
 
-                    </button>
+                        <option>
+                            مشاوره بازرگانی
+                        </option>
 
+                        <option>
+                            خدمات ترخیص کالا
+                        </option>
 
-                </form>
+                        <option>
+                            خدمات حقوقی
+                        </option>
 
+                        <option>
+                            امور تخصصی بازرگانی خارجی
+                        </option>
 
-                <!-- SUCCESS MESSAGE -->
-
-                <div
-                    id="successMessage"
-                    class="success-message"
-                >
-
-                    <strong>
-                        ✓ درخواست شما آماده ارسال است
-                    </strong>
-
-                    <br>
-
-                    لطفاً در واتساپ روی دکمه
-                    «ارسال» بزنید تا درخواست برای ما ارسال شود.
+                    </select>
 
                 </div>
 
 
+                <div class="form-group">
+
+                    <label for="message">
+                        توضیحات
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="توضیحات خود را بنویسید..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="form-button"
+                >
+
+                    ارسال درخواست
+
+                    <span>
+                        ←
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+
+                <strong>
+                    ✓ درخواست شما آماده ارسال است
+                </strong>
+
+                <br>
+
+                لطفاً در واتساپ روی دکمه
+                «ارسال» بزنید.
+
             </div>
+
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 </main>
 
 
 
-<!-- =========================
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer class="footer">
 
@@ -1058,19 +1103,107 @@
 
 
 
-<!-- =========================
-     NEWS SCRIPT
-========================= -->
-
-<script src="news.js"></script>
-
-
-
-<!-- =========================
-     WHATSAPP FORM SCRIPT
-========================= -->
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
+
+
+/* =========================================
+   MENU
+========================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+const sideMenu =
+    document.getElementById("sideMenu");
+
+const menuOverlay =
+    document.getElementById("menuOverlay");
+
+
+function openMenu() {
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("show");
+
+    document.body.classList.add("menu-open");
+
+}
+
+
+function closeSideMenu() {
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("show");
+
+    document.body.classList.remove("menu-open");
+
+}
+
+
+menuButton.addEventListener(
+    "click",
+    openMenu
+);
+
+
+closeMenu.addEventListener(
+    "click",
+    closeSideMenu
+);
+
+
+menuOverlay.addEventListener(
+    "click",
+    closeSideMenu
+);
+
+
+/* بستن منو بعد از انتخاب */
+
+document
+    .querySelectorAll(".side-nav a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            closeSideMenu
+        );
+
+    });
+
+
+/* =========================================
+   مشاهده خدمات
+========================================= */
+
+document
+    .getElementById("openServices")
+    .addEventListener(
+        "click",
+        function() {
+
+            document
+                .getElementById("services")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+    );
+
+
+/* =========================================
+   WHATSAPP FORM
+========================================= */
 
 document
     .getElementById("consultationForm")
@@ -1138,15 +1271,9 @@ ${message}`;
                 );
 
 
-            const successMessage =
-                document.getElementById(
-                    "successMessage"
-                );
-
-
-            successMessage.classList.add(
-                "show"
-            );
+            document
+                .getElementById("successMessage")
+                .classList.add("show");
 
 
             window.open(
@@ -1156,6 +1283,154 @@ ${message}`;
 
         }
     );
+
+
+/* =========================================
+   NEWS
+========================================= */
+
+async function loadNews() {
+
+    const newsList =
+        document.getElementById(
+            "news-list"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "content/news/news.json?v=" +
+                Date.now()
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "news file not found"
+            );
+
+        }
+
+
+        const news =
+            await response.json();
+
+
+        if (
+            !Array.isArray(news) ||
+            news.length === 0
+        ) {
+
+            newsList.innerHTML = `
+                <div class="news-empty">
+                    هنوز خبری منتشر نشده است.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        newsList.innerHTML = "";
+
+
+        news
+            .slice()
+            .reverse()
+            .forEach(function(item) {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "news-card";
+
+
+                let imageHTML = "";
+
+
+                if (item.image) {
+
+                    imageHTML = `
+                        <div class="news-image">
+                            <img
+                                src="${escapeHTML(item.image)}"
+                                alt="${escapeHTML(item.title)}"
+                            >
+                        </div>
+                    `;
+
+                }
+
+
+                card.innerHTML = `
+
+                    ${imageHTML}
+
+                    <div class="news-content">
+
+                        <span class="news-date">
+                            ${escapeHTML(item.date || "")}
+                        </span>
+
+                        <h3>
+                            ${escapeHTML(item.title || "")}
+                        </h3>
+
+                        <p>
+                            ${escapeHTML(item.text || "")}
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                newsList.appendChild(card);
+
+            });
+
+
+    } catch (error) {
+
+        newsList.innerHTML = `
+
+            <div class="news-empty">
+
+                هنوز خبری منتشر نشده است.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+loadNews();
+
 
 </script>
 
