@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        درخواست مشاوره | بیکران گسترش تجارت پارسی
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            height: 80px;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            border-bottom: 1px solid rgba(212,168,79,.12);
+
+            background: #080808;
+        }
+
+        .logo {
+            color: #d4a84f;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .back {
+            color: #d4a84f;
+
+            border: 1px solid rgba(212,168,79,.4);
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .page {
+            padding: 70px 0;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title span {
+            color: #d4a84f;
+            font-size: 14px;
+        }
+
+        .title h1 {
+            margin-top: 15px;
+            font-size: 40px;
+        }
+
+        .title p {
+            color: #888;
+            margin-top: 15px;
+            line-height: 2;
+        }
+
+        .form-box {
+            background: #111;
+
+            border: 1px solid rgba(212,168,79,.15);
+
+            border-radius: 14px;
+
+            padding: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            color: #bbb;
+
+            font-size: 13px;
+
+            margin-bottom: 9px;
+        }
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            background: #080808;
+
+            color: white;
+
+            border: 1px solid #292929;
+
+            border-radius: 7px;
+
+            padding: 14px;
+
+            font-family: inherit;
+
+            outline: none;
+
+            font-size: 13px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #d4a84f;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        button {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #d4a84f;
+
+            color: #111;
+
+            font-family: inherit;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #e4ba63;
+        }
+
+        .success {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            color: #d4a84f;
+
+            border: 1px solid rgba(212,168,79,.3);
+
+            border-radius: 7px;
+
+            line-height: 2;
+        }
+
+        @media(max-width:600px) {
+
+            .title h1 {
+                font-size: 32px;
+            }
+
+            .form-box {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="/bikaran-website/"
+        class="logo"
+    >
+        بیکران
+    </a>
+
+    <a
+        href="/bikaran-website/"
+        class="back"
+    >
+        ← بازگشت به خانه
+    </a>
+
+</header>
+
+
+
+<main class="page">
+
+    <div class="container">
+
+
+        <div class="title">
+
+            <span>
+                شروع همکاری
+            </span>
+
+            <h1>
+                درخواست مشاوره
+            </h1>
+
+            <p>
+                اطلاعات خود را وارد کنید تا
+                درخواست شما برای ما ارسال شود.
+            </p>
+
+        </div>
+
+
+
+        <div class="form-box">
+
+
+            <form id="consultationForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        نام و نام خانوادگی
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="نام شما"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        شماره تماس
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="۰۹۱۲..."
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        موضوع درخواست
+                    </label>
+
+                    <select
+                        id="subject"
+                        required
+                    >
+
+                        <option value="">
+                            انتخاب کنید
+                        </option>
+
+                        <option>
+                            واردات و صادرات
+                        </option>
+
+                        <option>
+                            مشاوره بازرگانی
+                        </option>
+
+                        <option>
+                            خدمات ترخیص کالا
+                        </option>
+
+                        <option>
+                            خدمات حقوقی
+                        </option>
+
+                        <option>
+                            امور تخصصی بازرگانی خارجی
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        توضیحات
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="توضیحات خود را بنویسید..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button type="submit">
+
+                    ارسال درخواست در واتساپ
+
+                </button>
+
+
+            </form>
+
+
+
+            <div
+                class="success"
+                id="success"
+            >
+
+                ✓ درخواست آماده ارسال شد.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<script>
+
+document
+.getElementById("consultationForm")
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+
+        const subject =
+            document.getElementById("subject").value.trim();
+
+
+        const message =
+            document.getElementById("message").value.trim();
+
+
+        const whatsappNumber =
+            "989125479907";
+
+
+        const whatsappMessage =
+
+`درخواست مشاوره جدید
+
+نام و نام خانوادگی:
+${name}
+
+شماره تماس:
+${phone}
+
+موضوع درخواست:
+${subject}
+
+توضیحات:
+${message}`;
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        document
+            .getElementById("success")
+            .style.display = "block";
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
