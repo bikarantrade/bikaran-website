@@ -2,16 +2,10 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-بیکران گسترش تجارت پارسی
-</title>
-
+<title>بیکران گسترش تجارت پارسی</title>
 
 <style>
 
@@ -21,25 +15,16 @@ content="width=device-width, initial-scale=1.0">
 
 html,
 body{
-
     margin:0;
     padding:0;
-
     width:100%;
     min-height:100%;
 }
 
 body{
-
     background:#080808;
-
     color:#fff;
-
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     overflow-x:hidden;
 }
 
@@ -48,76 +33,50 @@ a{
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* ================= HEADER ================= */
 
 .header{
-
     position:fixed;
-
     top:0;
     right:0;
     left:0;
 
     height:80px;
 
-    padding:
-        0 25px;
+    padding:0 25px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     z-index:9999;
 }
 
 
-/* =========================================
-   LOGO
-========================================= */
+/* ================= LOGO ================= */
 
 .logo{
-
     width:110px;
-
     height:60px;
-
     object-fit:contain;
-
     display:block;
 }
 
 
-/* =========================================
-   MENU BUTTON
-========================================= */
+/* ================= MENU BUTTON ================= */
 
 .menu-button{
-
     width:48px;
-
     height:48px;
 
-    padding:0;
+    background:rgba(0,0,0,.70);
 
-    background:
-        rgba(0,0,0,.70);
-
-    border:
-        1px solid
-        #d4a84f;
-
+    border:1px solid #d4a84f;
     border-radius:8px;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
     gap:6px;
@@ -126,20 +85,16 @@ a{
 }
 
 .menu-button span{
-
     display:block;
 
     width:23px;
-
     height:2px;
 
     background:#d4a84f;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* ================= HOME ================= */
 
 .hero{
 
@@ -157,21 +112,21 @@ a{
 
     text-align:center;
 
-    padding:
-        100px
-        20px
-        50px;
+    padding:100px 20px 50px;
+
+    /*
+       عکس پس زمینه
+       فایل logo.png.jpeg باید کنار index.html باشد
+    */
 
     background-image:
 
         linear-gradient(
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.65)
+            rgba(0,0,0,.38),
+            rgba(0,0,0,.68)
         ),
 
-        url(
-            "https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/image/jpg.png.jpeg"
-        );
+        url("logo.png.jpeg");
 
     background-size:cover;
 
@@ -183,9 +138,7 @@ a{
 }
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+/* ================= HERO CONTENT ================= */
 
 .hero-content{
 
@@ -201,9 +154,7 @@ a{
 }
 
 
-/* =========================================
-   COMPANY
-========================================= */
+/* ================= COMPANY ================= */
 
 .company{
 
@@ -220,9 +171,7 @@ a{
 }
 
 
-/* =========================================
-   TITLE
-========================================= */
+/* ================= TITLE ================= */
 
 .hero h1{
 
@@ -241,7 +190,7 @@ a{
 
     text-shadow:
         0 5px 30px
-        rgba(0,0,0,.9);
+        rgba(0,0,0,.95);
 }
 
 .hero h1 span{
@@ -254,18 +203,13 @@ a{
 }
 
 
-/* =========================================
-   DESCRIPTION
-========================================= */
+/* ================= DESCRIPTION ================= */
 
 .hero p{
 
     max-width:720px;
 
-    margin:
-        25px
-        auto
-        0;
+    margin:25px auto 0;
 
     color:#f1f1f1;
 
@@ -278,9 +222,7 @@ a{
 }
 
 
-/* =========================================
-   BUTTONS
-========================================= */
+/* ================= BUTTONS ================= */
 
 .buttons{
 
@@ -303,9 +245,7 @@ a{
 
     min-width:190px;
 
-    padding:
-        16px
-        28px;
+    padding:16px 28px;
 
     border-radius:9px;
 
@@ -319,13 +259,11 @@ a{
 }
 
 .button:hover{
-
-    transform:
-        translateY(-3px);
+    transform:translateY(-3px);
 }
 
 
-/* مشاوره */
+/* ================= CONSULTATION ================= */
 
 .consult{
 
@@ -339,18 +277,15 @@ a{
 }
 
 
-/* خدمات */
+/* ================= SERVICES ================= */
 
 .services{
 
     color:#fff;
 
-    border:
-        1px solid
-        #d4a84f;
+    border:1px solid #d4a84f;
 
-    background:
-        rgba(0,0,0,.60);
+    background:rgba(0,0,0,.60);
 }
 
 .services:hover{
@@ -360,9 +295,7 @@ a{
 }
 
 
-/* =========================================
-   OVERLAY
-========================================= */
+/* ================= OVERLAY ================= */
 
 .overlay{
 
@@ -390,20 +323,16 @@ a{
 }
 
 
-/* =========================================
-   MENU
-========================================= */
+/* ================= MENU ================= */
 
 .menu{
 
     position:fixed;
 
     top:0;
-
     right:0;
 
     width:320px;
-
     max-width:85%;
 
     height:100vh;
@@ -434,9 +363,7 @@ a{
 }
 
 
-/* =========================================
-   MENU TOP
-========================================= */
+/* ================= MENU TOP ================= */
 
 .menu-top{
 
@@ -449,14 +376,11 @@ a{
     padding-bottom:20px;
 
     border-bottom:
-        1px solid
-        #292929;
+        1px solid #292929;
 }
 
 
-/* =========================================
-   MENU LOGO
-========================================= */
+/* ================= MENU LOGO ================= */
 
 .menu-logo{
 
@@ -468,9 +392,7 @@ a{
 }
 
 
-/* =========================================
-   CLOSE
-========================================= */
+/* ================= CLOSE ================= */
 
 .close{
 
@@ -484,14 +406,11 @@ a{
 
     cursor:pointer;
 
-    padding:
-        0 8px;
+    padding:0 8px;
 }
 
 
-/* =========================================
-   MENU LINKS
-========================================= */
+/* ================= MENU LINKS ================= */
 
 .menu nav{
 
@@ -504,9 +423,7 @@ a{
 
     color:#fff;
 
-    padding:
-        17px
-        10px;
+    padding:17px 10px;
 
     margin-top:5px;
 
@@ -526,22 +443,16 @@ a{
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     .header{
-
-        padding:
-            0 18px;
+        padding:0 18px;
     }
 
     .logo{
-
         width:85px;
-
         height:55px;
     }
 
@@ -558,14 +469,11 @@ a{
     }
 
     .hero h1{
-
         font-size:40px;
     }
 
     .hero p{
-
         font-size:15px;
-
         line-height:2;
     }
 
@@ -584,26 +492,18 @@ a{
     }
 
     .menu{
-
         width:290px;
     }
-
 }
 
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
 
 @media(max-width:380px){
 
     .hero h1{
-
         font-size:34px;
     }
 
     .company{
-
         font-size:16px;
     }
 
@@ -617,31 +517,27 @@ a{
 <body>
 
 
-<!-- =========================================
-     HEADER
-========================================= -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/"
->
+<a href="index.html">
 
 <img
-src="https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/logo.png.jpeg"
-class="logo"
-alt="بیکران گسترش تجارت پارسی"
+    src="logo.png.jpeg"
+    class="logo"
+    alt="بیکران گسترش تجارت پارسی"
 >
 
 </a>
 
 
 <button
-type="button"
-class="menu-button"
-onclick="openMenu()"
-aria-label="باز کردن منو"
+    type="button"
+    class="menu-button"
+    onclick="openMenu()"
+    aria-label="باز کردن منو"
 >
 
 <span></span>
@@ -655,9 +551,7 @@ aria-label="باز کردن منو"
 
 
 
-<!-- =========================================
-     HOME
-========================================= -->
+<!-- ================= HOME ================= -->
 
 <section class="hero">
 
@@ -695,8 +589,8 @@ aria-label="باز کردن منو"
 
 
 <a
-href="https://bikarantrade.github.io/bikaran-website/consultation.html"
-class="button consult"
+    href="consultation.html"
+    class="button consult"
 >
 
 درخواست مشاوره
@@ -705,8 +599,8 @@ class="button consult"
 
 
 <a
-href="https://bikarantrade.github.io/bikaran-website/services.html"
-class="button services"
+    href="services.html"
+    class="button services"
 >
 
 مشاهده خدمات
@@ -723,25 +617,21 @@ class="button services"
 
 
 
-<!-- =========================================
-     OVERLAY
-========================================= -->
+<!-- ================= OVERLAY ================= -->
 
 <div
-class="overlay"
-id="overlay"
-onclick="closeMenu()"
+    class="overlay"
+    id="overlay"
+    onclick="closeMenu()"
 ></div>
 
 
 
-<!-- =========================================
-     MENU
-========================================= -->
+<!-- ================= MENU ================= -->
 
 <aside
-class="menu"
-id="menu"
+    class="menu"
+    id="menu"
 >
 
 
@@ -749,16 +639,16 @@ id="menu"
 
 
 <img
-src="https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/logo.png.jpeg"
-class="menu-logo"
-alt="بیکران گسترش تجارت پارسی"
+    src="logo.png.jpeg"
+    class="menu-logo"
+    alt="بیکران گسترش تجارت پارسی"
 >
 
 
 <button
-type="button"
-class="close"
-onclick="closeMenu()"
+    type="button"
+    class="close"
+    onclick="closeMenu()"
 >
 
 ×
@@ -773,44 +663,32 @@ onclick="closeMenu()"
 <nav>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/"
->
+<a href="index.html">
 خانه
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/services.html"
->
+<a href="services.html">
 خدمات
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/about.html"
->
+<a href="about.html">
 درباره ما
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/news.html"
->
+<a href="news.html">
 اخبار
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/consultation.html"
->
+<a href="consultation.html">
 درخواست مشاوره
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/contact.html"
->
+<a href="contact.html">
 تماس با ما
 </a>
 
@@ -821,10 +699,6 @@ href="https://bikarantrade.github.io/bikaran-website/contact.html"
 </aside>
 
 
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
 
 <script>
 
