@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,8 +14,7 @@
     box-sizing:border-box;
 }
 
-html,
-body{
+html,body{
     margin:0;
     padding:0;
     width:100%;
@@ -22,7 +22,7 @@ body{
 }
 
 body{
-    background:#050505;
+    background:#080808;
     color:#fff;
     font-family:Tahoma,Arial,sans-serif;
     overflow-x:hidden;
@@ -33,17 +33,14 @@ a{
 }
 
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .header{
     position:fixed;
-
     top:0;
     right:0;
     left:0;
-
     height:80px;
-
     padding:0 25px;
 
     display:flex;
@@ -53,39 +50,27 @@ a{
     z-index:9999;
 }
 
-
-/* ================= LOGO ================= */
-
 .logo{
-    width:110px;
-    height:60px;
-
+    width:120px;
+    height:55px;
     object-fit:contain;
-
-    display:block;
 }
 
 
-/* ================= MENU BUTTON ================= */
+/* MENU BUTTON */
 
 .menu-button{
     width:48px;
     height:48px;
 
-    padding:0;
-
-    background:rgba(0,0,0,.75);
+    background:#111;
 
     border:1px solid #d4a84f;
-
     border-radius:8px;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
     gap:6px;
@@ -94,267 +79,150 @@ a{
 }
 
 .menu-button span{
-    display:block;
-
     width:23px;
     height:2px;
-
     background:#d4a84f;
+    display:block;
 }
 
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
-
     min-height:100vh;
 
-    width:100%;
-
-    position:relative;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
 
-    padding:
-        100px
-        20px
-        50px;
+    padding:100px 20px 50px;
 
-    background-image:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.75)
-        ),
-        url("https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/logo.png.jpeg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
+    background:
+        radial-gradient(
+            circle,
+            #29241c 0%,
+            #0d0d0d 50%,
+            #050505 100%
+        );
 }
-
-
-/* ================= HERO CONTENT ================= */
 
 .hero-content{
-
     width:90%;
-
-    max-width:900px;
-
-    position:relative;
-
-    z-index:2;
+    max-width:850px;
 }
-
-
-/* ================= COMPANY ================= */
 
 .company{
-
     color:#d4a84f;
-
-    font-size:19px;
-
+    font-size:18px;
     font-weight:bold;
-
-    margin-bottom:22px;
-
-    text-shadow:
-        0 2px 12px #000;
+    margin-bottom:20px;
 }
 
-
-/* ================= TITLE ================= */
-
-.hero h1{
-
-    margin:0;
-
-    font-size:
-        clamp(
-            42px,
-            7vw,
-            78px
-        );
-
+h1{
+    font-size:clamp(42px,7vw,78px);
     line-height:1.5;
-
-    font-weight:700;
-
-    text-shadow:
-        0 5px 25px #000;
+    margin:0;
 }
 
-.hero h1 span{
-
+h1 span{
     display:block;
-
     color:#d4a84f;
 }
-
-
-/* ================= DESCRIPTION ================= */
 
 .hero p{
-
-    max-width:720px;
-
+    max-width:700px;
     margin:25px auto;
-
-    color:#f1f1f1;
-
+    color:#ddd;
     font-size:18px;
-
     line-height:2.2;
-
-    text-shadow:
-        0 3px 15px #000;
 }
 
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 
 .buttons{
-
     display:flex;
-
     justify-content:center;
-
-    align-items:center;
-
     gap:15px;
-
     flex-wrap:wrap;
-
-    margin-top:32px;
+    margin-top:30px;
 }
 
 .button{
-
     display:block;
-
     min-width:190px;
-
-    padding:16px 27px;
-
+    padding:16px 25px;
     border-radius:8px;
-
-    font-size:15px;
-
     font-weight:bold;
-
     text-align:center;
-
-    transition:.25s;
-}
-
-.button:hover{
-
-    transform:
-        translateY(-3px);
 }
 
 .consult{
-
     background:#d4a84f;
-
     color:#111;
 }
 
 .services{
-
-    background:rgba(0,0,0,.70);
-
+    background:#111;
     color:#fff;
-
-    border:
-        1px solid
-        #d4a84f;
+    border:1px solid #d4a84f;
 }
 
 
-/* ================= OVERLAY ================= */
+/* OVERLAY */
 
 .overlay{
-
     position:fixed;
-
     inset:0;
 
-    background:
-        rgba(0,0,0,.78);
+    background:rgba(0,0,0,.75);
 
     z-index:10000;
 
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.3s;
+    display:none;
 }
 
 .overlay.active{
-
-    opacity:1;
-
-    visibility:visible;
+    display:block;
 }
 
 
-/* ================= SIDE MENU ================= */
+/* MENU */
 
 .menu{
-
     position:fixed;
 
     top:0;
-
     right:0;
 
     width:320px;
-
     max-width:85%;
 
     height:100vh;
 
     background:#111;
 
-    border-left:
-        1px solid
-        rgba(212,168,79,.35);
-
     z-index:10001;
 
     padding:25px;
 
-    transform:
-        translateX(100%);
+    transform:translateX(100%);
 
-    transition:
-        transform .3s ease;
+    transition:transform .3s ease;
 
     overflow-y:auto;
 }
 
 .menu.active{
-
-    transform:
-        translateX(0);
+    transform:translateX(0);
 }
 
 
-/* ================= MENU TOP ================= */
+/* MENU TOP */
 
 .menu-top{
-
     display:flex;
 
     align-items:center;
@@ -363,32 +231,17 @@ a{
 
     padding-bottom:20px;
 
-    border-bottom:
-        1px solid
-        #333;
+    border-bottom:1px solid #333;
 }
-
-
-/* ================= MENU LOGO ================= */
 
 .menu-logo{
-
     width:100px;
-
-    height:55px;
-
+    height:50px;
     object-fit:contain;
-
-    display:block;
 }
 
-
-/* ================= CLOSE ================= */
-
 .close{
-
     background:none;
-
     border:0;
 
     color:#d4a84f;
@@ -401,15 +254,13 @@ a{
 }
 
 
-/* ================= MENU LINKS ================= */
+/* MENU LINKS */
 
 .menu nav{
-
     margin-top:15px;
 }
 
 .menu nav a{
-
     display:block;
 
     color:#fff;
@@ -421,93 +272,42 @@ a{
     border-radius:8px;
 
     font-size:16px;
-
-    transition:.2s;
 }
 
 .menu nav a:hover{
-
     color:#d4a84f;
-
     background:#1c1c1c;
 }
 
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
     .header{
-
-        padding:
-            0 18px;
-    }
-
-    .logo{
-
-        width:85px;
-
-        height:55px;
-    }
-
-    .hero{
-
-        min-height:100vh;
-
-        padding:
-            100px
-            18px
-            50px;
-
-        background-position:center;
+        padding:0 18px;
     }
 
     .hero h1{
-
         font-size:40px;
     }
 
     .hero p{
-
         font-size:15px;
-
-        line-height:2;
     }
 
     .buttons{
-
         flex-direction:column;
-
         align-items:center;
     }
 
     .button{
-
         width:100%;
-
         max-width:280px;
     }
 
     .menu{
-
         width:290px;
-    }
-
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media(max-width:380px){
-
-    .hero h1{
-
-        font-size:34px;
-    }
-
-    .company{
-
-        font-size:16px;
     }
 
 }
@@ -520,23 +320,18 @@ a{
 <body>
 
 
-<!-- ================= HEADER ================= -->
-
 <header class="header">
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/"
->
+<a href="index.html">
 
 <img
-src="https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/logo.png.jpeg"
+src="logo.png.jpeg"
 class="logo"
 alt="بیکران گسترش تجارت پارسی"
 >
 
 </a>
-
 
 
 <button
@@ -557,10 +352,7 @@ aria-label="باز کردن منو"
 
 
 
-<!-- ================= HERO ================= -->
-
 <section class="hero">
-
 
 <div class="hero-content">
 
@@ -577,9 +369,7 @@ aria-label="باز کردن منو"
 تجارت بین‌الملل
 
 <span>
-
 ساده‌تر از همیشه
-
 </span>
 
 </h1>
@@ -597,7 +387,7 @@ aria-label="باز کردن منو"
 
 
 <a
-href="https://bikarantrade.github.io/bikaran-website/consultation.html"
+href="consultation.html"
 class="button consult"
 >
 
@@ -607,7 +397,7 @@ class="button consult"
 
 
 <a
-href="https://bikarantrade.github.io/bikaran-website/services.html"
+href="services.html"
 class="button services"
 >
 
@@ -625,8 +415,6 @@ class="button services"
 
 
 
-<!-- ================= OVERLAY ================= -->
-
 <div
 class="overlay"
 id="overlay"
@@ -634,8 +422,6 @@ onclick="closeMenu()"
 ></div>
 
 
-
-<!-- ================= MENU ================= -->
 
 <aside
 class="menu"
@@ -647,9 +433,9 @@ id="menu"
 
 
 <img
-src="https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/logo.png.jpeg"
+src="logo.png.jpeg"
 class="menu-logo"
-alt="بیکران گسترش تجارت پارسی"
+alt="بیکران"
 >
 
 
@@ -667,61 +453,36 @@ onclick="closeMenu()"
 </div>
 
 
-
 <nav>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/"
->
-
+<a href="index.html">
 خانه
-
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/services.html"
->
-
+<a href="services.html">
 خدمات
-
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/about.html"
->
-
+<a href="about.html">
 درباره ما
-
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/news.html"
->
-
+<a href="news.html">
 اخبار
-
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/consultation.html"
->
-
+<a href="consultation.html">
 مشاوره
-
 </a>
 
 
-<a
-href="https://bikarantrade.github.io/bikaran-website/contact.html"
->
-
+<a href="contact.html">
 تماس با ما
-
 </a>
 
 
@@ -732,21 +493,19 @@ href="https://bikarantrade.github.io/bikaran-website/contact.html"
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
 function openMenu(){
 
     document
-        .getElementById("menu")
-        .classList
-        .add("active");
+    .getElementById("menu")
+    .classList
+    .add("active");
 
     document
-        .getElementById("overlay")
-        .classList
-        .add("active");
+    .getElementById("overlay")
+    .classList
+    .add("active");
 
 }
 
@@ -754,14 +513,14 @@ function openMenu(){
 function closeMenu(){
 
     document
-        .getElementById("menu")
-        .classList
-        .remove("active");
+    .getElementById("menu")
+    .classList
+    .remove("active");
 
     document
-        .getElementById("overlay")
-        .classList
-        .remove("active");
+    .getElementById("overlay")
+    .classList
+    .remove("active");
 
 }
 
