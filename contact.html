@@ -1,275 +1,52 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>تماس با ما | بیکران گسترش تجارت پارسی</title>
-
-<link rel="stylesheet" href="style.css">
+<title>تماس با ما | بیکران</title>
 
 <style>
-
-.contact-page{
-    min-height:100vh;
-    padding:140px 20px 70px;
-    background:#080808;
-}
-
-.contact-container{
-    width:90%;
-    max-width:1000px;
-    margin:auto;
-}
-
-.contact-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.contact-title h1{
-    color:#d4a84f;
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.contact-title p{
-    color:#aaa;
-    font-size:16px;
-    line-height:2;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.contact-card{
-    background:#111;
-    border:1px solid rgba(212,168,79,.2);
-    border-radius:15px;
-    padding:35px 20px;
-    text-align:center;
-    transition:.25s;
-}
-
-.contact-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(212,168,79,.5);
-}
-
-.contact-card h2{
-    color:#d4a84f;
-    font-size:20px;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
-.contact-card p{
-    color:#ddd;
-    line-height:2.5;
-    font-size:15px;
-}
-
-.phone{
-    display:block;
-    color:#d4a84f;
-    direction:ltr;
-    font-size:18px;
-    font-weight:600;
-    margin:5px 0;
-}
-
-.phone:hover{
-    color:#f0ca78;
-}
-
-.consultation-link{
-    display:inline-block;
-    margin-top:10px;
-    color:#d4a84f;
-    font-weight:600;
-}
-
-.back-home{
-    display:block;
-    width:max-content;
-    margin:45px auto 0;
-    padding:14px 28px;
-    background:#d4a84f;
-    color:#111;
-    border-radius:8px;
-    font-weight:700;
-    transition:.25s;
-}
-
-.back-home:hover{
-    background:#e4ba63;
-    transform:translateY(-2px);
-}
-
-
-/* موبایل */
-
-@media(max-width:700px){
-
-    .contact-page{
-        padding-top:110px;
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .contact-title h1{
-        font-size:34px;
-    }
-
-    .contact-title p{
-        font-size:14px;
-    }
-
-}
-
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
+.page{min-height:100vh;padding:110px 20px}
+.container{max-width:800px;width:90%;margin:auto}
+h1{text-align:center;font-size:42px}
+.gold{text-align:center;color:#d4a84f;margin-bottom:40px}
+.box{background:#111;border:1px solid #333;border-radius:14px;padding:30px;text-align:center}
+.label{color:#aaa;margin-top:20px}
+.phone{display:block;color:#d4a84f;font-size:22px;font-weight:bold;margin:10px}
+.home{display:block;width:max-content;margin:40px auto;padding:15px 30px;background:#d4a84f;color:#111;border-radius:8px;font-weight:bold}
 </style>
-
 </head>
-
 
 <body>
 
+<section class="page">
+<div class="container">
 
-<section class="contact-page">
+<h1>تماس با ما</h1>
 
-<div class="contact-container">
+<div class="gold">
+ارتباط با بیکران گسترش تجارت پارسی
+</div>
 
+<div class="box">
 
-<!-- عنوان -->
+<div class="label">شماره تماس</div>
 
-<div class="contact-title">
+<span class="phone">09981415115</span>
 
-<h1>
-تماس با ما
-</h1>
+<span class="phone">88083447</span>
 
-<p>
-برای دریافت مشاوره و ارتباط با مجموعه بیکران
-با ما در تماس باشید.
-</p>
+<div class="label">آماده پاسخگویی به شما هستیم.</div>
 
 </div>
 
-
-
-<!-- کارت‌ها -->
-
-<div class="contact-grid">
-
-
-<!-- شماره تماس -->
-
-<div class="contact-card">
-
-<h2>
-شماره‌های تماس
-</h2>
-
-<p>
-
-<a
-class="phone"
-href="tel:09981415115"
->
-۰۹۹۸۱۴۱۵۱۱۵
-</a>
-
-
-<a
-class="phone"
-href="tel:88083447"
->
-۸۸۰۸۳۴۴۷
-</a>
-
-</p>
-
-</div>
-
-
-
-<!-- مشاوره -->
-
-<div class="contact-card">
-
-<h2>
-مشاوره
-</h2>
-
-<p>
-
-برای دریافت مشاوره تخصصی
-امور بازرگانی خارجی
-با ما در ارتباط باشید.
-
-</p>
-
-<a
-href="consultation.html"
-class="consultation-link"
->
-
-درخواست مشاوره
-
+<a href="index.html" class="home">
+بازگشت به خانه
 </a>
 
 </div>
-
-
-
-<!-- شرکت -->
-
-<div class="contact-card">
-
-<h2>
-بیکران گسترش تجارت پارسی
-</h2>
-
-<p>
-
-همراه شما در مسیر
-تجارت بین‌الملل،
-واردات و صادرات
-
-</p>
-
-</div>
-
-
-</div>
-
-
-
-<!-- بازگشت -->
-
-<a
-href="index.html"
-class="back-home"
->
-
-بازگشت به صفحه اصلی
-
-</a>
-
-
-</div>
-
 </section>
 
-
 </body>
-
 </html>
