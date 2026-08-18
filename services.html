@@ -1,127 +1,374 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خدمات | بیکران گسترش تجارت پارسی</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+خدمات | بیکران گسترش تجارت پارسی
+</title>
+
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
-a{text-decoration:none}
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+
+    background:#080808;
+
+    color:#fff;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= PAGE ================= */
 
 .page{
-min-height:100vh;
-padding:110px 20px 60px
+
+    min-height:100vh;
+
+    padding:
+        110px
+        20px
+        70px;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #24201a 0%,
+            #101010 42%,
+            #050505 100%
+        );
 }
+
+
+/* ================= CONTAINER ================= */
 
 .container{
-max-width:1000px;
-width:90%;
-margin:auto
+
+    width:90%;
+
+    max-width:1050px;
+
+    margin:auto;
 }
 
+
+/* ================= TITLE ================= */
+
 h1{
-text-align:center;
-font-size:42px;
-margin-bottom:15px
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:
+        clamp(
+            36px,
+            6vw,
+            52px
+        );
+
+    line-height:1.5;
+
+    text-shadow:
+        0 5px 25px
+        rgba(0,0,0,.8);
 }
 
 .subtitle{
-text-align:center;
-color:#d4a84f;
-margin-bottom:45px
+
+    text-align:center;
+
+    color:#d4a84f;
+
+    font-size:17px;
+
+    line-height:2;
+
+    margin:
+        10px
+        0
+        45px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap:22px;
 }
 
-.card{
-background:#111;
-border:1px solid rgba(212,168,79,.25);
-border-radius:14px;
-padding:30px
+
+/* ================= CARD ================= */
+
+.service-card{
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #171717,
+            #0c0c0c
+        );
+
+    border:
+        1px solid
+        rgba(212,168,79,.25);
+
+    border-radius:15px;
+
+    padding:28px;
+
+    min-height:220px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .25s,
+        border-color .25s;
 }
 
-.card h2{
-color:#d4a84f;
-font-size:21px
+.service-card:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(212,168,79,.65);
 }
 
-.card p{
-color:#ccc;
-line-height:2.2
+
+/* ================= NUMBER ================= */
+
+.number{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#d4a84f;
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
 }
+
+
+/* ================= CARD TITLE ================= */
+
+.service-card h2{
+
+    margin:
+        0
+        0
+        15px;
+
+    color:#d4a84f;
+
+    font-size:20px;
+
+    line-height:1.8;
+}
+
+
+/* ================= CARD TEXT ================= */
+
+.service-card p{
+
+    margin:0;
+
+    color:#ddd;
+
+    font-size:15px;
+
+    line-height:2.25;
+}
+
+
+/* ================= HOME ================= */
 
 .home{
-display:block;
-width:max-content;
-margin:45px auto 0;
-padding:15px 30px;
-background:#d4a84f;
-color:#111;
-border-radius:8px;
-font-weight:bold
+
+    display:block;
+
+    width:max-content;
+
+    margin:
+        45px
+        auto
+        0;
+
+    padding:
+        14px
+        30px;
+
+    color:#111;
+
+    background:#d4a84f;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    transition:.25s;
 }
 
-@media(max-width:650px){
-.grid{grid-template-columns:1fr}
-h1{font-size:34px}
+.home:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:#e2b65d;
 }
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .page{
+
+        padding:
+            95px
+            15px
+            50px;
+    }
+
+    .container{
+
+        width:96%;
+    }
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+        gap:17px;
+    }
+
+    .service-card{
+
+        min-height:auto;
+
+        padding:24px;
+    }
+
+    .service-card h2{
+
+        font-size:18px;
+    }
+
+    .service-card p{
+
+        font-size:14px;
+
+        line-height:2.2;
+    }
+
+    .home{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <section class="page">
+
+
 <div class="container">
 
-<h1>خدمات</h1>
+
+<h1>
+خدمات
+</h1>
+
 
 <div class="subtitle">
-خدمات تخصصی بیکران گسترش تجارت پارسی
+
+ارائه خدمات تخصصی بازرگانی و تجارت بین‌الملل
+
 </div>
 
-<div class="grid">
 
-<div class="card">
-<h2>مشاوره بازرگانی</h2>
+<div class="services-grid">
+
+
+<!-- 1 -->
+
+<div class="service-card">
+
+<div class="number">
+1
+</div>
+
+<h2>
+
+مدیریت و اجرای فرآیندهای بازرگانی؛
+از ثبت سفارش تا رفع تعهد ارزی
+
+</h2>
+
 <p>
-ارائه مشاوره تخصصی برای فعالیت‌های تجاری و بازرگانی.
-</p>
-</div>
 
-<div class="card">
-<h2>واردات و صادرات</h2>
-<p>
-راهنمایی و همراهی در مسیر انجام امور واردات و صادرات.
-</p>
-</div>
-
-<div class="card">
-<h2>آموزش امور تخصصی بازرگانی خارجی</h2>
-<p>
-آموزش مفاهیم و فرآیندهای تخصصی مورد نیاز در بازرگانی خارجی.
-</p>
-</div>
-
-<div class="card">
-<h2>توسعه تجارت</h2>
-<p>
-کمک به کسب‌وکارها برای توسعه فعالیت‌های تجاری و ورود به بازارهای جدید.
-</p>
-</div>
-
-</div>
-
-<a href="index.html" class="home">
-بازگشت به خانه
-</a>
-
-</div>
-</section>
-
-</body>
-</html>
+ارائه خدمات تخصصی و پیگیر
