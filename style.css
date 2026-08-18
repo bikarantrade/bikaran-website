@@ -317,61 +317,6 @@ h1{
     }
 
 }
-/* =========================================
-   BACKGROUND صفحات داخلی
-   ========================================= */
-
-.page{
-    min-height:100vh;
-
-    position:relative;
-
-    padding:110px 20px 70px;
-
-    background-image:
-        linear-gradient(
-            rgba(0,0,0,.50),
-            rgba(0,0,0,.72)
-        ),
-        url("https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/pages-background.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-attachment:fixed;
-}
-
-
-/* =========================================
-   صفحه اصلی دست نخورَد
-   ========================================= */
-
-.hero{
-    /* بک‌گراند فعلی صفحه اصلی اینجا باقی بماند */
-}
-
-
-/* =========================================
-   صفحه مشاوره دست نخورَد
-   ========================================= */
-
-.consultation-page{
-    /* بک‌گراند فعلی صفحه مشاوره اینجا باقی بماند */
-}
-
-
-/* =========================================
-   موبایل
-   ========================================= */
-
-@media(max-width:700px){
-
-    .page{
-
-        background-attachment:scroll;
 
         background-position:center;
     }
