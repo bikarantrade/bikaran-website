@@ -31,106 +31,45 @@ a{
 }
 
 
-/* ================= HEADER ================= */
-
-.header{
-    height:80px;
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    z-index:1000;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 25px;
-}
-
-.logo{
-    width:110px;
-    height:60px;
-    object-fit:contain;
-}
-
-
-/* ================= MENU BUTTON ================= */
-
-.menu-button{
-    width:48px;
-    height:48px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    gap:6px;
-
-    background:rgba(0,0,0,.75);
-
-    border:1px solid #d4a84f;
-    border-radius:8px;
-
-    cursor:pointer;
-}
-
-.menu-button span{
-    width:23px;
-    height:2px;
-    display:block;
-    background:#d4a84f;
-}
-
-
-/* ================= PAGE ================= */
+/* ================= صفحه ================= */
 
 .page{
     min-height:100vh;
 
-    padding:
-        115px
-        20px
-        70px;
+    padding:110px 20px 60px;
 
     background:
         radial-gradient(
-            circle at 50% 0%,
+            circle at top center,
             rgba(212,168,79,.12),
             transparent 38%
         ),
-        linear-gradient(
-            135deg,
-            #151515,
-            #080808 55%,
-            #030303
-        );
+        #080808;
 }
 
 .container{
-    width:90%;
+    width:92%;
     max-width:1100px;
     margin:auto;
 }
 
 
-/* ================= TITLE ================= */
+/* ================= عنوان ================= */
 
-.page-title{
-    text-align:center;
+h1{
     margin:0;
+
+    text-align:center;
+
+    color:#fff;
 
     font-size:
         clamp(38px,6vw,55px);
 
     line-height:1.5;
-
-    text-shadow:
-        0 5px 25px rgba(0,0,0,.8);
 }
 
-.page-subtitle{
+.subtitle{
     text-align:center;
 
     color:#d4a84f;
@@ -140,16 +79,13 @@ a{
     line-height:2;
 
     margin:
-        8px
-        auto
-        50px;
+        10px auto 45px;
 }
 
 
-/* ================= SERVICES GRID ================= */
+/* ================= کارت خدمات ================= */
 
-.services-grid{
-
+.services{
     display:grid;
 
     grid-template-columns:
@@ -158,80 +94,72 @@ a{
     gap:22px;
 }
 
-
-/* ================= SERVICE CARD ================= */
-
-.service-card{
-
-    position:relative;
+.card{
 
     padding:30px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(30,30,30,.98),
-            rgba(10,10,10,.98)
+            #191919,
+            #0d0d0d
         );
 
     border:
         1px solid
-        rgba(212,168,79,.28);
+        rgba(212,168,79,.30);
 
     border-radius:15px;
 
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.35);
+    transition:.25s;
 
-    transition:
-        transform .25s,
-        border-color .25s,
-        box-shadow .25s;
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.25);
 }
 
-.service-card:hover{
+.card:hover{
 
     transform:
         translateY(-5px);
 
-    border-color:
-        rgba(212,168,79,.75);
+    border-color:#d4a84f;
 
     box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.55);
+        0 18px 45px
+        rgba(0,0,0,.45);
 }
 
 
-/* شماره خدمت */
+/* ================= شماره ================= */
 
-.service-number{
+.number{
 
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
-
-    margin-bottom:17px;
-
-    border-radius:50%;
 
     background:#d4a84f;
 
     color:#111;
 
-    font-size:18px;
+    border-radius:50%;
+
+    font-size:19px;
 
     font-weight:bold;
+
+    margin-bottom:18px;
 }
 
 
-/* عنوان */
+/* ================= عنوان خدمت ================= */
 
-.service-card h2{
+.card h2{
 
     margin:
         0 0 15px;
@@ -240,13 +168,13 @@ a{
 
     font-size:20px;
 
-    line-height:1.8;
+    line-height:1.9;
 }
 
 
-/* توضیحات */
+/* ================= توضیحات ================= */
 
-.service-card p{
+.card p{
 
     margin:0;
 
@@ -254,43 +182,43 @@ a{
 
     font-size:15px;
 
-    line-height:2.2;
+    line-height:2.25;
 }
 
 
-/* ================= LAST CARD ================= */
+/* ================= خدمت پنجم ================= */
 
-.service-card:last-child{
+.card:last-child{
 
     grid-column:
         1 / -1;
 
-    max-width:540px;
-
     width:100%;
+
+    max-width:550px;
 
     justify-self:center;
 }
 
 
-/* ================= CONSULTATION ================= */
+/* ================= مشاوره ================= */
 
 .consultation{
-
-    text-align:center;
 
     margin-top:45px;
 
     padding:35px 20px;
 
-    border:
-        1px solid
-        rgba(212,168,79,.25);
-
-    border-radius:15px;
+    text-align:center;
 
     background:
         rgba(212,168,79,.05);
+
+    border:
+        1px solid
+        rgba(212,168,79,.30);
+
+    border-radius:15px;
 }
 
 .consultation h2{
@@ -300,7 +228,7 @@ a{
 
     color:#fff;
 
-    font-size:24px;
+    font-size:23px;
 }
 
 .consultation p{
@@ -313,6 +241,110 @@ a{
     line-height:2;
 }
 
-.consultation-button{
+.consultation a{
 
-    display:inline-blo
+    display:inline-block;
+
+    padding:
+        15px 32px;
+
+    background:#d4a84f;
+
+    color:#111;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.consultation a:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:#e1b35d;
+}
+
+
+/* ================= بازگشت ================= */
+
+.home{
+
+    display:block;
+
+    width:max-content;
+
+    margin:
+        30px auto 0;
+
+    padding:
+        14px 30px;
+
+    border:
+        1px solid
+        #d4a84f;
+
+    border-radius:8px;
+
+    color:#d4a84f;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.home:hover{
+
+    background:#d4a84f;
+
+    color:#111;
+}
+
+
+/* ================= موبایل ================= */
+
+@media(max-width:700px){
+
+    .page{
+
+        padding:
+            100px 15px 50px;
+    }
+
+    .container{
+        width:96%;
+    }
+
+    .services{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:24px 20px;
+
+    }
+
+    .card:last-child{
+
+        grid-column:auto;
+
+        max-width:none;
+
+    }
+
+    .card h2{
+
+        font-size:18px;
+
+    }
+
+    .card p{
+
+        font-size:14px;
+
+        line-height
