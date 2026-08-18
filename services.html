@@ -10,255 +10,1582 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>خدمات | بیکران گسترش تجارت پارسی</title>
+    <title>
+        خدمات | بیکران گسترش تجارت پارسی
+    </title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #080808;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            height: 80px;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            background: #080808;
+
+            border-bottom:
+                1px solid rgba(212, 168, 79, 0.12);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+
+        .header-logo {
+
+            width: 135px;
+
+            height: 55px;
+
+            object-fit: contain;
+        }
+
+
+        .back-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #d4a84f;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.45);
+
+            padding: 11px 20px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            transition: 0.25s;
+        }
+
+
+        .back-button:hover {
+
+            background:
+                rgba(212, 168, 79, 0.1);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .page {
+
+            width: 100%;
+
+            padding: 80px 0;
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .title span {
+
+            display: block;
+
+            color: #d4a84f;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .title h1 {
+
+            font-size:
+                clamp(34px, 5vw, 50px);
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+
+        .title p {
+
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           SERVICES GRID
+        ========================= */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* CARD */
+
+        .service-card {
+
+            background: #111;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            padding: 35px 25px;
+
+            min-height: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition: 0.25s;
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(212, 168, 79, 0.5);
+        }
+
+
+        /* ICON */
+
+        .service-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(212, 168, 79, 0.08);
+
+            border:
+                1px solid rgba(212, 168, 79, 0.25);
+
+            color: #d4a84f;
+
+            font-size: 28px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* TITLE */
+
+        .service-card h2 {
+
+            color: #ffffff;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* TEXT */
+
+        .service-card p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            flex: 1;
+        }
+
+
+        /* BUTTON */
+
+        .service-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 25px;
+
+            color: #d4a84f;
+
+            font-size: 13px;
+        }
+
+
+        .service-link:hover {
+
+            color: #f0ca78;
+        }
+
+
+        /* =========================
+           CONSULTATION BUTTON
+        ========================= */
+
+        .bottom-box {
+
+            text-align: center;
+
+            margin-top: 60px;
+
+            padding: 40px 20px;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            background: #101010;
+        }
+
+
+        .bottom-box h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .bottom-box p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            margin-bottom: 25px;
+        }
+
+
+        .consultation-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            background: #d4a84f;
+
+            color: #111;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+
+        .consultation-button:hover {
+
+            background: #e4ba63;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            padding: 25px 5%;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .page {
+
+                padding: 55px 0;
+            }
+
+
+            .header {
+
+                padding: 0 20px;
+            }
+
+
+            .header-logo {
+
+                width: 110px;
+            }
+
+
+            .back-button {
+
+                padding: 9px 14px;
+
+                font-size: 12px;
+            }
+
+
+            .service-card {
+
+                min-height: auto;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
-    <div class="header-inner">
 
-        <a href="index.html" class="logo">
-            <span class="logo-main">بیکران</span>
-            <span class="logo-sub">گسترش تجارت پارسی</span>
-        </a>
+    <a href="/bikaran-website/">
 
-        <button class="menu-button" id="menuButton">
+        <img
+            src="/bikaran-website/logo.png.jpeg"
+            alt="بیکران گسترش تجارت پارسی"
+            class="header-logo"
+        >
 
-            <span></span>
-            <span></span>
-            <span></span>
+    </a>
 
-        </button>
 
-    </div>
+    <a
+        href="/bikaran-website/"
+        class="back-button"
+    >
+
+        ← بازگشت به خانه
+
+    </a>
+
 
 </header>
 
 
-<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="page">
 
 
-<aside class="side-menu" id="sideMenu">
+    <div class="container">
 
-    <div class="side-menu-header">
 
-        <div class="side-logo">
-            <strong>بیکران</strong>
-            <span>گسترش تجارت پارسی</span>
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <span>
+                خدمات ما
+            </span>
+
+
+            <h1>
+                خدمات تخصصی بازرگانی
+            </h1>
+
+
+            <p>
+
+                بیکران گسترش تجارت پارسی
+                در مسیر تجارت و بازرگانی
+                همراه شماست.
+
+            </p>
+
         </div>
 
-        <button class="close-menu" id="closeMenu">
-            ×
-        </button>
-
-    </div>
 
 
-    <nav class="side-nav">
-
-        <a href="index.html">⌂ خانه</a>
-        <a href="services.html">◆ خدمات</a>
-        <a href="about.html">◇ درباره ما</a>
-        <a href="news.html">▣ اخبار</a>
-        <a href="contact.html">☎ تماس با ما</a>
-
-    </nav>
-
-</aside>
-
-
-<main>
-
-<section class="page-hero">
-
-    <div class="container">
-
-        <span>خدمات ما</span>
-
-        <h1>
-            خدمات تخصصی
-            <strong>بازرگانی</strong>
-        </h1>
-
-        <p>
-            راهکارهای حرفه‌ای برای تجارت داخلی و بین‌المللی
-        </p>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
+        <!-- SERVICES -->
 
         <div class="services-grid">
 
 
+
+            <!-- SERVICE 1 -->
+
             <div class="service-card">
+
 
                 <div class="service-icon">
                     🌍
                 </div>
 
-                <h3>
+
+                <h2>
                     واردات و صادرات
-                </h3>
+                </h2>
+
 
                 <p>
-                    ارائه خدمات تخصصی در زمینه واردات و
-                    صادرات و همراهی در مسیر تجارت بین‌الملل.
+
+                    ارائه خدمات تخصصی در زمینه
+                    واردات و صادرات و همراهی
+                    در مسیر تجارت بین‌الملل.
+
                 </p>
 
-                <a href="contact.html">
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
                     ثبت درخواست ←
+
                 </a>
+
 
             </div>
 
 
+
+            <!-- SERVICE 2 -->
+
             <div class="service-card">
+
 
                 <div class="service-icon">
                     🤝
                 </div>
 
-                <h3>
+
+                <h2>
                     مشاوره بازرگانی
-                </h3>
+                </h2>
+
 
                 <p>
-                    ارائه مشاوره تخصصی در زمینه امور
-                    بازرگانی و تجارت بین‌الملل.
+
+                    ارائه مشاوره تخصصی در زمینه
+                    امور بازرگانی و تجارت
+                    بین‌الملل.
+
                 </p>
 
-                <a href="contact.html">
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
                     ثبت درخواست ←
+
                 </a>
+
 
             </div>
 
 
+
+            <!-- SERVICE 3 -->
+
             <div class="service-card">
+
 
                 <div class="service-icon">
                     🛃
                 </div>
 
-                <h3>
+
+                <h2>
                     خدمات ترخیص کالا
-                </h3>
+                </h2>
+
 
                 <p>
-                    همراهی و ارائه خدمات تخصصی در فرآیندهای
-                    گمرکی و ترخیص کالا.
+
+                    همراهی و ارائه خدمات تخصصی
+                    در فرآیندهای گمرکی و
+                    ترخیص کالا.
+
                 </p>
 
-                <a href="contact.html">
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
                     ثبت درخواست ←
+
                 </a>
+
 
             </div>
 
 
+
+            <!-- SERVICE 4 -->
+
             <div class="service-card">
+
 
                 <div class="service-icon">
                     ⚖️
                 </div>
 
-                <h3>
+
+                <h2>
                     خدمات حقوقی
-                </h3>
+                </h2>
+
 
                 <p>
-                    ارائه خدمات و مشاوره حقوقی مرتبط با
-                    امور تجاری و فعالیت‌های بازرگانی.
+
+                    ارائه خدمات و مشاوره حقوقی
+                    مرتبط با امور تجاری و
+                    فعالیت‌های بازرگانی.
+
                 </p>
 
-                <a href="contact.html">
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
                     ثبت درخواست ←
+
                 </a>
+
 
             </div>
 
+
+
+            <!-- SERVICE 5 -->
 
             <div class="service-card">
 
+
                 <div class="service-icon">
-                    📊
+                    📚
                 </div>
 
-                <h3>
-                    امور تخصصی بازرگانی خارجی
-                </h3>
+
+                <h2>
+                    آموزش امور تخصصی بازرگانی خارجی
+                </h2>
+
 
                 <p>
-                    ارائه خدمات تخصصی در زمینه امور
-                    بازرگانی خارجی و تجارت بین‌الملل.
+
+                    آموزش مفاهیم و مهارت‌های
+                    تخصصی مرتبط با امور
+                    بازرگانی خارجی و تجارت
+                    بین‌الملل.
+
                 </p>
 
-                <a href="contact.html">
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
                     ثبت درخواست ←
+
                 </a>
 
+
             </div>
+
 
 
         </div>
 
+
+
+        <!-- BOTTOM -->
+
+        <div class="bottom-box">
+
+
+            <h2>
+                برای شروع همکاری آماده‌اید؟
+            </h2>
+
+
+            <p>
+
+                برای دریافت مشاوره و اطلاعات
+                بیشتر با ما در ارتباط باشید.
+
+            </p>
+
+
+            <a
+                href="consultation.html"
+                class="consultation-button"
+            >
+
+                درخواست مشاوره ←
+
+            </a>
+
+
+        </div>
+
+
     </div>
 
-</section>
 
 </main>
 
 
-<script>
 
-const menuButton =
-    document.getElementById("menuButton");
+<!-- =========================
+     FOOTER
+========================= -->
 
-const closeMenu =
-    document.getElementById("closeMenu");
+<footer class="footer">
 
-const sideMenu =
-    document.getElementById("sideMenu");
+    © ۱۴۰۵ بیکران گسترش تجارت پارسی
 
-const menuOverlay =
-    document.getElementById("menuOverlay");
+</footer>
 
-
-menuButton.onclick = function () {
-
-    sideMenu.classList.add("open");
-    menuOverlay.classList.add("show");
-
-};
-
-
-closeMenu.onclick = function () {
-
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("show");
-
-};
-
-
-menuOverlay.onclick = function () {
-
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("show");
-
-};
-
-</script>
 
 </body>
+
+</html><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        خدمات | بیکران گسترش تجارت پارسی
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #080808;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            height: 80px;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            background: #080808;
+
+            border-bottom:
+                1px solid rgba(212, 168, 79, 0.12);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+
+        .header-logo {
+
+            width: 135px;
+
+            height: 55px;
+
+            object-fit: contain;
+        }
+
+
+        .back-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #d4a84f;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.45);
+
+            padding: 11px 20px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            transition: 0.25s;
+        }
+
+
+        .back-button:hover {
+
+            background:
+                rgba(212, 168, 79, 0.1);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .page {
+
+            width: 100%;
+
+            padding: 80px 0;
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .title span {
+
+            display: block;
+
+            color: #d4a84f;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .title h1 {
+
+            font-size:
+                clamp(34px, 5vw, 50px);
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+
+        .title p {
+
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           SERVICES GRID
+        ========================= */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* CARD */
+
+        .service-card {
+
+            background: #111;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            padding: 35px 25px;
+
+            min-height: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition: 0.25s;
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(212, 168, 79, 0.5);
+        }
+
+
+        /* ICON */
+
+        .service-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(212, 168, 79, 0.08);
+
+            border:
+                1px solid rgba(212, 168, 79, 0.25);
+
+            color: #d4a84f;
+
+            font-size: 28px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* TITLE */
+
+        .service-card h2 {
+
+            color: #ffffff;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* TEXT */
+
+        .service-card p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            flex: 1;
+        }
+
+
+        /* BUTTON */
+
+        .service-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 25px;
+
+            color: #d4a84f;
+
+            font-size: 13px;
+        }
+
+
+        .service-link:hover {
+
+            color: #f0ca78;
+        }
+
+
+        /* =========================
+           CONSULTATION BUTTON
+        ========================= */
+
+        .bottom-box {
+
+            text-align: center;
+
+            margin-top: 60px;
+
+            padding: 40px 20px;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            background: #101010;
+        }
+
+
+        .bottom-box h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .bottom-box p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            margin-bottom: 25px;
+        }
+
+
+        .consultation-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            background: #d4a84f;
+
+            color: #111;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+
+        .consultation-button:hover {
+
+            background: #e4ba63;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            padding: 25px 5%;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .page {
+
+                padding: 55px 0;
+            }
+
+
+            .header {
+
+                padding: 0 20px;
+            }
+
+
+            .header-logo {
+
+                width: 110px;
+            }
+
+
+            .back-button {
+
+                padding: 9px 14px;
+
+                font-size: 12px;
+            }
+
+
+            .service-card {
+
+                min-height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+
+    <a href="/bikaran-website/">
+
+        <img
+            src="/bikaran-website/logo.png.jpeg"
+            alt="بیکران گسترش تجارت پارسی"
+            class="header-logo"
+        >
+
+    </a>
+
+
+    <a
+        href="/bikaran-website/"
+        class="back-button"
+    >
+
+        ← بازگشت به خانه
+
+    </a>
+
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="page">
+
+
+    <div class="container">
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <span>
+                خدمات ما
+            </span>
+
+
+            <h1>
+                خدمات تخصصی بازرگانی
+            </h1>
+
+
+            <p>
+
+                بیکران گسترش تجارت پارسی
+                در مسیر تجارت و بازرگانی
+                همراه شماست.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="services-grid">
+
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    🌍
+                </div>
+
+
+                <h2>
+                    واردات و صادرات
+                </h2>
+
+
+                <p>
+
+                    ارائه خدمات تخصصی در زمینه
+                    واردات و صادرات و همراهی
+                    در مسیر تجارت بین‌الملل.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    🤝
+                </div>
+
+
+                <h2>
+                    مشاوره بازرگانی
+                </h2>
+
+
+                <p>
+
+                    ارائه مشاوره تخصصی در زمینه
+                    امور بازرگانی و تجارت
+                    بین‌الملل.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    🛃
+                </div>
+
+
+                <h2>
+                    خدمات ترخیص کالا
+                </h2>
+
+
+                <p>
+
+                    همراهی و ارائه خدمات تخصصی
+                    در فرآیندهای گمرکی و
+                    ترخیص کالا.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    ⚖️
+                </div>
+
+
+                <h2>
+                    خدمات حقوقی
+                </h2>
+
+
+                <p>
+
+                    ارائه خدمات و مشاوره حقوقی
+                    مرتبط با امور تجاری و
+                    فعالیت‌های بازرگانی.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    📚
+                </div>
+
+
+                <h2>
+                    آموزش امور تخصصی بازرگانی خارجی
+                </h2>
+
+
+                <p>
+
+                    آموزش مفاهیم و مهارت‌های
+                    تخصصی مرتبط با امور
+                    بازرگانی خارجی و تجارت
+                    بین‌الملل.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- BOTTOM -->
+
+        <div class="bottom-box">
+
+
+            <h2>
+                برای شروع همکاری آماده‌اید؟
+            </h2>
+
+
+            <p>
+
+                برای دریافت مشاوره و اطلاعات
+                بیشتر با ما در ارتباط باشید.
+
+            </p>
+
+
+            <a
+                href="consultation.html"
+                class="consultation-button"
+            >
+
+                درخواست مشاوره ←
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    © ۱۴۰۵ بیکران گسترش تجارت پارسی
+
+</footer>
+
+
+</body>
+
 </html>
