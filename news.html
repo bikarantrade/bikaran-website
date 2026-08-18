@@ -1,67 +1,213 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>اخبار | بیکران</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#080808;color:#fff;font-family:Tahoma,Arial,sans-serif}
-.page{min-height:100vh;padding:110px 20px}
-.container{max-width:1000px;width:90%;margin:auto}
-h1{text-align:center;font-size:42px}
-.gold{text-align:center;color:#d4a84f;margin-bottom:45px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#111;border:1px solid #333;border-radius:14px;padding:25px}
-.card h2{color:#d4a84f;font-size:19px;line-height:1.8}
-.card p{color:#ccc;line-height:2}
-.home{display:block;width:max-content;margin:45px auto;padding:15px 30px;background:#d4a84f;color:#111;border-radius:8px;font-weight:bold}
-@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#080808;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+.page{
+    min-height:100vh;
+    padding:110px 20px;
+}
+
+.container{
+    max-width:1000px;
+    width:90%;
+    margin:auto;
+}
+
+
+/* ================= TITLE ================= */
+
+h1{
+    text-align:center;
+    font-size:42px;
+    margin:0 0 15px;
+}
+
+.gold{
+    text-align:center;
+    color:#d4a84f;
+    margin-bottom:45px;
+    font-size:17px;
+}
+
+
+/* ================= EMPTY NEWS ================= */
+
+.empty-news{
+
+    background:#111;
+
+    border:1px solid #333;
+
+    border-radius:14px;
+
+    padding:55px 25px;
+
+    text-align:center;
+
+    color:#ccc;
+
+    font-size:20px;
+
+    line-height:2.2;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.3);
+}
+
+.empty-news span{
+    display:block;
+
+    color:#d4a84f;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+
+/* ================= HOME ================= */
+
+.home{
+
+    display:block;
+
+    width:max-content;
+
+    margin:45px auto 0;
+
+    padding:15px 30px;
+
+    background:#d4a84f;
+
+    color:#111;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.home:hover{
+
+    transform:translateY(-3px);
+
+    background:#e2b65d;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .page{
+        padding:100px 15px;
+    }
+
+    .container{
+        width:94%;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .gold{
+        font-size:15px;
+        margin-bottom:30px;
+    }
+
+    .empty-news{
+        padding:45px 20px;
+        font-size:17px;
+    }
+
+    .empty-news span{
+        font-size:22px;
+    }
+
+    .home{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <section class="page">
+
+
 <div class="container">
 
-<h1>اخبار</h1>
+
+<h1>
+اخبار
+</h1>
+
 
 <div class="gold">
 آخرین اخبار و مطالب بازرگانی
 </div>
 
-<div class="grid">
 
-<div class="card">
-<h2>اخبار بازرگانی</h2>
-<p>
-آخرین مطالب و تحولات حوزه تجارت و بازرگانی.
-</p>
-</div>
+<div class="empty-news">
 
-<div class="card">
-<h2>بازرگانی خارجی</h2>
-<p>
-مطالب و اطلاعات تخصصی مرتبط با واردات و صادرات.
-</p>
-</div>
+<span>
+در حال حاضر خبری منتشر نشده است
+</span>
 
-<div class="card">
-<h2>اطلاعیه‌های بیکران</h2>
-<p>
-اخبار و اطلاعیه‌های مجموعه بیکران گسترش تجارت پارسی.
-</p>
-</div>
+به‌محض انتشار خبر جدید،
+مطالب در این قسمت نمایش داده خواهند شد.
 
 </div>
 
-<a href="index.html" class="home">
+
+<a
+href="https://bikarantrade.github.io/bikaran-website/"
+class="home"
+>
+
 بازگشت به خانه
+
 </a>
 
+
 </div>
+
 </section>
 
+
 </body>
+
 </html>
