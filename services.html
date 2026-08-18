@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>خدمات | بیکران گسترش تجارت پارسی</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">بیکران</span>
+            <span class="logo-sub">گسترش تجارت پارسی</span>
+        </a>
+
+        <button class="menu-button" id="menuButton">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+
+        <div class="side-logo">
+            <strong>بیکران</strong>
+            <span>گسترش تجارت پارسی</span>
+        </div>
+
+        <button class="close-menu" id="closeMenu">
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="side-nav">
+
+        <a href="index.html">⌂ خانه</a>
+        <a href="services.html">◆ خدمات</a>
+        <a href="about.html">◇ درباره ما</a>
+        <a href="news.html">▣ اخبار</a>
+        <a href="contact.html">☎ تماس با ما</a>
+
+    </nav>
+
+</aside>
+
+
+<main>
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span>خدمات ما</span>
+
+        <h1>
+            خدمات تخصصی
+            <strong>بازرگانی</strong>
+        </h1>
+
+        <p>
+            راهکارهای حرفه‌ای برای تجارت داخلی و بین‌المللی
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    واردات و صادرات
+                </h3>
+
+                <p>
+                    ارائه خدمات تخصصی در زمینه واردات و
+                    صادرات و همراهی در مسیر تجارت بین‌الملل.
+                </p>
+
+                <a href="contact.html">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    مشاوره بازرگانی
+                </h3>
+
+                <p>
+                    ارائه مشاوره تخصصی در زمینه امور
+                    بازرگانی و تجارت بین‌الملل.
+                </p>
+
+                <a href="contact.html">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🛃
+                </div>
+
+                <h3>
+                    خدمات ترخیص کالا
+                </h3>
+
+                <p>
+                    همراهی و ارائه خدمات تخصصی در فرآیندهای
+                    گمرکی و ترخیص کالا.
+                </p>
+
+                <a href="contact.html">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    خدمات حقوقی
+                </h3>
+
+                <p>
+                    ارائه خدمات و مشاوره حقوقی مرتبط با
+                    امور تجاری و فعالیت‌های بازرگانی.
+                </p>
+
+                <a href="contact.html">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📊
+                </div>
+
+                <h3>
+                    امور تخصصی بازرگانی خارجی
+                </h3>
+
+                <p>
+                    ارائه خدمات تخصصی در زمینه امور
+                    بازرگانی خارجی و تجارت بین‌الملل.
+                </p>
+
+                <a href="contact.html">
+                    ثبت درخواست ←
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+const sideMenu =
+    document.getElementById("sideMenu");
+
+const menuOverlay =
+    document.getElementById("menuOverlay");
+
+
+menuButton.onclick = function () {
+
+    sideMenu.classList.add("open");
+    menuOverlay.classList.add("show");
+
+};
+
+
+closeMenu.onclick = function () {
+
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("show");
+
+};
+
+
+menuOverlay.onclick = function () {
+
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("show");
+
+};
+
+</script>
+
+</body>
+</html>
