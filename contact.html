@@ -11,7 +11,7 @@
     >
 
     <title>
-        تماس با ما | بیکران گسترش تجارت پارسی
+        خدمات | بیکران گسترش تجارت پارسی
     </title>
 
 
@@ -73,8 +73,6 @@
         }
 
 
-        /* LOGO */
-
         .header-logo {
 
             width: 135px;
@@ -84,8 +82,6 @@
             object-fit: contain;
         }
 
-
-        /* BACK BUTTON */
 
         .back-button {
 
@@ -125,9 +121,6 @@
 
             width: 100%;
 
-            min-height:
-                calc(100vh - 80px);
-
             padding: 80px 0;
         }
 
@@ -136,7 +129,7 @@
 
             width: 90%;
 
-            max-width: 1000px;
+            max-width: 1100px;
 
             margin: auto;
         }
@@ -192,10 +185,10 @@
 
 
         /* =========================
-           CONTACT GRID
+           SERVICES GRID
         ========================= */
 
-        .contact-grid {
+        .services-grid {
 
             display: grid;
 
@@ -208,7 +201,7 @@
 
         /* CARD */
 
-        .contact-card {
+        .service-card {
 
             background: #111;
 
@@ -217,49 +210,43 @@
 
             border-radius: 14px;
 
-            padding: 35px 22px;
+            padding: 35px 25px;
 
-            text-align: center;
-
-            min-height: 240px;
+            min-height: 300px;
 
             display: flex;
 
             flex-direction: column;
 
-            align-items: center;
-
-            justify-content: center;
-
             transition: 0.25s;
         }
 
 
-        .contact-card:hover {
+        .service-card:hover {
 
             transform:
-                translateY(-5px);
+                translateY(-6px);
 
             border-color:
-                rgba(212, 168, 79, 0.45);
+                rgba(212, 168, 79, 0.5);
         }
 
 
         /* ICON */
 
-        .icon {
+        .service-icon {
 
             width: 65px;
 
             height: 65px;
-
-            border-radius: 50%;
 
             display: flex;
 
             align-items: center;
 
             justify-content: center;
+
+            border-radius: 50%;
 
             background:
                 rgba(212, 168, 79, 0.08);
@@ -271,87 +258,135 @@
 
             font-size: 28px;
 
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
 
-        /* SMALL TITLE */
+        /* TITLE */
 
-        .contact-card small {
+        .service-card h2 {
 
-            display: block;
+            color: #ffffff;
 
-            color: #777;
+            font-size: 18px;
 
-            font-size: 12px;
+            line-height: 1.8;
 
-            margin-bottom: 13px;
+            margin-bottom: 15px;
         }
 
 
         /* TEXT */
 
-        .contact-card strong {
+        .service-card p {
 
-            color: #ddd;
-
-            font-size: 14px;
-
-            line-height: 2.3;
-
-            font-weight: normal;
-        }
-
-
-        /* PHONE LINKS */
-
-        .phone-link {
-
-            display: block;
-
-            color: #d4a84f;
-
-            direction: ltr;
-
-            transition: 0.2s;
-        }
-
-
-        .phone-link:hover {
-
-            color: #f0ca78;
-        }
-
-
-        /* INSTAGRAM */
-
-        .instagram-link {
-
-            color: #d4a84f;
-
-            direction: ltr;
-
-            display: inline-block;
-
-            transition: 0.2s;
-        }
-
-
-        .instagram-link:hover {
-
-            color: #f0ca78;
-        }
-
-
-        /* ADDRESS */
-
-        .address {
-
-            color: #ccc;
+            color: #888;
 
             font-size: 13px;
 
-            line-height: 2.2;
+            line-height: 2;
+
+            flex: 1;
+        }
+
+
+        /* BUTTON */
+
+        .service-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 25px;
+
+            color: #d4a84f;
+
+            font-size: 13px;
+        }
+
+
+        .service-link:hover {
+
+            color: #f0ca78;
+        }
+
+
+        /* =========================
+           CONSULTATION BUTTON
+        ========================= */
+
+        .bottom-box {
+
+            text-align: center;
+
+            margin-top: 60px;
+
+            padding: 40px 20px;
+
+            border:
+                1px solid rgba(212, 168, 79, 0.15);
+
+            border-radius: 14px;
+
+            background: #101010;
+        }
+
+
+        .bottom-box h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .bottom-box p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            margin-bottom: 25px;
+        }
+
+
+        .consultation-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            background: #d4a84f;
+
+            color: #111;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+
+        .consultation-button:hover {
+
+            background: #e4ba63;
+
+            transform:
+                translateY(-2px);
         }
 
 
@@ -378,40 +413,40 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
 
-            .contact-grid {
+            .services-grid {
 
-                grid-template-columns: 1fr;
-
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
+        }
 
-            .contact-card {
 
-                min-height: 210px;
+        @media (max-width: 600px) {
 
+            .services-grid {
+
+                grid-template-columns: 1fr;
             }
 
 
             .page {
 
                 padding: 55px 0;
-
             }
 
 
             .header {
 
                 padding: 0 20px;
-
             }
 
 
             .header-logo {
 
                 width: 110px;
-
             }
 
 
@@ -420,25 +455,12 @@
                 padding: 9px 14px;
 
                 font-size: 12px;
-
-            }
-
-        }
-
-
-        @media (max-width: 450px) {
-
-            .title h1 {
-
-                font-size: 32px;
-
             }
 
 
-            .title p {
+            .service-card {
 
-                font-size: 12px;
-
+                min-height: auto;
             }
 
         }
@@ -498,19 +520,20 @@
         <div class="title">
 
             <span>
-                در ارتباط باشیم
+                خدمات ما
             </span>
 
 
             <h1>
-                تماس با ما
+                خدمات تخصصی بازرگانی
             </h1>
 
 
             <p>
 
-                برای ارتباط با بیکران گسترش تجارت پارسی
-                می‌توانید از راه‌های زیر با ما در تماس باشید.
+                بیکران گسترش تجارت پارسی
+                در مسیر تجارت و بازرگانی
+                همراه شماست.
 
             </p>
 
@@ -518,115 +541,233 @@
 
 
 
-        <!-- CONTACT CARDS -->
+        <!-- SERVICES -->
 
-        <div class="contact-grid">
-
-
-
-            <!-- PHONE -->
-
-            <div class="contact-card">
+        <div class="services-grid">
 
 
-                <div class="icon">
-                    ☎
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    🌍
                 </div>
 
 
-                <small>
-                    شماره‌های تماس
-                </small>
+                <h2>
+                    واردات و صادرات
+                </h2>
 
 
-                <strong>
+                <p>
+
+                    ارائه خدمات تخصصی در زمینه
+                    واردات و صادرات و همراهی
+                    در مسیر تجارت بین‌الملل.
+
+                </p>
 
 
-                    <a
-                        href="tel:880813447"
-                        class="phone-link"
-                    >
-                        ۸۸۰۸۱۳۴۴۷
-                    </a>
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
 
+                    ثبت درخواست ←
 
-                    <a
-                        href="tel:09981415115"
-                        class="phone-link"
-                    >
-                        ۰۹۹۸۱۴۱۵۱۱۵
-                    </a>
-
-
-                </strong>
+                </a>
 
 
             </div>
 
 
 
-            <!-- INSTAGRAM -->
+            <!-- SERVICE 2 -->
 
-            <div class="contact-card">
+            <div class="service-card">
 
 
-                <div class="icon">
-                    ◎
+                <div class="service-icon">
+                    🤝
                 </div>
 
 
-                <small>
-                    اینستاگرام
-                </small>
+                <h2>
+                    مشاوره بازرگانی
+                </h2>
 
 
-                <strong>
+                <p>
 
-                    <a
-                        href="https://instagram.com/bikaran_trade"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="instagram-link"
-                    >
-                        @bikaran_trade
-                    </a>
+                    ارائه مشاوره تخصصی در زمینه
+                    امور بازرگانی و تجارت
+                    بین‌الملل.
 
-                </strong>
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
 
 
             </div>
 
 
 
-            <!-- ADDRESS -->
+            <!-- SERVICE 3 -->
 
-            <div class="contact-card">
+            <div class="service-card">
 
 
-                <div class="icon">
-                    📍
+                <div class="service-icon">
+                    🛃
                 </div>
 
 
-                <small>
-                    آدرس
-                </small>
+                <h2>
+                    خدمات ترخیص کالا
+                </h2>
 
 
-                <strong class="address">
+                <p>
 
-                    تهران، شهرک غرب،
-                    بلوار فرحزادی،
-                    بعد از تقاطع دریا،
-                    خیابان شهید اناری،
-                    مجتمع اداری آریا،
-                    طبقه ۴،
-                    واحد ۴۰۶
+                    همراهی و ارائه خدمات تخصصی
+                    در فرآیندهای گمرکی و
+                    ترخیص کالا.
 
-                </strong>
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
 
 
             </div>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    ⚖️
+                </div>
+
+
+                <h2>
+                    خدمات حقوقی
+                </h2>
+
+
+                <p>
+
+                    ارائه خدمات و مشاوره حقوقی
+                    مرتبط با امور تجاری و
+                    فعالیت‌های بازرگانی.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card">
+
+
+                <div class="service-icon">
+                    📚
+                </div>
+
+
+                <h2>
+                    آموزش امور تخصصی بازرگانی خارجی
+                </h2>
+
+
+                <p>
+
+                    آموزش مفاهیم و مهارت‌های
+                    تخصصی مرتبط با امور
+                    بازرگانی خارجی و تجارت
+                    بین‌الملل.
+
+                </p>
+
+
+                <a
+                    href="consultation.html"
+                    class="service-link"
+                >
+
+                    ثبت درخواست ←
+
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- BOTTOM -->
+
+        <div class="bottom-box">
+
+
+            <h2>
+                برای شروع همکاری آماده‌اید؟
+            </h2>
+
+
+            <p>
+
+                برای دریافت مشاوره و اطلاعات
+                بیشتر با ما در ارتباط باشید.
+
+            </p>
+
+
+            <a
+                href="consultation.html"
+                class="consultation-button"
+            >
+
+                درخواست مشاوره ←
+
+            </a>
 
 
         </div>
