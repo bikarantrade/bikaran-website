@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
 <head>
 
@@ -39,9 +40,7 @@ a{
     top:0;
     right:0;
     left:0;
-
     height:80px;
-
     padding:0 25px;
 
     display:flex;
@@ -51,13 +50,9 @@ a{
     z-index:9999;
 }
 
-
-/* LOGO */
-
 .logo{
     width:120px;
     height:55px;
-
     object-fit:contain;
 }
 
@@ -71,29 +66,23 @@ a{
     background:#111;
 
     border:1px solid #d4a84f;
-
     border-radius:8px;
 
     display:flex;
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
 
     gap:6px;
 
     cursor:pointer;
-
-    padding:0;
 }
 
 .menu-button span{
-    display:block;
-
     width:23px;
     height:2px;
-
     background:#d4a84f;
+    display:block;
 }
 
 
@@ -103,9 +92,7 @@ a{
     min-height:100vh;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -113,12 +100,12 @@ a{
     padding:100px 20px 50px;
 
     background:
-    radial-gradient(
-        circle,
-        #29241c 0%,
-        #0d0d0d 50%,
-        #050505 100%
-    );
+        radial-gradient(
+            circle,
+            #29241c 0%,
+            #0d0d0d 50%,
+            #050505 100%
+        );
 }
 
 .hero-content{
@@ -128,37 +115,27 @@ a{
 
 .company{
     color:#d4a84f;
-
     font-size:18px;
-
     font-weight:bold;
-
     margin-bottom:20px;
 }
 
 h1{
     font-size:clamp(42px,7vw,78px);
-
     line-height:1.5;
-
     margin:0;
 }
 
 h1 span{
     display:block;
-
     color:#d4a84f;
 }
 
 .hero p{
     max-width:700px;
-
     margin:25px auto;
-
     color:#ddd;
-
     font-size:18px;
-
     line-height:2.2;
 }
 
@@ -167,41 +144,29 @@ h1 span{
 
 .buttons{
     display:flex;
-
     justify-content:center;
-
     gap:15px;
-
     flex-wrap:wrap;
-
     margin-top:30px;
 }
 
 .button{
     display:block;
-
     min-width:190px;
-
     padding:16px 25px;
-
     border-radius:8px;
-
     font-weight:bold;
-
     text-align:center;
 }
 
 .consult{
     background:#d4a84f;
-
     color:#111;
 }
 
 .services{
     background:#111;
-
     color:#fff;
-
     border:1px solid #d4a84f;
 }
 
@@ -210,7 +175,6 @@ h1 span{
 
 .overlay{
     position:fixed;
-
     inset:0;
 
     background:rgba(0,0,0,.75);
@@ -234,7 +198,6 @@ h1 span{
     right:0;
 
     width:320px;
-
     max-width:85%;
 
     height:100vh;
@@ -273,15 +236,12 @@ h1 span{
 
 .menu-logo{
     width:100px;
-
     height:50px;
-
     object-fit:contain;
 }
 
 .close{
     background:none;
-
     border:0;
 
     color:#d4a84f;
@@ -316,7 +276,6 @@ h1 span{
 
 .menu nav a:hover{
     color:#d4a84f;
-
     background:#1c1c1c;
 }
 
@@ -339,13 +298,11 @@ h1 span{
 
     .buttons{
         flex-direction:column;
-
         align-items:center;
     }
 
     .button{
         width:100%;
-
         max-width:280px;
     }
 
@@ -369,7 +326,7 @@ h1 span{
 <a href="index.html">
 
 <img
-src="https://bikarantrade.github.io/bikaran-website/logo.png.jpeg"
+src="logo.png.jpeg"
 class="logo"
 alt="بیکران گسترش تجارت پارسی"
 >
@@ -386,4 +343,190 @@ aria-label="باز کردن منو"
 
 <span></span>
 <span></span>
-<span><
+<span></span>
+
+</button>
+
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+
+<div class="company">
+
+بیکران گسترش تجارت پارسی
+
+</div>
+
+
+<h1>
+
+تجارت بین‌الملل
+
+<span>
+ساده‌تر از همیشه
+</span>
+
+</h1>
+
+
+<p>
+
+همراه شما در مسیر واردات، صادرات،
+مشاوره و آموزش امور تخصصی بازرگانی خارجی
+
+</p>
+
+
+<div class="buttons">
+
+
+<a
+href="consultation.html"
+class="button consult"
+>
+
+درخواست مشاوره
+
+</a>
+
+
+<a
+href="services.html"
+class="button services"
+>
+
+مشاهده خدمات
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeMenu()"
+></div>
+
+
+
+<aside
+class="menu"
+id="menu"
+>
+
+
+<div class="menu-top">
+
+
+<img
+src="logo.png.jpeg"
+class="menu-logo"
+alt="بیکران"
+>
+
+
+<button
+type="button"
+class="close"
+onclick="closeMenu()"
+>
+
+×
+
+</button>
+
+
+</div>
+
+
+<nav>
+
+
+<a href="index.html">
+خانه
+</a>
+
+
+<a href="services.html">
+خدمات
+</a>
+
+
+<a href="about.html">
+درباره ما
+</a>
+
+
+<a href="news.html">
+اخبار
+</a>
+
+
+<a href="consultation.html">
+مشاوره
+</a>
+
+
+<a href="contact.html">
+تماس با ما
+</a>
+
+
+</nav>
+
+
+</aside>
+
+
+
+<script>
+
+function openMenu(){
+
+    document
+    .getElementById("menu")
+    .classList
+    .add("active");
+
+    document
+    .getElementById("overlay")
+    .classList
+    .add("active");
+
+}
+
+
+function closeMenu(){
+
+    document
+    .getElementById("menu")
+    .classList
+    .remove("active");
+
+    document
+    .getElementById("overlay")
+    .classList
+    .remove("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
