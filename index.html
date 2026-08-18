@@ -1,132 +1,228 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>درباره ما | بیکران گسترش تجارت پارسی</title>
+<title>بیکران گسترش تجارت پارسی</title>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-.about-page{
-    min-height:100vh;
-    padding:130px 20px 70px;
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
     background:#080808;
-}
-
-.about-container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-.about-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.about-title span{
-    color:#d4a84f;
-    font-size:17px;
-    font-weight:700;
-}
-
-.about-title h1{
     color:#fff;
-    font-size:44px;
-    margin:15px 0;
-    font-weight:700;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
-.about-title p{
-    color:#999;
-    font-size:15px;
-    line-height:2;
+.home{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.about-box{
-    background:#111;
-    border:1px solid rgba(212,168,79,.2);
-    border-radius:16px;
-    padding:40px;
-    margin-bottom:25px;
+.home-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
 }
 
-.about-box h2{
+.home-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.62);
+    z-index:1;
+}
+
+.header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    height:80px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:100;
+}
+
+.logo{
+    width:120px;
+    height:55px;
+    object-fit:contain;
+}
+
+.menu-button{
+    width:48px;
+    height:48px;
+    border:1px solid #d4a84f;
+    border-radius:8px;
+    background:rgba(0,0,0,.5);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    cursor:pointer;
+}
+
+.menu-button span{
+    width:23px;
+    height:2px;
+    background:#d4a84f;
+}
+
+.home-content{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:900px;
+    text-align:center;
+}
+
+.small-title{
     color:#d4a84f;
-    font-size:25px;
+    font-size:18px;
+    font-weight:bold;
     margin-bottom:20px;
 }
 
-.about-box p{
-    color:#ddd;
-    font-size:15px;
-    line-height:2.5;
+.home-content h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.5;
+    margin:0;
 }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:25px;
+.home-content h1 span{
+    color:#d4a84f;
 }
 
-.about-card{
-    background:#111;
-    border:1px solid rgba(212,168,79,.18);
-    border-radius:14px;
-    padding:30px 22px;
-    text-align:center;
+.home-content p{
+    color:#eee;
+    font-size:18px;
+    line-height:2.2;
+    max-width:700px;
+    margin:25px auto;
+}
+
+.home-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.home-button{
+    display:inline-block;
+    padding:15px 30px;
+    border-radius:8px;
+    font-weight:bold;
     transition:.25s;
 }
 
-.about-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(212,168,79,.5);
-}
-
-.about-card h3{
-    color:#d4a84f;
-    font-size:19px;
-    margin-bottom:15px;
-}
-
-.about-card p{
-    color:#999;
-    font-size:14px;
-    line-height:2.2;
-}
-
-.back-home{
-    display:block;
-    width:max-content;
-    margin:45px auto 0;
-    padding:14px 28px;
+.gold{
     background:#d4a84f;
     color:#111;
-    border-radius:8px;
-    font-weight:700;
 }
 
-@media(max-width:700px){
+.dark{
+    border:1px solid #d4a84f;
+    color:#fff;
+    background:rgba(0,0,0,.4);
+}
 
-    .about-page{
-        padding-top:105px;
+.home-button:hover{
+    transform:translateY(-3px);
+}
+
+.side-menu{
+    position:fixed;
+    top:0;
+    right:0;
+    width:330px;
+    max-width:85%;
+    height:100vh;
+    background:#101010;
+    z-index:1000;
+    padding:30px;
+    transform:translateX(100%);
+    transition:.3s;
+    border-left:1px solid rgba(212,168,79,.3);
+}
+
+.side-menu.active{
+    transform:translateX(0);
+}
+
+.close{
+    color:#d4a84f;
+    font-size:35px;
+    border:0;
+    background:none;
+    cursor:pointer;
+}
+
+.side-menu nav{
+    margin-top:30px;
+}
+
+.side-menu nav a{
+    display:block;
+    color:#fff;
+    padding:17px;
+    border-radius:8px;
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.side-menu nav a:hover{
+    color:#d4a84f;
+    background:rgba(212,168,79,.1);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:999;
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+@media(max-width:600px){
+
+    .header{
+        height:70px;
+        padding:0 20px;
     }
 
-    .about-title h1{
-        font-size:34px;
+    .home-content h1{
+        font-size:40px;
     }
 
-    .about-box{
-        padding:25px;
+    .home-content p{
+        font-size:15px;
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
+    .home-button{
+        width:100%;
+        max-width:280px;
     }
 
 }
@@ -135,107 +231,58 @@
 
 </head>
 
-
 <body>
 
 
-<section class="about-page">
+<header class="header">
 
-<div class="about-container">
+<a href="https://bikarantrade.github.io/bikaran-website/">
+<img src="logo.png.jpeg" class="logo" alt="بیکران">
+</a>
+
+<button class="menu-button" onclick="openMenu()">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+</header>
 
 
-<div class="about-title">
+<section class="home">
 
-<span>
+<img
+src="logo.png.jpeg"
+class="home-bg"
+alt=""
+>
+
+<div class="home-overlay"></div>
+
+
+<div class="home-content">
+
+<div class="small-title">
 بیکران گسترش تجارت پارسی
-</span>
+</div>
 
 <h1>
-درباره ما
+همراه شما در
+<span>تجارت بین‌الملل</span>
 </h1>
 
 <p>
-آشنایی با مجموعه و مسیر فعالیت ما در حوزه تجارت و بازرگانی
+ارائه خدمات تخصصی بازرگانی،
+مشاوره و آموزش امور تخصصی بازرگانی خارجی
+برای توسعه کسب‌وکار شما.
 </p>
 
-</div>
 
+<div class="home-buttons">
 
-<div class="about-box">
-
-<h2>
-بیکران گسترش تجارت پارسی
-</h2>
-
-<p>
-
-مجموعه بیکران گسترش تجارت پارسی با هدف ارائه خدمات تخصصی
-در حوزه بازرگانی و تجارت بین‌الملل فعالیت می‌کند.
-ما تلاش می‌کنیم با ارائه مشاوره و خدمات تخصصی،
-مسیر تجارت را برای مشتریان خود ساده‌تر و مطمئن‌تر کنیم.
-
-</p>
-
-</div>
-
-
-<div class="about-grid">
-
-
-<div class="about-card">
-
-<h3>
-تخصص
-</h3>
-
-<p>
-ارائه خدمات و مشاوره تخصصی در حوزه امور بازرگانی خارجی.
-</p>
-
-</div>
-
-
-<div class="about-card">
-
-<h3>
-اعتماد
-</h3>
-
-<p>
-تلاش برای ایجاد ارتباطی شفاف، حرفه‌ای و قابل اعتماد با مشتریان.
-</p>
-
-</div>
-
-
-<div class="about-card">
-
-<h3>
-تجارت بین‌الملل
-</h3>
-
-<p>
-همراهی در مسیر واردات، صادرات و توسعه فعالیت‌های تجاری.
-</p>
-
-</div>
-
-
-</div>
-
-
-<a href="index.html" class="back-home">
-
-بازگشت به صفحه اصلی
-
-</a>
-
-
-</div>
-
-</section>
-
-
-</body>
-
-</html>
+<a
+href="consultation.html"
+class="home-button gold"
+>
+درخواست مشاوره
+</a
