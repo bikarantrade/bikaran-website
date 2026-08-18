@@ -1,288 +1,377 @@
 <!DOCTYPE html><html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>بیکران گسترش تجارت پارسی</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     margin:0;
     background:#080808;
     color:#fff;
-    font-family:Tahoma,Arial,sans-serif;
+    font-family:Tahoma, Arial, sans-serif;
+    overflow-x:hidden;
 }
 
-.home{
-    min-height:100vh;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+a{
+    text-decoration:none;
 }
 
-.home-bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:0;
-}
 
-.home-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.62);
-    z-index:1;
-}
+/* =========================
+   HEADER
+========================= */
 
 .header{
     position:fixed;
+
     top:0;
     right:0;
     left:0;
+
+    width:100%;
     height:80px;
+
     padding:0 5%;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    z-index:100;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,.20);
 }
 
+
+/* LOGO */
+
 .logo{
-    width:120px;
+    width:125px;
     height:55px;
+
     object-fit:contain;
 }
 
+
+/* =========================
+   THREE LINE MENU
+========================= */
+
 .menu-button{
-    width:48px;
-    height:48px;
+
+    width:50px;
+    height:50px;
+
     border:1px solid #d4a84f;
+
     border-radius:8px;
-    background:rgba(0,0,0,.5);
+
+    background:rgba(0,0,0,.55);
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
-    gap:5px;
+
+    gap:6px;
+
     cursor:pointer;
+
+    position:relative;
+
+    z-index:2001;
 }
 
 .menu-button span{
-    width:23px;
+
+    display:block;
+
+    width:24px;
+
     height:2px;
+
     background:#d4a84f;
+
+    transition:.3s;
 }
 
-.home-content{
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
     position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* BACKGROUND */
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:0;
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.70),
+            rgba(0,0,0,.62)
+        );
+
+    z-index:1;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+
+    position:relative;
+
     z-index:2;
+
     width:90%;
-    max-width:900px;
+
+    max-width:950px;
+
     text-align:center;
+
+    padding-top:70px;
 }
 
-.small-title{
+
+.company-name{
+
+    display:block;
+
     color:#d4a84f;
+
     font-size:18px;
+
     font-weight:bold;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
 }
 
-.home-content h1{
+
+.hero-content h1{
+
     font-size:clamp(42px,7vw,78px);
+
     line-height:1.5;
+
+    font-weight:700;
+
     margin:0;
 }
 
-.home-content h1 span{
+.hero-content h1 span{
+
+    display:block;
+
     color:#d4a84f;
 }
 
-.home-content p{
+
+.hero-content p{
+
+    max-width:720px;
+
+    margin:25px auto 0;
+
     color:#eee;
+
     font-size:18px;
+
     line-height:2.2;
-    max-width:700px;
-    margin:25px auto;
 }
 
+
+/* =========================
+   HOME BUTTONS
+========================= */
+
 .home-buttons{
+
     display:flex;
+
     justify-content:center;
+
+    align-items:center;
+
     gap:15px;
+
+    margin-top:35px;
+
     flex-wrap:wrap;
 }
 
+
 .home-button{
-    display:inline-block;
-    padding:15px 30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:190px;
+
+    padding:16px 28px;
+
     border-radius:8px;
+
+    font-size:15px;
+
     font-weight:bold;
+
     transition:.25s;
-}
 
-.gold{
-    background:#d4a84f;
-    color:#111;
-}
-
-.dark{
-    border:1px solid #d4a84f;
-    color:#fff;
-    background:rgba(0,0,0,.4);
-}
-
-.home-button:hover{
-    transform:translateY(-3px);
-}
-
-.side-menu{
-    position:fixed;
-    top:0;
-    right:0;
-    width:330px;
-    max-width:85%;
-    height:100vh;
-    background:#101010;
-    z-index:1000;
-    padding:30px;
-    transform:translateX(100%);
-    transition:.3s;
-    border-left:1px solid rgba(212,168,79,.3);
-}
-
-.side-menu.active{
-    transform:translateX(0);
-}
-
-.close{
-    color:#d4a84f;
-    font-size:35px;
-    border:0;
-    background:none;
     cursor:pointer;
 }
 
-.side-menu nav{
-    margin-top:30px;
+
+.consultation{
+
+    background:#d4a84f;
+
+    color:#111;
 }
 
-.side-menu nav a{
-    display:block;
+
+.services{
+
+    background:rgba(0,0,0,.45);
+
     color:#fff;
-    padding:17px;
-    border-radius:8px;
-    font-size:16px;
-    margin-bottom:5px;
+
+    border:1px solid #d4a84f;
 }
 
-.side-menu nav a:hover{
-    color:#d4a84f;
-    background:rgba(212,168,79,.1);
+
+.home-button:hover{
+
+    transform:translateY(-3px);
 }
 
-.overlay{
+
+/* =========================
+   DARK OVERLAY FOR MENU
+========================= */
+
+.menu-overlay{
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.7);
-    z-index:999;
-    display:none;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:1998;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
 }
 
-.overlay.active{
-    display:block;
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
 }
 
-@media(max-width:600px){
 
-    .header{
-        height:70px;
-        padding:0 20px;
-    }
+/* =========================
+   SIDE MENU
+========================= */
 
-    .home-content h1{
-        font-size:40px;
-    }
+.side-menu{
 
-    .home-content p{
-        font-size:15px;
-    }
+    position:fixed;
 
-    .home-button{
-        width:100%;
-        max-width:280px;
-    }
+    top:0;
 
-}
+    right:0;
 
-</style>
+    width:340px;
 
-</head>
+    max-width:88%;
 
-<body>
+    height:100vh;
 
+    background:#101010;
 
-<header class="header">
+    border-left:1px solid rgba(212,168,79,.35);
 
-<a href="https://bikarantrade.github.io/bikaran-website/">
-<img src="logo.png.jpeg" class="logo" alt="بیکران">
-</a>
+    z-index:2000;
 
-<button class="menu-button" onclick="openMenu()">
-<span></span>
-<span></span>
-<span></span>
-</button>
+    padding:25px;
 
-</header>
+    transform:translateX(100%);
 
+    transition:.35s ease;
 
-<section class="home">
-
-<img
-src="logo.png.jpeg"
-class="home-bg"
-alt=""
->
-
-<div class="home-overlay"></div>
-
-
-<div class="home-content">
-
-<div class="small-title">
-بیکران گسترش تجارت پارسی
-</div>
-
-<h1>
-همراه شما در
-<span>تجارت بین‌الملل</span>
-</h1>
-
-<p>
-ارائه خدمات تخصصی بازرگانی،
-مشاوره و آموزش امور تخصصی بازرگانی خارجی
-برای توسعه کسب‌وکار شما.
-</p>
-
-
-<div class="home-buttons">
-
-<a
-href="consultation.html"
-class="home-button gold"
->
-درخواست مشاوره
-</a
+    o
