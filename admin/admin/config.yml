@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: melinaamiri91/bikaran-website
+  branch: main
+
+media_folder: "images/news"
+public_folder: "/bikaran-website/images/news"
+
+locale: "fa"
+
+collections:
+
+  - name: "news"
+    label: "اخبار"
+    label_singular: "خبر"
+    folder: "content/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    fields:
+
+      - label: "عنوان خبر"
+        name: "title"
+        widget: "string"
+
+      - label: "تاریخ"
+        name: "date"
+        widget: "string"
+
+      - label: "تصویر خبر"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "متن خبر"
+        name: "body"
+        widget: "markdown"
+
+      - label: "لینک خبر"
+        name: "link"
+        widget: "string"
+        required: false
