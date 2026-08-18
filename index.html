@@ -3,247 +3,261 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>بیکران گسترش تجارت پارسی</title>
 
-    <meta
-        name="description"
-        content="بیکران گسترش تجارت پارسی | تجارت بین‌الملل، واردات، صادرات و خدمات بازرگانی"
-    >
-
-    <link rel="stylesheet" href="style.css">
-
     <style>
 
-        /* =========================
-           HOME PAGE
-        ========================= */
-
-        .home-page {
-            min-height: 100vh;
-            background: #090909;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .home-hero {
-            min-height: 100vh;
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #080808;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
 
-            position: relative;
-            overflow: hidden;
+            height: 80px;
 
             display: flex;
             align-items: center;
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            z-index: 1000;
+
+            background: rgba(8,8,8,.75);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(212,168,79,.08);
+        }
+
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            color: #d4a84f;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo-sub {
+            color: #777;
+            font-size: 9px;
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           MENU BUTTON
+        ========================= */
+
+        .menu-button {
+            width: 48px;
+            height: 48px;
+
+            border: 1px solid rgba(212,168,79,.35);
+            border-radius: 8px;
+
+            background: rgba(212,168,79,.05);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+
+            gap: 5px;
+
+            cursor: pointer;
+        }
+
+        .menu-button span {
+            width: 22px;
+            height: 2px;
+
+            background: #d4a84f;
+
+            display: block;
+
+            transition: .3s;
+        }
+
+        .menu-button:hover {
+            background: rgba(212,168,79,.12);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
 
             background:
                 radial-gradient(
-                    circle at 75% 45%,
-                    rgba(212,168,79,0.13),
-                    transparent 32%
-                ),
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(212,168,79,0.05),
+                    circle at 75% 50%,
+                    rgba(212,168,79,.13),
                     transparent 30%
                 ),
-                #090909;
-        }
-
-        /* خطوط تزئینی */
-
-        .home-hero::before {
-            content: "";
-            position: absolute;
-
-            width: 700px;
-            height: 700px;
-
-            border: 1px solid rgba(212,168,79,0.08);
-            border-radius: 50%;
-
-            right: -250px;
-            top: 50%;
-
-            transform: translateY(-50%);
-        }
-
-        .home-hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            border: 1px solid rgba(212,168,79,0.08);
-            border-radius: 50%;
-
-            right: -150px;
-            top: 50%;
-
-            transform: translateY(-50%);
+                #080808;
         }
 
 
-        /* محتوای اصلی */
-
-        .home-container {
-            width: min(1180px, calc(100% - 40px));
+        .hero-content {
+            width: 90%;
+            max-width: 1200px;
 
             margin: 0 auto;
 
-            padding-top: 82px;
+            padding-top: 80px;
 
             display: grid;
 
-            grid-template-columns: 1.1fr .9fr;
+            grid-template-columns: 1fr 1fr;
 
             align-items: center;
 
             gap: 70px;
 
             position: relative;
-
             z-index: 2;
         }
 
 
-        /* متن */
+        /* =========================
+           HERO TEXT
+        ========================= */
 
-        .home-text {
+        .hero-text {
             text-align: right;
         }
 
-        .home-small-title {
-            display: inline-block;
-
+        .small-title {
             color: #d4a84f;
 
             font-size: 14px;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
 
-            position: relative;
-
-            padding-right: 35px;
-        }
-
-        .home-small-title::before {
-            content: "";
-
-            position: absolute;
-
-            right: 0;
-            top: 50%;
-
-            width: 25px;
-            height: 1px;
-
-            background: #d4a84f;
-        }
-
-
-        .home-title {
-            margin: 0;
-
-            font-size: clamp(42px, 5.5vw, 72px);
-
-            line-height: 1.35;
-
-            font-weight: 700;
-
-            color: #fff;
-        }
-
-        .home-title-gold {
             display: block;
+        }
 
+        .hero-title {
+            font-size: clamp(40px, 5vw, 70px);
+
+            line-height: 1.4;
+
+            font-weight: bold;
+
+            color: white;
+        }
+
+        .hero-title span {
             color: #d4a84f;
 
-            margin-top: 5px;
+            display: block;
         }
 
-
-        .home-description {
+        .hero-text p {
             color: #999;
 
             font-size: 16px;
 
-            line-height: 2.2;
+            line-height: 2;
 
             margin-top: 25px;
-
-            max-width: 570px;
         }
 
 
-        /* دکمه ها */
+        /* =========================
+           BUTTONS
+        ========================= */
 
-        .home-buttons {
+        .buttons {
             display: flex;
 
-            justify-content: flex-start;
-
-            gap: 14px;
+            gap: 15px;
 
             margin-top: 35px;
 
             flex-wrap: wrap;
         }
 
-        .home-button {
-            min-width: 175px;
+        .button {
+            padding: 15px 25px;
 
-            padding: 14px 23px;
-
-            border-radius: 8px;
-
-            display: inline-flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 15px;
+            border-radius: 7px;
 
             font-size: 13px;
 
             transition: .3s;
 
-            cursor: pointer;
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
         }
 
-        .home-button-primary {
+        .button-primary {
             background: #d4a84f;
-
             color: #111;
-
-            border: 1px solid #d4a84f;
         }
 
-        .home-button-primary:hover {
-            background: #e4bb67;
-
+        .button-primary:hover {
             transform: translateY(-3px);
-
-            box-shadow:
-                0 10px 30px rgba(212,168,79,.15);
+            background: #e4ba63;
         }
 
-        .home-button-secondary {
+        .button-secondary {
             color: #d4a84f;
 
-            border: 1px solid rgba(212,168,79,.45);
-
-            background: rgba(212,168,79,.04);
+            border: 1px solid rgba(212,168,79,.5);
         }
 
-        .home-button-secondary:hover {
+        .button-secondary:hover {
             background: rgba(212,168,79,.1);
 
             transform: translateY(-3px);
@@ -251,143 +265,241 @@
 
 
         /* =========================
-           LOGO سمت راست
+           LOGO CIRCLE
         ========================= */
 
-        .home-visual {
-            min-height: 520px;
+        .visual {
+            height: 500px;
+
+            position: relative;
 
             display: flex;
 
-            justify-content: center;
-
             align-items: center;
 
-            position: relative;
+            justify-content: center;
         }
 
 
-        .visual-ring {
+        .circle {
             position: absolute;
 
             border-radius: 50%;
 
-            border: 1px solid rgba(212,168,79,.22);
+            border: 1px solid rgba(212,168,79,.18);
         }
 
-        .visual-ring-1 {
-            width: 430px;
-            height: 430px;
+        .circle.one {
+            width: 450px;
+            height: 450px;
         }
 
-        .visual-ring-2 {
-            width: 330px;
-            height: 330px;
+        .circle.two {
+            width: 340px;
+            height: 340px;
 
-            border-color: rgba(212,168,79,.3);
+            border-color: rgba(212,168,79,.25);
         }
 
-        .visual-ring-3 {
-            width: 210px;
-            height: 210px;
+        .circle.three {
+            width: 220px;
+            height: 220px;
 
-            border-color: rgba(212,168,79,.42);
+            border-color: rgba(212,168,79,.4);
         }
 
 
-        .visual-dot {
-            width: 8px;
-            height: 8px;
+        .visual-logo {
+            position: relative;
+
+            z-index: 5;
+
+            text-align: center;
+        }
+
+        .visual-logo strong {
+            color: #d4a84f;
+
+            font-size: 70px;
+
+            display: block;
+        }
+
+        .visual-logo span {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           DECORATION
+        ========================= */
+
+        .dot {
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
 
             background: #d4a84f;
 
             border-radius: 50%;
 
-            position: absolute;
+            box-shadow: 0 0 20px #d4a84f;
+        }
 
-            box-shadow:
-                0 0 25px rgba(212,168,79,.6);
+        .dot-one {
+            right: 20%;
+            top: 18%;
+        }
+
+        .dot-two {
+            left: 18%;
+            bottom: 18%;
         }
 
 
-        .visual-dot-1 {
-            top: 95px;
-            right: 90px;
+        /* =========================
+           SIDE MENU
+        ========================= */
+
+        .overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,.7);
+
+            z-index: 1999;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .3s;
         }
 
-        .visual-dot-2 {
-            bottom: 100px;
-            left: 80px;
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
 
-        .home-logo {
-            position: relative;
+        .side-menu {
+            position: fixed;
 
-            z-index: 5;
+            top: 0;
+            right: 0;
+
+            width: 330px;
+            max-width: 85%;
+
+            height: 100vh;
+
+            background: #101010;
+
+            border-left: 1px solid rgba(212,168,79,.2);
+
+            z-index: 2000;
+
+            transform: translateX(100%);
+
+            transition: .35s;
+
+            padding: 35px 28px;
 
             display: flex;
 
             flex-direction: column;
-
-            align-items: center;
-
-            text-align: center;
         }
 
-        .home-logo-main {
-            color: #d4a84f;
-
-            font-size: clamp(55px, 7vw, 90px);
-
-            font-weight: bold;
-
-            line-height: 1;
-        }
-
-        .home-logo-sub {
-            color: #777;
-
-            font-size: 13px;
-
-            margin-top: 12px;
+        .side-menu.active {
+            transform: translateX(0);
         }
 
 
-        /* خط پایین */
-
-        .home-bottom-info {
-            position: absolute;
-
-            bottom: 35px;
-
-            right: 50%;
-
-            transform: translateX(50%);
-
-            width: min(1180px, calc(100% - 40px));
-
+        .menu-top {
             display: flex;
 
             align-items: center;
 
             justify-content: space-between;
 
+            padding-bottom: 25px;
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+
+        .menu-logo strong {
+            color: #d4a84f;
+
+            display: block;
+
+            font-size: 25px;
+        }
+
+        .menu-logo span {
+            color: #777;
+
+            font-size: 9px;
+        }
+
+
+        .close-button {
+            background: none;
+
+            border: none;
+
+            color: #d4a84f;
+
+            font-size: 35px;
+
+            cursor: pointer;
+        }
+
+
+        .menu-links {
+            margin-top: 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+
+        .menu-links a {
+            color: #ddd;
+
+            padding: 18px;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            transition: .3s;
+        }
+
+        .menu-links a:hover {
+            background: rgba(212,168,79,.08);
+
+            color: #d4a84f;
+
+            padding-right: 25px;
+        }
+
+
+        .menu-footer {
+            margin-top: auto;
+
             color: #555;
 
             font-size: 10px;
 
-            z-index: 5;
-        }
-
-        .home-bottom-line {
-            height: 1px;
-
-            flex: 1;
-
-            background: rgba(255,255,255,.08);
-
-            margin: 0 20px;
+            text-align: center;
         }
 
 
@@ -395,200 +507,257 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 800px) {
 
-            .home-container {
+            .top-header {
+                height: 70px;
+
+                padding: 0 20px;
+            }
+
+            .hero-content {
+                width: 90%;
+
                 grid-template-columns: 1fr;
 
                 gap: 10px;
 
-                padding-top: 105px;
+                padding-top: 100px;
 
-                padding-bottom: 100px;
+                padding-bottom: 50px;
             }
 
-            .home-text {
+            .hero {
+                min-height: 100vh;
+            }
+
+            .hero-text {
                 text-align: center;
-
-                display: flex;
-
-                flex-direction: column;
-
-                align-items: center;
             }
 
-            .home-small-title {
-                padding-right: 0;
+            .small-title {
+                font-size: 12px;
             }
 
-            .home-small-title::before {
-                display: none;
+            .hero-title {
+                font-size: 42px;
             }
 
-            .home-title {
-                font-size: 43px;
-            }
-
-            .home-description {
-                max-width: 500px;
-
+            .hero-text p {
                 font-size: 14px;
             }
 
-            .home-buttons {
+            .buttons {
                 justify-content: center;
-
-                width: 100%;
             }
 
-            .home-button {
+            .button {
                 min-width: 160px;
             }
 
-            .home-visual {
-                min-height: 300px;
+            .visual {
+                height: 300px;
             }
 
-            .visual-ring-1 {
-                width: 280px;
-                height: 280px;
+            .circle.one {
+                width: 270px;
+                height: 270px;
             }
 
-            .visual-ring-2 {
-                width: 220px;
-                height: 220px;
+            .circle.two {
+                width: 205px;
+                height: 205px;
             }
 
-            .visual-ring-3 {
-                width: 140px;
-                height: 140px;
+            .circle.three {
+                width: 135px;
+                height: 135px;
             }
 
-            .home-logo-main {
-                font-size: 55px;
-            }
-
-            .home-logo-sub {
-                font-size: 10px;
-            }
-
-            .visual-dot-1 {
-                top: 30px;
-                right: 50px;
-            }
-
-            .visual-dot-2 {
-                bottom: 35px;
-                left: 45px;
+            .visual-logo strong {
+                font-size: 50px;
             }
 
         }
 
 
-        @media (max-width: 500px) {
+        @media (max-width: 480px) {
 
-            .home-container {
-                width: calc(100% - 28px);
+            .hero-title {
+                font-size: 35px;
             }
 
-            .home-title {
-                font-size: 36px;
-            }
-
-            .home-description {
+            .hero-text p {
                 font-size: 13px;
             }
 
-            .home-buttons {
+            .buttons {
                 flex-direction: column;
 
                 align-items: center;
             }
 
-            .home-button {
+            .button {
                 width: 100%;
-
                 max-width: 300px;
             }
 
-            .home-visual {
-                min-height: 250px;
+            .visual {
+                height: 250px;
             }
 
-            .home-bottom-info {
-                display: none;
+            .logo-main {
+                font-size: 23px;
             }
 
         }
 
     </style>
-
 </head>
 
 
-<body class="home-page">
+<body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
-<header class="header">
+<header class="top-header">
 
-    <div class="header-inner">
+    <a href="index.html" class="logo">
 
+        <span class="logo-main">
+            بیکران
+        </span>
 
-        <a
-            href="index.html"
-            class="logo"
-        >
+        <span class="logo-sub">
+            گسترش تجارت پارسی
+        </span>
 
-            <span class="logo-main">
-                بیکران
-            </span>
-
-            <span class="logo-sub">
-                گسترش تجارت پارسی
-            </span>
-
-        </a>
+    </a>
 
 
-        <!-- سه خط -->
+    <button
+        class="menu-button"
+        id="openMenu"
+        aria-label="منو"
+    >
 
-        <button
-            class="menu-button"
-            id="menuButton"
-            aria-label="باز کردن منو"
-        >
+        <span></span>
+        <span></span>
+        <span></span>
 
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-
-    </div>
+    </button>
 
 </header>
 
 
 
-<!-- =========================
-     OVERLAY
-========================= -->
+<!-- HERO -->
+
+<main>
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-text">
+
+            <span class="small-title">
+                بیکران گسترش تجارت پارسی
+            </span>
+
+
+            <h1 class="hero-title">
+
+                تجارت بین‌الملل،
+
+                <span>
+                    ساده‌تر از همیشه
+                </span>
+
+            </h1>
+
+
+            <p>
+                همراه شما در مسیر واردات،
+                صادرات و خدمات بازرگانی
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="contact.html"
+                    class="button button-primary"
+                >
+                    درخواست مشاوره
+                    <span>←</span>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="button button-secondary"
+                >
+                    مشاهده خدمات
+                    <span>←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="visual">
+
+            <div class="circle one"></div>
+
+            <div class="circle two"></div>
+
+            <div class="circle three"></div>
+
+            <div class="dot dot-one"></div>
+
+            <div class="dot dot-two"></div>
+
+
+            <div class="visual-logo">
+
+                <strong>
+                    بیکران
+                </strong>
+
+                <span>
+                    گسترش تجارت پارسی
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+</main>
+
+
+
+<!-- OVERLAY -->
 
 <div
-    class="menu-overlay"
-    id="menuOverlay"
+    class="overlay"
+    id="overlay"
 ></div>
 
 
 
-<!-- =========================
-     SIDE MENU
-========================= -->
+<!-- SIDE MENU -->
 
 <aside
     class="side-menu"
@@ -596,10 +765,10 @@
 >
 
 
-    <div class="side-menu-header">
+    <div class="menu-top">
 
 
-        <div class="side-logo">
+        <div class="menu-logo">
 
             <strong>
                 بیکران
@@ -613,56 +782,43 @@
 
 
         <button
-            class="close-menu"
+            class="close-button"
             id="closeMenu"
-            aria-label="بستن منو"
         >
             ×
         </button>
-
 
     </div>
 
 
 
-    <nav class="side-nav">
-
+    <nav class="menu-links">
 
         <a href="index.html">
-            <span>⌂</span>
             خانه
         </a>
 
-
         <a href="services.html">
-            <span>◆</span>
             خدمات
         </a>
 
-
         <a href="about.html">
-            <span>◇</span>
             درباره ما
         </a>
 
-
         <a href="news.html">
-            <span>▣</span>
             اخبار
         </a>
 
-
         <a href="contact.html">
-            <span>☎</span>
             تماس با ما
         </a>
-
 
     </nav>
 
 
 
-    <div class="side-menu-footer">
+    <div class="menu-footer">
 
         تجارت بین‌الملل، ساده‌تر از همیشه
 
@@ -673,216 +829,44 @@
 
 
 
-<!-- =========================
-     HOME
-========================= -->
-
-<main>
-
-
-<section class="home-hero">
-
-
-    <div class="home-container">
-
-
-        <!-- متن -->
-
-        <div class="home-text">
-
-
-            <span class="home-small-title">
-                بیکران گسترش تجارت پارسی
-            </span>
-
-
-            <h1 class="home-title">
-
-                تجارت بین‌الملل،
-
-                <span class="home-title-gold">
-                    ساده‌تر از همیشه
-                </span>
-
-            </h1>
-
-
-            <p class="home-description">
-
-                همراه شما در مسیر واردات،
-                صادرات و خدمات بازرگانی
-
-            </p>
-
-
-
-            <div class="home-buttons">
-
-
-                <a
-                    href="contact.html"
-                    class="home-button home-button-primary"
-                >
-
-                    درخواست مشاوره
-
-                    <span>
-                        ←
-                    </span>
-
-                </a>
-
-
-
-                <a
-                    href="services.html"
-                    class="home-button home-button-secondary"
-                >
-
-                    مشاهده خدمات
-
-                    <span>
-                        ←
-                    </span>
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- لوگو -->
-
-        <div class="home-visual">
-
-
-            <div class="visual-ring visual-ring-1"></div>
-
-            <div class="visual-ring visual-ring-2"></div>
-
-            <div class="visual-ring visual-ring-3"></div>
-
-
-            <div class="visual-dot visual-dot-1"></div>
-
-            <div class="visual-dot visual-dot-2"></div>
-
-
-            <div class="home-logo">
-
-                <span class="home-logo-main">
-                    بیکران
-                </span>
-
-                <span class="home-logo-sub">
-                    گسترش تجارت پارسی
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- پایین صفحه -->
-
-    <div class="home-bottom-info">
-
-        <span>
-            تجارت بین‌الملل
-        </span>
-
-        <div class="home-bottom-line"></div>
-
-        <span>
-            BIKARAN TRADE
-        </span>
-
-    </div>
-
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================
-     SCRIPT
-========================= -->
-
 <script>
 
-const menuButton =
-    document.getElementById("menuButton");
+    const openMenu =
+        document.getElementById("openMenu");
 
-const closeMenu =
-    document.getElementById("closeMenu");
+    const closeMenu =
+        document.getElementById("closeMenu");
 
-const sideMenu =
-    document.getElementById("sideMenu");
+    const sideMenu =
+        document.getElementById("sideMenu");
 
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-
-function openMenu() {
-
-    sideMenu.classList.add("open");
-
-    menuOverlay.classList.add("show");
-
-    document.body.classList.add("menu-open");
-
-}
+    const overlay =
+        document.getElementById("overlay");
 
 
-function closeMenuFunction() {
+    openMenu.addEventListener("click", function () {
 
-    sideMenu.classList.remove("open");
+        sideMenu.classList.add("active");
 
-    menuOverlay.classList.remove("show");
+        overlay.classList.add("active");
 
-    document.body.classList.remove("menu-open");
-
-}
+    });
 
 
-menuButton.addEventListener(
-    "click",
-    openMenu
-);
+    closeMenu.addEventListener("click", function () {
+
+        sideMenu.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+    });
 
 
-closeMenu.addEventListener(
-    "click",
-    closeMenuFunction
-);
+    overlay.addEventListener("click", function () {
 
+        sideMenu.classList.remove("active");
 
-menuOverlay.addEventListener(
-    "click",
-    closeMenuFunction
-);
-
-
-document
-    .querySelectorAll(".side-nav a")
-    .forEach(function(link) {
-
-        link.addEventListener(
-            "click",
-            closeMenuFunction
-        );
+        overlay.classList.remove("active");
 
     });
 
@@ -891,5 +875,4 @@ document
 
 
 </body>
-
 </html>
