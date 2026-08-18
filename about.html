@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>درباره ما | بیکران گسترش تجارت پارسی</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">بیکران</span>
+            <span class="logo-sub">گسترش تجارت پارسی</span>
+        </a>
+
+        <button class="menu-button" id="menuButton">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+
+        <div class="side-logo">
+            <strong>بیکران</strong>
+            <span>گسترش تجارت پارسی</span>
+        </div>
+
+        <button class="close-menu" id="closeMenu">
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="side-nav">
+
+        <a href="index.html">⌂ خانه</a>
+        <a href="services.html">◆ خدمات</a>
+        <a href="about.html">◇ درباره ما</a>
+        <a href="news.html">▣ اخبار</a>
+        <a href="contact.html">☎ تماس با ما</a>
+
+    </nav>
+
+</aside>
+
+
+<main>
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span>
+            درباره ما
+        </span>
+
+        <h1>
+            همراه مطمئن شما در
+            <strong>تجارت</strong>
+        </h1>
+
+        <p>
+            اعتماد، شفافیت و تخصص در کنار شما
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container about-content">
+
+        <div class="about-big">
+
+            <span>✦</span>
+
+            <strong>
+                بیکران
+            </strong>
+
+            <small>
+                گسترش تجارت پارسی
+            </small>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <h2>
+                درباره بیکران گسترش تجارت پارسی
+            </h2>
+
+            <p>
+                بیکران گسترش تجارت پارسی با هدف ارائه
+                خدمات حرفه‌ای و تخصصی در حوزه تجارت و
+                بازرگانی خارجی فعالیت می‌کند.
+            </p>
+
+            <p>
+                ما در مسیر واردات و صادرات، مشاوره
+                بازرگانی، خدمات ترخیص کالا، خدمات حقوقی
+                و امور تخصصی بازرگانی خارجی در کنار
+                مشتریان خود هستیم.
+            </p>
+
+            <p>
+                رویکرد ما بر پایه اعتماد، شفافیت،
+                مسئولیت‌پذیری و ارائه راهکارهای متناسب
+                با نیاز هر کسب‌وکار شکل گرفته است.
+            </p>
+
+
+            <div class="experience-features">
+
+                <div class="feature">
+                    <span>✓</span>
+                    <p>اعتماد و شفافیت</p>
+                </div>
+
+                <div class="feature">
+                    <span>✓</span>
+                    <p>خدمات تخصصی</p>
+                </div>
+
+                <div class="feature">
+                    <span>✓</span>
+                    <p>مسئولیت‌پذیری</p>
+                </div>
+
+                <div class="feature">
+                    <span>✓</span>
+                    <p>همکاری پایدار</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+const menuButton = document.getElementById("menuButton");
+const closeMenu = document.getElementById("closeMenu");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+
+menuButton.onclick = function () {
+    sideMenu.classList.add("open");
+    menuOverlay.classList.add("show");
+};
+
+closeMenu.onclick = function () {
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("show");
+};
+
+menuOverlay.onclick = function () {
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("show");
+};
+
+</script>
+
+</body>
+</html>
