@@ -4,243 +4,184 @@
 
 html,
 body{
-    margin:0;
-    padding:0;
-    width:100%;
+    margin:0 !important;
+    padding:0 !important;
     min-height:100%;
 }
 
 body{
-    background:#050505;
-    color:#fff;
+    background:#030303 !important;
+    color:#fff !important;
     font-family:Tahoma,Arial,sans-serif;
     overflow-x:hidden;
 }
 
-a{
-    text-decoration:none;
-}
 
-
-/* ================= GLOBAL PAGE ================= */
+/* ===== BACKGROUND ALL INNER PAGES ===== */
 
 .page{
-    min-height:100vh;
+    min-height:100vh !important;
 
-    padding:
-        110px
-        20px
-        70px;
+    padding:120px 20px 80px !important;
 
     position:relative;
 
     background:
         radial-gradient(
-            circle at 50% 10%,
-            rgba(212,168,79,.14) 0%,
-            rgba(212,168,79,.06) 20%,
-            rgba(0,0,0,0) 52%
+            circle at 50% 0%,
+            rgba(212,168,79,.18) 0%,
+            rgba(212,168,79,.08) 18%,
+            transparent 48%
         ),
         radial-gradient(
-            circle at 5% 80%,
-            rgba(212,168,79,.07) 0%,
-            rgba(0,0,0,0) 35%
+            circle at 0% 100%,
+            rgba(212,168,79,.08) 0%,
+            transparent 35%
         ),
         linear-gradient(
             135deg,
-            #151515 0%,
-            #090909 45%,
-            #030303 100%
-        );
+            #181818 0%,
+            #0b0b0b 45%,
+            #020202 100%
+        ) !important;
 }
+
+
+/* ===== CONTAINER ===== */
 
 .container{
     width:90%;
     max-width:1000px;
-    margin:0 auto;
+    margin:auto;
 }
 
 
-/* ================= TITLES ================= */
+/* ===== PAGE TITLE ===== */
 
 h1{
-    margin:0 0 15px;
+    color:#fff !important;
 
     text-align:center;
 
-    font-size:
-        clamp(38px,6vw,52px);
+    font-size:clamp(38px,6vw,55px) !important;
 
     line-height:1.5;
 
-    font-weight:700;
+    margin:0 0 15px !important;
 
     text-shadow:
         0 5px 25px rgba(0,0,0,.8);
 }
 
 .gold{
-    text-align:center;
+    color:#d4a84f !important;
 
-    color:#d4a84f;
+    text-align:center;
 
     font-size:17px;
 
     font-weight:bold;
 
-    margin-bottom:45px;
+    margin-bottom:45px !important;
 }
 
 
-/* ================= CARDS ================= */
+/* ===== ALL BOXES ===== */
 
-.card{
+.card,
+.contact-box,
+.empty-news{
+
     background:
         linear-gradient(
             145deg,
-            rgba(30,30,30,.96),
-            rgba(10,10,10,.98)
-        );
+            rgba(35,35,35,.97),
+            rgba(9,9,9,.99)
+        ) !important;
 
     border:
         1px solid
-        rgba(212,168,79,.22);
+        rgba(212,168,79,.28) !important;
 
-    border-radius:15px;
-
-    padding:25px;
+    border-radius:16px !important;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.45),
-        inset 0 1px 0
-        rgba(255,255,255,.03);
+        0 20px 55px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.03) !important;
+}
+
+
+/* ===== CARDS ===== */
+
+.card{
+    padding:25px !important;
 
     transition:
         transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        border-color .25s ease;
 }
 
 .card:hover{
+
     transform:translateY(-5px);
 
     border-color:
-        rgba(212,168,79,.55);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.55),
-        0 0 25px
-        rgba(212,168,79,.08);
+        rgba(212,168,79,.65) !important;
 }
 
 .card h2{
-    color:#d4a84f;
+    color:#d4a84f !important;
 
     font-size:19px;
 
     line-height:1.8;
-
-    margin-top:0;
 }
 
 .card p{
-    color:#ccc;
+    color:#ddd !important;
 
     line-height:2;
-
-    font-size:16px;
 }
 
 
-/* ================= GRID ================= */
+/* ===== NEWS EMPTY ===== */
 
-.grid{
-    display:grid;
+.empty-news{
 
-    grid-template-columns:
-        repeat(3,1fr);
+    padding:60px 25px !important;
 
-    gap:20px;
+    text-align:center;
+
+    color:#ddd !important;
+
+    font-size:18px;
+
+    line-height:2.3;
 }
 
+.empty-news span{
 
-/* ================= BUTTON ================= */
-
-.home,
-.button{
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-}
-
-.home{
     display:block;
 
-    width:max-content;
+    color:#d4a84f !important;
 
-    margin:
-        45px
-        auto
-        0;
-
-    padding:
-        15px
-        32px;
-
-    background:#d4a84f;
-
-    color:#111;
-
-    border-radius:9px;
+    font-size:26px;
 
     font-weight:bold;
 
-    box-shadow:
-        0 8px 25px
-        rgba(212,168,79,.12);
-}
-
-.home:hover{
-    transform:translateY(-3px);
-
-    background:#e2b65d;
-
-    box-shadow:
-        0 12px 30px
-        rgba(212,168,79,.2);
+    margin-bottom:15px;
 }
 
 
-/* ================= CONTACT BOX ================= */
+/* ===== CONTACT ===== */
 
 .contact-box{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30,30,30,.96),
-            rgba(10,10,10,.98)
-        );
 
-    border:
-        1px solid
-        rgba(212,168,79,.25);
-
-    border-radius:16px;
-
-    padding:35px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.5),
-        inset 0 1px 0
-        rgba(255,255,255,.03);
+    padding:35px !important;
 }
 
-
-/* ================= CONTACT ITEM ================= */
-
 .contact-item{
+
     padding:22px 0;
 
     border-bottom:
@@ -252,7 +193,8 @@ h1{
 }
 
 .contact-title{
-    color:#d4a84f;
+
+    color:#d4a84f !important;
 
     font-size:17px;
 
@@ -263,85 +205,75 @@ h1{
 
 .contact-text,
 .address{
-    color:#ddd;
 
-    font-size:16px;
+    color:#ddd !important;
 
     line-height:2.3;
 }
 
-
-/* ================= PHONE ================= */
-
 .phone{
-    display:block;
 
-    color:#fff;
+    color:#fff !important;
 
     font-size:20px;
 
     font-weight:bold;
-
-    direction:ltr;
-
-    text-align:right;
-
-    transition:.2s;
 }
 
 .phone:hover{
-    color:#d4a84f;
+    color:#d4a84f !important;
 }
 
 
-/* ================= EMPTY NEWS ================= */
+/* ===== GRID ===== */
 
-.empty-news{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30,30,30,.96),
-            rgba(10,10,10,.98)
-        );
+.grid{
 
-    border:
-        1px solid
-        rgba(212,168,79,.25);
+    display:grid;
 
-    border-radius:16px;
+    grid-template-columns:
+        repeat(3,1fr);
 
-    padding:
-        60px 25px;
-
-    text-align:center;
-
-    color:#ccc;
-
-    font-size:18px;
-
-    line-height:2.3;
-
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.5),
-        inset 0 1px 0
-        rgba(255,255,255,.03);
+    gap:20px;
 }
 
-.empty-news span{
+
+/* ===== HOME BUTTON ===== */
+
+.home{
+
     display:block;
 
-    color:#d4a84f;
+    width:max-content;
 
-    font-size:26px;
+    margin:45px auto 0;
+
+    padding:15px 32px;
+
+    background:#d4a84f !important;
+
+    color:#111 !important;
+
+    border-radius:9px;
 
     font-weight:bold;
 
-    margin-bottom:15px;
+    transition:.25s;
+
+    box-shadow:
+        0 8px 25px
+        rgba(212,168,79,.15);
+}
+
+.home:hover{
+
+    transform:translateY(-3px);
+
+    background:#e3b960 !important;
 }
 
 
-/* ================= MOBILE ================= */
+/* ===== MOBILE ===== */
 
 @media(max-width:700px){
 
@@ -349,7 +281,7 @@ h1{
         padding:
             100px
             15px
-            50px;
+            60px !important;
     }
 
     .container{
@@ -357,13 +289,13 @@ h1{
     }
 
     h1{
-        font-size:35px;
+        font-size:35px !important;
     }
 
     .gold{
         font-size:15px;
 
-        margin-bottom:30px;
+        margin-bottom:30px !important;
     }
 
     .grid{
@@ -371,47 +303,17 @@ h1{
     }
 
     .card{
-        padding:22px;
+        padding:22px !important;
     }
 
     .contact-box{
-        padding:25px 20px;
-    }
-
-    .empty-news{
-        padding:
-            45px 18px;
-    }
-
-    .empty-news span{
-        font-size:22px;
+        padding:25px 20px !important;
     }
 
     .home{
         width:100%;
 
         text-align:center;
-    }
-
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media(max-width:380px){
-
-    h1{
-        font-size:32px;
-    }
-
-    .card h2{
-        font-size:18px;
-    }
-
-    .card p,
-    .contact-text,
-    .address{
-        font-size:15px;
     }
 
 }
