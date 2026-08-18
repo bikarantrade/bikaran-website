@@ -17,10 +17,10 @@
         content="بیکران گسترش تجارت پارسی | تجارت بین‌الملل، واردات، صادرات و خدمات بازرگانی"
     >
 
-    <!-- مسیر اصلاح شد -->
     <link rel="stylesheet" href="style.css">
 
     <style>
+
         .success-message {
             display: none;
             margin-top: 20px;
@@ -37,6 +37,83 @@
         .success-message.show {
             display: block;
         }
+
+        /* NEWS */
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            background: #181818;
+            border: 1px solid rgba(212,168,79,.20);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: .3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212,168,79,.55);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-card-content {
+            padding: 22px;
+        }
+
+        .news-card-content small {
+            display: block;
+            color: #d4a84f;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .news-card-content h3 {
+            color: #fff;
+            font-size: 19px;
+            line-height: 1.8;
+            margin: 0 0 12px;
+        }
+
+        .news-card-content p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 2;
+            margin: 0;
+        }
+
+        .news-loading {
+            width: 100%;
+            text-align: center;
+            color: #aaa;
+            padding: 30px;
+        }
+
+        @media (max-width: 900px) {
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -45,7 +122,10 @@
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
     <div class="container">
@@ -65,7 +145,10 @@
 
         <nav class="navbar">
 
-            <a href="#" class="active">
+            <a
+                href="#"
+                class="active"
+            >
                 خانه
             </a>
 
@@ -92,11 +175,18 @@
 </header>
 
 
-<!-- MAIN -->
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
 
         <div class="container hero-content">
@@ -161,7 +251,11 @@
     </section>
 
 
-    <!-- SERVICES -->
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
     <section
         class="services"
         id="services"
@@ -311,7 +405,11 @@
     </section>
 
 
-    <!-- NEWS -->
+
+    <!-- =========================
+         NEWS
+    ========================= -->
+
     <section
         class="news"
         id="news"
@@ -340,12 +438,19 @@
             </div>
 
 
+            <!--
+                اخبار به صورت خودکار
+                توسط news.js اینجا قرار می‌گیرند
+            -->
+
             <div
                 class="news-grid"
                 id="news-list"
             >
 
-                <!-- خبرها در آینده اضافه خواهند شد -->
+                <div class="news-loading">
+                    در حال دریافت آخرین اخبار...
+                </div>
 
             </div>
 
@@ -354,7 +459,11 @@
     </section>
 
 
-    <!-- ABOUT -->
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
     <section
         class="experience"
         id="about"
@@ -415,6 +524,7 @@
 
                 <div class="experience-features">
 
+
                     <div class="feature">
 
                         <span>
@@ -466,6 +576,7 @@
 
                     </div>
 
+
                 </div>
 
             </div>
@@ -475,7 +586,11 @@
     </section>
 
 
-    <!-- WHY US -->
+
+    <!-- =========================
+         WHY US
+    ========================= -->
+
     <section class="why-us">
 
         <div class="container">
@@ -502,6 +617,7 @@
 
 
             <div class="why-grid">
+
 
                 <div class="why-card">
 
@@ -590,6 +706,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -597,7 +714,11 @@
     </section>
 
 
-    <!-- CONTACT -->
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
     <section
         class="contact"
         id="contact"
@@ -634,6 +755,7 @@
 
 
                     <!-- PHONE -->
+
                     <a
                         href="tel:880813447"
                         class="contact-item"
@@ -659,6 +781,7 @@
 
 
                     <!-- INSTAGRAM -->
+
                     <a
                         href="https://instagram.com/bikaran_trade"
                         target="_blank"
@@ -686,6 +809,7 @@
 
 
                     <!-- ADDRESS -->
+
                     <div class="contact-item">
 
                         <div class="contact-item-icon">
@@ -714,7 +838,9 @@
             </div>
 
 
+
             <!-- CONTACT FORM -->
+
             <div class="contact-form-box">
 
                 <h3>
@@ -728,7 +854,9 @@
                 </p>
 
 
-                <form id="consultationForm">
+                <form
+                    id="consultationForm"
+                >
 
 
                     <div class="form-row">
@@ -845,6 +973,7 @@
 
 
                 <!-- SUCCESS MESSAGE -->
+
                 <div
                     id="successMessage"
                     class="success-message"
@@ -872,7 +1001,11 @@
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
     <div class="container footer-content">
@@ -924,34 +1057,63 @@
 </footer>
 
 
-<!-- WHATSAPP FORM SCRIPT -->
+
+<!-- =========================
+     NEWS SCRIPT
+========================= -->
+
+<script src="news.js"></script>
+
+
+
+<!-- =========================
+     WHATSAPP FORM SCRIPT
+========================= -->
+
 <script>
 
 document
     .getElementById("consultationForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener(
+        "submit",
+        function(event) {
 
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById("name").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const subject =
-            document.getElementById("subject").value.trim();
-
-        const message =
-            document.getElementById("message").value.trim();
+            event.preventDefault();
 
 
-        const whatsappNumber =
-            "989125479907";
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
 
 
-        const whatsappMessage =
+            const phone =
+                document
+                    .getElementById("phone")
+                    .value
+                    .trim();
+
+
+            const subject =
+                document
+                    .getElementById("subject")
+                    .value
+                    .trim();
+
+
+            const message =
+                document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+            const whatsappNumber =
+                "989125479907";
+
+
+            const whatsappMessage =
 `درخواست مشاوره جدید
 
 نام و نام خانوادگی:
@@ -967,26 +1129,33 @@ ${subject}
 ${message}`;
 
 
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(whatsappMessage);
+            const whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(
+                    whatsappMessage
+                );
 
 
-        const successMessage =
-            document.getElementById("successMessage");
+            const successMessage =
+                document.getElementById(
+                    "successMessage"
+                );
 
 
-        successMessage.classList.add("show");
+            successMessage.classList.add(
+                "show"
+            );
 
 
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
 
-    });
+        }
+    );
 
 </script>
 
