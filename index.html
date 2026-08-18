@@ -138,7 +138,7 @@ a{
 
 
 /* =========================================
-   HERO / HOME
+   HERO
 ========================================= */
 
 .hero{
@@ -162,38 +162,24 @@ a{
         20px
         50px;
 
-    background:
+    background-image:
 
-        radial-gradient(
-            circle at center,
-            #24201a 0%,
-            #0e0e0e 45%,
-            #050505 100%
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.65)
+        ),
+
+        url(
+            "https://raw.githubusercontent.com/bikarantrade/bikaran-website/main/image/jpg.png.jpeg"
         );
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
 
     overflow:hidden;
-}
-
-
-/* نور ظریف وسط صفحه */
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(212,168,79,.10),
-            transparent 45%
-        );
-
-    pointer-events:none;
 }
 
 
@@ -329,8 +315,7 @@ a{
 
     text-align:center;
 
-    transition:
-        .25s;
+    transition:.25s;
 }
 
 .button:hover{
@@ -350,7 +335,7 @@ a{
 
     box-shadow:
         0 8px 25px
-        rgba(212,168,79,.12);
+        rgba(212,168,79,.18);
 }
 
 
@@ -365,13 +350,13 @@ a{
         #d4a84f;
 
     background:
-        rgba(0,0,0,.55);
+        rgba(0,0,0,.60);
 }
 
 .services:hover{
 
     background:
-        rgba(212,168,79,.12);
+        rgba(212,168,79,.15);
 }
 
 
@@ -406,7 +391,7 @@ a{
 
 
 /* =========================================
-   SIDE MENU
+   MENU
 ========================================= */
 
 .menu{
@@ -568,6 +553,8 @@ a{
             100px
             18px
             50px;
+
+        background-position:center;
     }
 
     .hero h1{
@@ -690,9 +677,7 @@ aria-label="باز کردن منو"
 تجارت بین‌الملل
 
 <span>
-
 ساده‌تر از همیشه
-
 </span>
 
 </h1>
@@ -791,54 +776,42 @@ onclick="closeMenu()"
 <a
 href="https://bikarantrade.github.io/bikaran-website/"
 >
-
 خانه
-
 </a>
 
 
 <a
 href="https://bikarantrade.github.io/bikaran-website/services.html"
 >
-
 خدمات
-
 </a>
 
 
 <a
 href="https://bikarantrade.github.io/bikaran-website/about.html"
 >
-
 درباره ما
-
 </a>
 
 
 <a
 href="https://bikarantrade.github.io/bikaran-website/news.html"
 >
-
 اخبار
-
 </a>
 
 
 <a
 href="https://bikarantrade.github.io/bikaran-website/consultation.html"
 >
-
 درخواست مشاوره
-
 </a>
 
 
 <a
 href="https://bikarantrade.github.io/bikaran-website/contact.html"
 >
-
 تماس با ما
-
 </a>
 
 
@@ -884,8 +857,6 @@ function closeMenu(){
 
 }
 
-
-/* بستن منو با کلید ESC */
 
 document.addEventListener(
     "keydown",
