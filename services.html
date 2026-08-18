@@ -16,56 +16,41 @@ html,body{
     margin:0;
     padding:0;
     width:100%;
-    min-height:100%;
 }
 
 body{
     background:#080808;
     color:#fff;
     font-family:Tahoma,Arial,sans-serif;
-    overflow-x:hidden;
 }
-
-a{
-    text-decoration:none;
-}
-
-
-/* ================= صفحه ================= */
 
 .page{
     min-height:100vh;
-
     padding:110px 20px 60px;
 
     background:
-        radial-gradient(
-            circle at top center,
-            rgba(212,168,79,.12),
-            transparent 38%
-        ),
-        #080808;
+    radial-gradient(
+        circle at top,
+        rgba(212,168,79,.14),
+        transparent 40%
+    ),
+    #080808;
 }
 
 .container{
     width:92%;
-    max-width:1100px;
+    max-width:950px;
     margin:auto;
 }
 
 
-/* ================= عنوان ================= */
+/* عنوان */
 
-h1{
+.title{
+    text-align:center;
     margin:0;
 
-    text-align:center;
-
-    color:#fff;
-
-    font-size:
-        clamp(38px,6vw,55px);
-
+    font-size:48px;
     line-height:1.5;
 }
 
@@ -74,72 +59,57 @@ h1{
 
     color:#d4a84f;
 
-    font-size:17px;
-
-    line-height:2;
-
     margin:
-        10px auto 45px;
+        10px 0 45px;
+
+    font-size:17px;
 }
 
 
-/* ================= کارت خدمات ================= */
+/* خدمات */
 
 .services{
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    display:flex;
+    flex-direction:column;
     gap:22px;
 }
 
-.card{
+
+/* هر خدمت */
+
+.service{
+
+    width:100%;
 
     padding:30px;
 
     background:
-        linear-gradient(
-            145deg,
-            #191919,
-            #0d0d0d
-        );
+    linear-gradient(
+        145deg,
+        #1c1c1c,
+        #0d0d0d
+    );
 
     border:
         1px solid
-        rgba(212,168,79,.30);
+        rgba(212,168,79,.35);
 
     border-radius:15px;
 
-    transition:.25s;
-
     box-shadow:
-        0 12px 35px
-        rgba(0,0,0,.25);
-}
-
-.card:hover{
-
-    transform:
-        translateY(-5px);
-
-    border-color:#d4a84f;
-
-    box-shadow:
-        0 18px 45px
-        rgba(0,0,0,.45);
+        0 10px 30px
+        rgba(0,0,0,.35);
 }
 
 
-/* ================= شماره ================= */
+/* شماره */
 
 .number{
 
-    width:44px;
-    height:44px;
+    width:45px;
+    height:45px;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -157,51 +127,35 @@ h1{
 }
 
 
-/* ================= عنوان خدمت ================= */
+/* عنوان */
 
-.card h2{
+.service h2{
 
-    margin:
-        0 0 15px;
+    margin:0 0 15px;
 
     color:#d4a84f;
 
-    font-size:20px;
+    font-size:21px;
 
     line-height:1.9;
 }
 
 
-/* ================= توضیحات ================= */
+/* متن */
 
-.card p{
+.service p{
 
     margin:0;
 
     color:#ddd;
 
-    font-size:15px;
+    font-size:16px;
 
-    line-height:2.25;
+    line-height:2.3;
 }
 
 
-/* ================= خدمت پنجم ================= */
-
-.card:last-child{
-
-    grid-column:
-        1 / -1;
-
-    width:100%;
-
-    max-width:550px;
-
-    justify-self:center;
-}
-
-
-/* ================= مشاوره ================= */
+/* مشاوره */
 
 .consultation{
 
@@ -211,64 +165,49 @@ h1{
 
     text-align:center;
 
-    background:
-        rgba(212,168,79,.05);
-
     border:
         1px solid
-        rgba(212,168,79,.30);
+        rgba(212,168,79,.3);
 
     border-radius:15px;
+
+    background:
+        rgba(212,168,79,.05);
 }
 
 .consultation h2{
 
-    margin:
-        0 0 12px;
-
-    color:#fff;
+    margin:0 0 12px;
 
     font-size:23px;
 }
 
 .consultation p{
 
-    margin:
-        0 auto 22px;
-
     color:#bbb;
 
     line-height:2;
+
+    margin:0 0 20px;
 }
 
 .consultation a{
 
     display:inline-block;
 
-    padding:
-        15px 32px;
-
     background:#d4a84f;
 
     color:#111;
 
+    padding:15px 32px;
+
     border-radius:8px;
 
     font-weight:bold;
-
-    transition:.25s;
-}
-
-.consultation a:hover{
-
-    transform:
-        translateY(-3px);
-
-    background:#e1b35d;
 }
 
 
-/* ================= بازگشت ================= */
+/* بازگشت */
 
 .home{
 
@@ -276,23 +215,17 @@ h1{
 
     width:max-content;
 
-    margin:
-        30px auto 0;
+    margin:30px auto 0;
 
-    padding:
-        14px 30px;
+    padding:14px 30px;
 
-    border:
-        1px solid
-        #d4a84f;
+    border:1px solid #d4a84f;
 
     border-radius:8px;
 
     color:#d4a84f;
 
     font-weight:bold;
-
-    transition:.25s;
 }
 
 .home:hover{
@@ -303,48 +236,130 @@ h1{
 }
 
 
-/* ================= موبایل ================= */
+/* موبایل */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
     .page{
-
         padding:
-            100px 15px 50px;
+            95px 15px 50px;
     }
 
     .container{
         width:96%;
     }
 
-    .services{
-
-        grid-template-columns:1fr;
-
+    .title{
+        font-size:36px;
     }
 
-    .card{
+    .subtitle{
+        font-size:15px;
+    }
 
+    .service{
         padding:24px 20px;
-
     }
 
-    .card:last-child{
-
-        grid-column:auto;
-
-        max-width:none;
-
-    }
-
-    .card h2{
-
+    .service h2{
         font-size:18px;
-
     }
 
-    .card p{
-
+    .service p{
         font-size:14px;
+        line-height:2.2;
+    }
 
-        line-height
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<section class="page">
+
+<div class="container">
+
+
+<h1 class="title">
+خدمات
+</h1>
+
+<div class="subtitle">
+خدمات تخصصی بیکران گسترش تجارت پارسی
+</div>
+
+
+<div class="services">
+
+
+<!-- ۱ -->
+
+<div class="service">
+
+<div class="number">۱</div>
+
+<h2>
+مدیریت و اجرای فرآیندهای بازرگانی؛
+از ثبت سفارش تا رفع تعهد ارزی
+</h2>
+
+<p>
+ارائه خدمات تخصصی و پیگیری امور بازرگانی و ارزی از ثبت سفارش،
+پیگیری فرآیندهای ارزی تا رفع تعهد ارزی؛ همراه با نظارت و اجرای
+دقیق فرآیندها و رعایت الزامات و مقررات مربوطه.
+</p>
+
+</div>
+
+
+<!-- ۲ -->
+
+<div class="service">
+
+<div class="number">۲</div>
+
+<h2>
+مشاوره تخصصی قوانین و مقررات
+</h2>
+
+<p>
+ارائه مشاوره در زمینه ضوابط و بخشنامه‌های بانک مرکزی و مقررات
+مرتبط با تجارت و بازرگانی بین‌المللی، متناسب با شرایط و الزامات
+هر پرونده.
+</p>
+
+</div>
+
+
+<!-- ۳ -->
+
+<div class="service">
+
+<div class="number">۳</div>
+
+<h2>
+خدمات ترخیص کالا
+</h2>
+
+<p>
+انجام و پیگیری امور ترخیص کالا و فرآیندهای مرتبط، با هدف تسهیل
+مراحل اجرایی و مدیریت چالش‌های موجود در مسیر ترخیص.
+</p>
+
+</div>
+
+
+<!-- ۴ -->
+
+<div class="service">
+
+<div class="number">۴</div>
+
+<h2>
+پشتیبانی حقوقی و معرفی وکیل متخصص
+</h2>
